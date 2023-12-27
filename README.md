@@ -1,2 +1,4 @@
 # PSF_Excel_Analyzer
  
+Run **npm install on terminal** once on installation of project dependencies
+**npm run** to run the Project
