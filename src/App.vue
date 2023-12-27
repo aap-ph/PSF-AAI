@@ -5,9 +5,8 @@ import NavBarView from './views/NavBarView.vue';
 
 
 <template>
-  <div class="header">
+  <div class="header w-100">
     <img src="/DICT Logo.png" alt="DICT Logo" class="logo" />
-    
     <img src="/IIDB Logo.png" alt="IIDB Logo" class="logo" />
     <img src="/Bagong Pilipinas Logo.jpg" alt="Bagong Pilipinas Logo" class="logo" />
     <div class="text-after-images">
@@ -29,6 +28,8 @@ import NavBarView from './views/NavBarView.vue';
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: white;
+  min-width: max-content;
 }
 
 .logo {
