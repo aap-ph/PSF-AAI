@@ -4,4 +4,4 @@ Run **npm install** on project directory once on installation to install project
 
 and
 
-**npm run** to run the Project
+**npm run dev** to run the Project
