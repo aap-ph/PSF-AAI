@@ -24,13 +24,13 @@
     <tr>
       <th style="font-weight: bold; border-right: solid white">C-Level</th>
       <td style="width: 10px;"></td>
-      <td style="border: solid white;">Chief [Business Function] Officer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" onclick="logText(this)">Chief Data Officer</td> 
-      <td style="width: 10px;"></td><td style="border: solid white;">Chief Information Officer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;">Chief Analytics Officer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;">Chief Technology Officer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;">Chief Scientific Officer</td>
-      <td style="width: 10px;"></td><td rowspan="11" style="border: solid white;">Refer to the PSF-Human Capital Development, Learning & Organization Development Track</td>
+      <td style="border: solid white;" @click="logText">Chief [Business Function] Officer</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Chief Data Officer</td> 
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Chief Information Officer</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Chief Analytics Officer</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Chief Technology Officer</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Chief Scientific Officer</td>
+      <td style="width: 10px;"></td><td rowspan="11" style="border: solid white;" @click="logText">Refer to the PSF-Human Capital Development, Learning & Organization Development Track</td>
     </tr>
     <tr>
       <th style=" border-right: solid white"></th>
@@ -43,12 +43,12 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Senior Director</th>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;">Business Analytics Director</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;">Data Governance Officer</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;">Chief Data Architect</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;">Chief Data Scientist</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;">Chief AI Engineer</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;">Director of Research</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Business Analytics Director</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Data Governance Officer</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Chief Data Architect</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Chief Data Scientist</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Chief AI Engineer</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Director of Research</td>
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Director</th>
@@ -65,12 +65,12 @@
     </tr>
     <tr>
       <th style="font-weight: bold;  border-right: solid white">Senior Manager</th>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;">Business Analytics Manager</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;">Data Governance Manager</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;">Data Architect</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;">Senior Data Scientist</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;">Senior AI Engineer</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;">Research Manager</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Business Analytics Manager</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Data Governance Manager</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Data Architect</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Senior Data Scientist</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Senior AI Engineer</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Research Manager</td>
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Manager</th>
@@ -87,12 +87,12 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Senior Professional/ Supervisor</th>
-      <td style="width: 10px;"></td><td style="border: solid white;">Senior Business Intelligence Analyst</td>
-      <td style="width: 10px;"></td><td style="border: solid white;">Data Protection Specialist</td>
-      <td style="width: 10px;"></td><td style="border: solid white;">Senior Data Engineer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;">Data Scientist</td>
-      <td style="width: 10px;"></td><td style="border: solid white;">AI Engineer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;">Senior Applied Data/AI Researcher</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Senior Business Intelligence Analyst</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Data Protection Specialist</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Senior Data Engineer</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Data Scientist</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">AI Engineer</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Senior Applied Data/AI Researcher</td>
     </tr>
     <tr>
       <th style=" border-right: solid white"></th>
@@ -105,11 +105,11 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Professional</th>
-      <td style="width: 10px;"></td><td colspan="3" style="border: solid white;">Business Intelligence Analyst</td>
+      <td style="width: 10px;"></td><td colspan="3" style="border: solid white;" @click="logText">Business Intelligence Analyst</td>
       <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td>
-      <td style="border: solid white;">Data Engineer</td>
-      <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td><td colspan="3" style="border: solid white;">Machine Learning Engineer</td>
-      <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td><td style="border: solid white;">Applied Data/AI Researcher</td>
+      <td style="border: solid white;" @click="logText">Data Engineer</td>
+      <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td><td colspan="3" style="border: solid white;" @click="logText">Machine Learning Engineer</td>
+      <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td><td style="border: solid white;" @click="logText">Applied Data/AI Researcher</td>
     </tr>
     <tr>
       <th style=" border-right: solid white"></th>
@@ -121,9 +121,9 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Senior Associate</th>
-      <td style="width: 10px;"></td><td colspan="3" style="border: solid white;">Data Analyst</td>
+      <td style="width: 10px;"></td><td colspan="3" style="border: solid white;" @click="logText">Data Analyst</td>
       <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td> 
-      <td colspan="9" style="border: solid white;">Associate Data Engineer</td>
+      <td colspan="9" style="border: solid white;" @click="logText">Associate Data Engineer</td>
     </tr>
     <tr>
       <th style=" border-right: solid white"></th>
@@ -132,7 +132,7 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Associate</th>
-      <td style="width: 10px;"></td><td colspan="13" style="border: solid white;">Associate Data Analyst</td>
+      <td style="width: 10px;"></td><td colspan="13" style="border: solid white;" @click="logText">Associate Data Analyst</td>
     </tr>
   </table>
 </template>
@@ -161,9 +161,13 @@
   }
 </style>
 <script>
-  function logText(element) {
-    console.log(element.textContent);
-  }
+export default {
+  methods: {
+    logText(event) {
+      console.log(event.target.textContent);
+    },
+  },
+};
 </script>
 
 
