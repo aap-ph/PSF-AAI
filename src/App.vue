@@ -19,7 +19,7 @@ import NavBarView from './views/NavBarView.vue';
       <NavBarView />
   </div>
   </div>
-  <RouterView />
+   <RouterView />
 </template>
 
 <style scoped>
@@ -29,7 +29,6 @@ import NavBarView from './views/NavBarView.vue';
   justify-content: space-around;
   align-items: center;
   background-color: white;
-  min-width: max-content;
 }
 
 .logo {

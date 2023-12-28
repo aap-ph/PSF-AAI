@@ -150,6 +150,7 @@
   text-align: center;
   color: white; /* Set text color to white */
 }
+
 .styled-table td img {
     top: 23%;
     left: 17%;
@@ -160,6 +161,7 @@
     width: 30px;
   }
 </style>
+
 <script>
 export default {
   methods: {
@@ -169,5 +171,4 @@ export default {
   },
 };
 </script>
-
 
