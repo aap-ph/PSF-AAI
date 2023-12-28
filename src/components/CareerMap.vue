@@ -127,8 +127,8 @@
     </tr>
     <tr>
       <th style=" border-right: solid white"></th>
-      <td style="width: 10px;"></td><td colspan="2" rowspan="1" style="padding: 0; margin: 0; border: none;"><img src="/arrow-up-bold.svg"></td>
-      <td colspan="6" rowspan="1" style="padding: 0; margin: 0; border: none;"><img src="/arrow-up-bold.svg"></td>
+      <td style="width: 10px;"></td><td colspan="3" rowspan="1" style="padding: 0; margin: 0; border: none;"><img src="/arrow-up-bold.svg"></td>
+      <td colspan="10" rowspan="1" style="padding: 0; margin: 0; border: none;"><img src="/arrow-up-bold.svg"></td>
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Associate</th>
