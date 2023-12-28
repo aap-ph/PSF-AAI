@@ -3,7 +3,7 @@ import SkillsMap from '../components/SkillsMap.vue'
 </script>
 
 <template>
-  <main class="pt-3">
+  <main class="p-4">
     <SkillsMap />
   </main>
 </template>

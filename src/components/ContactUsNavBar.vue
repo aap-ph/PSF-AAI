@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light justify-content-between d-flex w-100 p-0">
-    <div class="container-fluid">
+    <div class="d-flex justify-content-center align-items-center">
       <button
         class="navbar-toggler"
         type="button"

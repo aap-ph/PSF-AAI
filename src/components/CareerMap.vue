@@ -1,5 +1,5 @@
 <template>
-    <img src="/Career Map.jpg" alt="DICT Logo" class="logo w-100 p-0" />
+    <img src="/Career Map.jpg" alt="DICT Logo" class="logo h-100 p-0" />
     <div class="absolute-container">
         <div class="absolute-text" style="left: 25px; top: 1px; text-align: center;" title="This career path focuses on using data to inform business decisions and strategy. Professionals in this field analyze data trends to provide insights that drive business growth, efficiency, and innovation. They often work with management teams to understand business objectives and translate data findings into actionable strategies.">Business<br> Intelligence &<br> Strategy</div>
         <div class="absolute-text" style="left: 165px; top: 30px;" title="This career path focuses on using data to inform business decisions and strategy. Professionals in this field analyze data trends to provide insights that drive business growth, efficiency, and innovation. They often work with management teams to understand business objectives and translate data findings into actionable strategies.">Data Stewardship</div>
@@ -32,4 +32,10 @@
 }
 
 </style>
+
+<script setup>
+
+
+
+</script>
   
