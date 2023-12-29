@@ -17,7 +17,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'MainPage',
-      component: MainPageView
+      component: CareerMap
     },
     {
       path: '/careermap',
