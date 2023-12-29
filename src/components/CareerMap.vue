@@ -195,9 +195,9 @@ const uploadFile = () => {
 
   uploadBytes(fileRef, modifiedFile)
     .then((snapshot) => {
-      alert("Upload complete! Total Bytes: " + snapshot.totalBytes);
+      alert("Upload complete! ");
       getDownloadURL(snapshot.ref).then((downloadURL) => {
-        alert("File available at: " + downloadURL);
+    
         // Do something with the download URL
       });
     })
