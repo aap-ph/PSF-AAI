@@ -146,6 +146,10 @@
   border-collapse: collapse;
 }
 
+td:hover{
+  cursor: pointer;
+}
+
 .styled-table th,
 .styled-table td {
   /* border: 1px solid #ddd; */

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="fs-4 text-light text-center">ASSOCIATE DATA ANALYST</div>
+        <div class="fs-4 text-light text-center">{{clickedText}}</div>
         <div class="contents row p-2 text-light">
             <div class="col-md-6">
                 <div class="d-flex flex-column m-2">
