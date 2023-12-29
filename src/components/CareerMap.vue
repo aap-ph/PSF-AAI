@@ -1,5 +1,5 @@
 <template>
-  <table class="styled-table">
+  <table class="styled-table mb-3">
     <tr>
       <th style="border-bottom: solid white; border-right: solid white;"></th>
       <td style="width: 10px;border-bottom: solid white;"></td>
@@ -24,13 +24,13 @@
     <tr>
       <th style="font-weight: bold; border-right: solid white">C-Level</th>
       <td style="width: 10px;"></td>
-      <td style="border: solid white;" @click="logText">Chief [Business Function] Officer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Chief Data Officer</td> 
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Chief Information Officer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Chief Analytics Officer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Chief Technology Officer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Chief Scientific Officer</td>
-      <td style="width: 10px;"></td><td rowspan="11" style="border: solid white;" @click="logText">Refer to the PSF-Human Capital Development, Learning & Organization Development Track</td>
+      <td style="border: solid white;" @click="sendText('Chief [Business Function] Officer')">Chief [Business Function] Officer</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Chief Data Officer')">Chief Data Officer</td> 
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Chief Information Officer')">Chief Information Officer</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Chief Analytics Officer')">Chief Analytics Officer</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Chief Technology Officer')">Chief Technology Officer</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Chief Scientific Officer')">Chief Scientific Officer</td>
+      <td style="width: 10px;"></td><td rowspan="11" style="border: solid white;">Refer to the PSF-Human Capital Development, Learning & Organization Development Track</td>
     </tr>
     <tr>
       <th style=" border-right: solid white"></th>
@@ -43,12 +43,12 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Senior Director</th>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Business Analytics Director</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Data Governance Officer</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Chief Data Architect</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Chief Data Scientist</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Chief AI Engineer</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Director of Research</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Business Analytics Director')">Business Analytics Director</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Data Governance Officer')">Data Governance Officer</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Chief Data Architect')">Chief Data Architect</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Chief Data Scientist')">Chief Data Scientist</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Chief AI Engineer')">Chief AI Engineer</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Director of Research')">Director of Research</td>
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Director</th>
@@ -65,12 +65,12 @@
     </tr>
     <tr>
       <th style="font-weight: bold;  border-right: solid white">Senior Manager</th>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Business Analytics Manager</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Data Governance Manager</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Data Architect</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Senior Data Scientist</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Senior AI Engineer</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="logText">Research Manager</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Business Analytics Manager')">Business Analytics Manager</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Data Governance Manager')">Data Governance Manager</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Data Architect')">Data Architect</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Senior Data Scientist')">Senior Data Scientist</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Senior AI Engineer')">Senior AI Engineer</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Research Manager')">Research Manager</td>
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Manager</th>
@@ -87,12 +87,12 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Senior Professional/ Supervisor</th>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Senior Business Intelligence Analyst</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Data Protection Specialist</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Senior Data Engineer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Data Scientist</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">AI Engineer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="logText">Senior Applied Data/AI Researcher</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Senior Business Intelligence Analyst')">Senior Business Intelligence Analyst</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Data Protection Specialist')">Data Protection Specialist</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Senior Data Engineer')">Senior Data Engineer</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Data Scientist')">Data Scientist</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('AI Engineer')">AI Engineer</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Senior Applied Data/AI Researcher')">Senior Applied Data/AI Researcher</td>
     </tr>
     <tr>
       <th style=" border-right: solid white"></th>
@@ -105,11 +105,11 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Professional</th>
-      <td style="width: 10px;"></td><td colspan="3" style="border: solid white;" @click="logText">Business Intelligence Analyst</td>
+      <td style="width: 10px;"></td><td colspan="3" style="border: solid white;" @click="sendText('Business Intelligence Analyst')">Business Intelligence Analyst</td>
       <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td>
-      <td style="border: solid white;" @click="logText">Data Engineer</td>
-      <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td><td colspan="3" style="border: solid white;" @click="logText">Machine Learning Engineer</td>
-      <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td><td style="border: solid white;" @click="logText">Applied Data/AI Researcher</td>
+      <td style="border: solid white;" @click="sendText('Data Engineer')">Data Engineer</td>
+      <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td><td colspan="3" style="border: solid white;" @click="sendText('Machine Learning Engineer')">Machine Learning Engineer</td>
+      <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td><td style="border: solid white;" @click="sendText('Applied Data/AI Researcher')">Applied Data/AI Researcher</td>
     </tr>
     <tr>
       <th style=" border-right: solid white"></th>
@@ -121,9 +121,9 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Senior Associate</th>
-      <td style="width: 10px;"></td><td colspan="3" style="border: solid white;" @click="logText">Data Analyst</td>
+      <td style="width: 10px;"></td><td colspan="3" style="border: solid white;" @click="sendText('Data Analyst')">Data Analyst</td>
       <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td> 
-      <td colspan="9" style="border: solid white;" @click="logText">Associate Data Engineer</td>
+      <td colspan="9" style="border: solid white;" @click="sendText('Associate Data Engineer')">Associate Data Engineer</td>
     </tr>
     <tr>
       <th style=" border-right: solid white"></th>
@@ -132,9 +132,13 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Associate</th>
-      <td style="width: 10px;"></td><td colspan="13" style="border: solid white;" @click="logText">Associate Data Analyst</td>
+      <td style="width: 10px;"></td><td colspan="13" style="border: solid white;" @click="sendText('Associate Data Analyst')">Associate Data Analyst</td>
     </tr>
   </table>
+  <div class="d-flex flex-row justify-content-end align-items-end">
+    <input type="file" @change="handleFileChange">
+    <button @click="uploadFile">Upload</button>
+  </div>
 </template>
 <style scoped>
 .styled-table {
@@ -162,13 +166,41 @@
   }
 </style>
 
-<script>
-export default {
-  methods: {
-    logText(event) {
-      console.log(event.target.textContent);
-    },
-  },
+<script setup>
+import { useRouter } from 'vue-router';
+import { storage, uploadBytes, ref as storageRef, getDownloadURL } from '@/firebase';
+
+let selectedFile = null;
+
+const handleFileChange = (event) => {
+  selectedFile = event.target.files[0];
+};
+
+const uploadFile = () => {
+  if (!selectedFile) {
+    return alert('Please select a file to upload.');
+  }
+
+  const fileRef = storageRef(storage, selectedFile.name);
+
+  uploadBytes(fileRef, selectedFile)
+    .then((snapshot) => {
+      console.log("Upload complete!", snapshot.totalBytes);
+      getDownloadURL(snapshot.ref).then((downloadURL) => {
+        console.log("File available at:", downloadURL);
+        // Do something with the download URL
+      });
+    })
+    .catch((error) => {
+      console.error("Upload failed:", error);
+      // Handle errors appropriately, e.g., display user-friendly messages
+    });
+};
+
+const router = useRouter();
+
+const sendText = (text) => {
+  router.push({ name: 'skillsmap', params: { text: text } });
 };
 </script>
 

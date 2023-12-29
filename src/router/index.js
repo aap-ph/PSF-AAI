@@ -25,8 +25,8 @@ const router = createRouter({
       component: CareerMap
     },
     {
-      path: '/skillsmap',
-      name: 'skillsmap',
+      path: '/skillsmap/:text',
+      name: 'skillsmap',  
       component: SkillsMap
     },
     {

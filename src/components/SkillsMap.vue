@@ -92,14 +92,6 @@
                             </table>
                         </div>
                     </div>
-
-                    <div class="file-upload mt-4">
-                        <div class="title">
-                            Upload File
-                        </div>
-                        <input type="file" @change="handleFileUpload" accept=".xlsx, .xls" />
-                        <!-- You can customize the 'accept' attribute based on the file types you want to allow -->
-                    </div>
                 </div>
             </div>
         </div>
@@ -107,15 +99,35 @@
 </template>
   
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 import * as XLSX from 'xlsx/dist/xlsx.full.min.js';
+import { storage, ref as storageRef, getDownloadURL } from '@/firebase';
 
-const handleFileUpload = async (event) => {
-    const file = event.target.files[0];
+const clickedText = ref('');
 
-    if (file) {
+onMounted(() => {
+  // Access the text parameter from the route
+  const route = useRoute(); // Use useRoute to get the route object
+  clickedText.value = route.params.text || '';
+});
+
+var globalJobRoleDescription = ref(null);
+var globalperformanceExpectation = ref(null);
+var groupedTasksByFunction = ref({});
+var FSC = ref([]);
+var ESC = ref([]);
+
+const fetchAndAnalyzeFile = async () => {
         try {
-            const arrayBuffer = await file.arrayBuffer();
+            const filePath = 'excel.xlsx';
+            const fileURL = await getDownloadURL(storageRef(storage, filePath));
+
+            // Assuming CORS has been addressed either through Firebase Storage rules or a proxy
+
+            const response = await fetch(fileURL, { mode: 'cors' });
+            const arrayBuffer = await response.arrayBuffer();
+
             const data = new Uint8Array(arrayBuffer);
             const workbook = XLSX.read(data, { type: 'array' });
 
@@ -129,7 +141,8 @@ const handleFileUpload = async (event) => {
                 const allRows = XLSX.utils.sheet_to_json(worksheet);
 
                 // Specify the job role you want to filter
-                const targetJobRole = 'Associate Data Analyst';
+                
+                const targetJobRole = clickedText.value;
 
                 // Filter rows based on the job role
                 const matchingRows = allRows.filter(row => row['Job Role'] === targetJobRole);
@@ -159,7 +172,7 @@ const handleFileUpload = async (event) => {
                 const allRows = XLSX.utils.sheet_to_json(worksheet);
 
                 // Specify the job role you want to filter
-                const targetJobRole = 'Associate Data Analyst';
+                const targetJobRole = clickedText.value;
 
                 // Filter rows based on the job role
                 const matchingRows = allRows.filter(row => row['Job Role'] === targetJobRole);
@@ -192,7 +205,7 @@ const handleFileUpload = async (event) => {
             const processJobRoleSkills = (worksheet) => {
                 const allRows = XLSX.utils.sheet_to_json(worksheet);
                 // Specify the job role you want to filter
-                const targetJobRole = 'Associate Data Analyst';
+                const targetJobRole = clickedText.value;
 
                 // Filter rows based on the job role and Skill Type
                 const MatchingFSC = allRows.filter(row => row['Job Role'] === targetJobRole && row['Skill Type'] === 'FSC');
@@ -234,14 +247,8 @@ const handleFileUpload = async (event) => {
         } catch (error) {
             console.error('Error processing Excel file:', error.message);
         }
-    }
 };
-var globalJobRoleDescription = ref(null);
-var globalperformanceExpectation = ref(null);
-var groupedTasksByFunction = ref({});
-var FSC = ref([]);
-var ESC = ref([]);
-
+onMounted(fetchAndAnalyzeFile);
 </script>
   
 <style>

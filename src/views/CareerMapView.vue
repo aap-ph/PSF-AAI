@@ -3,7 +3,7 @@ import CareerMap from '../components/CareerMap.vue'
 </script>
 
 <template>
-  <main class="pt-3">
+  <main class="p-4">
     <CareerMap />
   </main>
 </template>
