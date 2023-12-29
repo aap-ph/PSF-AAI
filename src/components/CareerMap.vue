@@ -195,14 +195,14 @@ const uploadFile = () => {
 
   uploadBytes(fileRef, modifiedFile)
     .then((snapshot) => {
-      console.log("Upload complete!", snapshot.totalBytes);
+      alert("Upload complete! Total Bytes: " + snapshot.totalBytes);
       getDownloadURL(snapshot.ref).then((downloadURL) => {
-        console.log("File available at:", downloadURL);
+        alert("File available at: " + downloadURL);
         // Do something with the download URL
       });
     })
     .catch((error) => {
-      console.error("Upload failed:", error);
+      alert("Upload failed: " + error);
       // Handle errors appropriately, e.g., display user-friendly messages
     });
 };
