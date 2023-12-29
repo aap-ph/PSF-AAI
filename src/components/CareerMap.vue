@@ -185,9 +185,15 @@ const uploadFile = () => {
     return alert('Please select a file to upload.');
   }
 
-  const fileRef = storageRef(storage, selectedFile.name);
+  // Set the file name to "excel"
+  const modifiedFileName = 'excel.xlsx';
 
-  uploadBytes(fileRef, selectedFile)
+  // Create a new File object with the modified file name
+  const modifiedFile = new File([selectedFile], modifiedFileName, { type: selectedFile.type });
+
+  const fileRef = storageRef(storage, modifiedFile.name);
+
+  uploadBytes(fileRef, modifiedFile)
     .then((snapshot) => {
       console.log("Upload complete!", snapshot.totalBytes);
       getDownloadURL(snapshot.ref).then((downloadURL) => {
@@ -200,6 +206,7 @@ const uploadFile = () => {
       // Handle errors appropriately, e.g., display user-friendly messages
     });
 };
+
 
 const router = useRouter();
 
