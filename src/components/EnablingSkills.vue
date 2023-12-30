@@ -33,14 +33,14 @@ import * as XLSX from 'xlsx/dist/xlsx.full.min.js';
 import { storage, ref as storageRef, getDownloadURL } from '@/firebase';
 import { useRouter } from 'vue-router';
 
+
 const router = useRouter();
 
 const handleRowClick = (escCode) => {
   // Assuming you have a route named 'details' where you want to send the FSC Code
-  const routeParams = { params: { escCode } };
 
   // Use router.push to navigate to the 'details' route with the FSC Code as a parameter
-  router.push({ name: 'enablingskillsdetails', ...routeParams });
+  router.push({ name: 'enablingskillsdetails', params: { escCode: escCode } });
 };
 
 const ESCData = ref([]);
