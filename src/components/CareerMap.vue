@@ -24,13 +24,13 @@
     <tr>
       <th style="font-weight: bold; border-right: solid white">C-Level</th>
       <td style="width: 10px;"></td>
-      <td style="border: solid white;" @click="sendText('Chief [Business Function] Officer')">Chief [Business Function] Officer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Chief Data Officer')">Chief Data Officer</td> 
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Chief Information Officer')">Chief Information Officer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Chief Analytics Officer')">Chief Analytics Officer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Chief Technology Officer')">Chief Technology Officer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Chief Scientific Officer')">Chief Scientific Officer</td>
-      <td style="width: 10px;"></td><td rowspan="11" style="border: solid white;">Refer to the PSF-Human Capital Development, Learning & Organization Development Track</td>
+      <td style="border: solid white;" @click="sendText(D5)">{{D5}}</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText(G5)">{{G5}}</td> 
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText(J5)">{{J5}}</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText(M5)">{{M5}}</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText(P5)">{{P5}}</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText(S5)">{{S5}}</td>
+      <td style="width: 10px;"></td><td rowspan="11" style="border: solid white;">{{V5}}</td>
     </tr>
     <tr>
       <th style=" border-right: solid white"></th>
@@ -43,12 +43,12 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Senior Director</th>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Business Analytics Director')">Business Analytics Director</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Data Governance Officer')">Data Governance Officer</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Chief Data Architect')">Chief Data Architect</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Chief Data Scientist')">Chief Data Scientist</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Chief AI Engineer')">Chief AI Engineer</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Director of Research')">Director of Research</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(D8)">{{D8}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(G8)">{{G8}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(J8)">{{J8}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(M8)">{{M8}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(P8)">{{P8}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(S8)">{{S8}}</td>
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Director</th>
@@ -65,12 +65,12 @@
     </tr>
     <tr>
       <th style="font-weight: bold;  border-right: solid white">Senior Manager</th>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Business Analytics Manager')">Business Analytics Manager</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Data Governance Manager')">Data Governance Manager</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Data Architect')">Data Architect</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Senior Data Scientist')">Senior Data Scientist</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Senior AI Engineer')">Senior AI Engineer</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText('Research Manager')">Research Manager</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(D14)">{{D14}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(G14)">{{G14}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(J14)">{{J14}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(M14)">{{M14}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(P14)">{{P14}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(S14)">{{S14}}</td>
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Manager</th>
@@ -87,12 +87,12 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Senior Professional/ Supervisor</th>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Senior Business Intelligence Analyst')">Senior Business Intelligence Analyst</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Data Protection Specialist')">Data Protection Specialist</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Senior Data Engineer')">Senior Data Engineer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Data Scientist')">Data Scientist</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('AI Engineer')">AI Engineer</td>
-      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText('Senior Applied Data/AI Researcher')">Senior Applied Data/AI Researcher</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText(D20)">{{D20}}</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText(G20)">{{G20}}</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText(J20)">{{J20}}</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText(M20)">{{M20}}</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText(P20)">{{P20}}</td>
+      <td style="width: 10px;"></td><td style="border: solid white;" @click="sendText(S20)">{{S20}}</td>
     </tr>
     <tr>
       <th style=" border-right: solid white"></th>
@@ -105,11 +105,11 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Professional</th>
-      <td style="width: 10px;"></td><td colspan="3" style="border: solid white;" @click="sendText('Business Intelligence Analyst')">Business Intelligence Analyst</td>
+      <td style="width: 10px;"></td><td colspan="3" style="border: solid white;" @click="sendText(D23)">{{D23}}</td>
       <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td>
-      <td style="border: solid white;" @click="sendText('Data Engineer')">Data Engineer</td>
-      <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td><td colspan="3" style="border: solid white;" @click="sendText('Machine Learning Engineer')">Machine Learning Engineer</td>
-      <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td><td style="border: solid white;" @click="sendText('Applied Data/AI Researcher')">Applied Data/AI Researcher</td>
+      <td style="border: solid white;" @click="sendText(J23)">{{J23}}</td>
+      <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td><td colspan="3" style="border: solid white;" @click="sendText(M23)">{{M23}}</td>
+      <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td><td style="border: solid white;" @click="sendText(S23)">{{S23}}</td>
     </tr>
     <tr>
       <th style=" border-right: solid white"></th>
@@ -121,9 +121,9 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Senior Associate</th>
-      <td style="width: 10px;"></td><td colspan="3" style="border: solid white;" @click="sendText('Data Analyst')">Data Analyst</td>
+      <td style="width: 10px;"></td><td colspan="3" style="border: solid white;" @click="sendText(D26)">{{D26}}</td>
       <td style="padding: 0; margin: 0; border: none;"><img src="/arrow-dual-horizontal.png"></td> 
-      <td colspan="9" style="border: solid white;" @click="sendText('Associate Data Engineer')">Associate Data Engineer</td>
+      <td colspan="9" style="border: solid white;" @click="sendText(J26)">{{J26}}</td>
     </tr>
     <tr>
       <th style=" border-right: solid white"></th>
@@ -132,7 +132,7 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Associate</th>
-      <td style="width: 10px;"></td><td colspan="13" style="border: solid white;" @click="sendText('Associate Data Analyst')">Associate Data Analyst</td>
+      <td style="width: 10px;"></td><td colspan="13" style="border: solid white;" @click="sendText(D29)">{{D29}}</td>
     </tr>
   </table>
   <div class="d-flex flex-row justify-content-end align-items-end">
@@ -173,12 +173,186 @@ td:hover{
 <script setup>
 import { useRouter } from 'vue-router';
 import { storage, uploadBytes, ref as storageRef, getDownloadURL } from '@/firebase';
+import * as XLSX from 'xlsx/dist/xlsx.full.min.js';
+import { onMounted, ref } from 'vue';
+
+//Row 5
+var D5 = ref('') //Value of Chief [Business Function] Officer"
+var G5 = ref('') //Value of Chief Data Officer
+var J5 = ref('') //Value of Chief Information Officer
+var M5 = ref('') //Value of Chief Analytics Officer
+var P5 = ref('') //Value of Chief Technology Officer
+var S5 = ref('') //Value of Chief Scientific Officer
+var V5 = ref('') //Value of Refer.....
+
+//Row 8
+var D8 = ref('') //Value of Business Analytics Director
+var G8 = ref('') //Value of Data Governance Officer
+var J8 = ref('') //Value of Chief Data Architect
+var M8 = ref('') //Value of Chief Data Scientist
+var P8 = ref('') //Value of Chief AI Engineer
+var S8 = ref('') //Value of Director of Research
+
+//Row 14
+var D14 = ref('') //Value of Business Analytics Manager
+var G14 = ref('') //Value of Data Governance Manager
+var J14 = ref('') //Value of Data Architect
+var M14 = ref('') //Value of Senior Data Scientist
+var P14 = ref('') //Value of Senior AI Engineer
+var S14 = ref('') //Value of Research Manager
+
+//Row 20
+var D20 = ref('') 
+var G20 = ref('') 
+var J20 = ref('') 
+var M20 = ref('')
+var P20 = ref('')
+var S20 = ref('')
+
+//Row 23
+var D23 = ref('') 
+var J23 = ref('') 
+var M23 = ref('') 
+var S23 = ref('') 
+
+//Row 26
+var D26 = ref('')
+var J26 = ref('') 
+
+//Row 29
+var D29  = ref('')
+
 
 let selectedFile = null;
 
 const handleFileChange = (event) => {
   selectedFile = event.target.files[0];
 };
+
+const fetchData = async () => {
+  try {
+    const filePath = 'excel.xlsx';
+    const fileURL = await getDownloadURL(storageRef(storage, filePath));
+    const response = await fetch(fileURL, { mode: 'cors' });
+    const arrayBuffer = await response.arrayBuffer();
+
+    const data = new Uint8Array(arrayBuffer);
+    const workbook = XLSX.read(data, { type: 'array' });
+
+    // Assuming you want to read cell D5 in the sheet named 'Career Map'
+    const sheetName = 'Career Map';
+    const sheet = workbook.Sheets[sheetName];
+
+    //Row 5
+    var cellValue = sheet['D5'] ? sheet['D5'].v : undefined;
+    D5.value = cellValue;
+
+    cellValue = sheet['G5'] ? sheet['G5'].v : undefined;
+    G5.value = cellValue;
+
+    cellValue = sheet['J5'] ? sheet['J5'].v : undefined;
+    J5.value = cellValue;
+
+    cellValue = sheet['M5'] ? sheet['M5'].v : undefined;
+    M5.value = cellValue;
+
+    cellValue = sheet['P5'] ? sheet['P5'].v : undefined;
+    P5.value = cellValue;
+
+    cellValue = sheet['S5'] ? sheet['S5'].v : undefined;
+    S5.value = cellValue;
+
+    cellValue = sheet['V5'] ? sheet['V5'].v : undefined;
+    V5.value = cellValue;
+
+    //Row 8
+    cellValue = sheet['D8'] ? sheet['D8'].v : undefined;
+    D8.value = cellValue;
+
+    cellValue = sheet['G8'] ? sheet['G8'].v : undefined;
+    G8.value = cellValue;
+
+    cellValue = sheet['J8'] ? sheet['J8'].v : undefined;
+    J8.value = cellValue;
+
+    cellValue = sheet['M8'] ? sheet['M8'].v : undefined;
+    M8.value = cellValue;
+
+    cellValue = sheet['P8'] ? sheet['P8'].v : undefined;
+    P8.value = cellValue;
+
+    cellValue = sheet['S8'] ? sheet['S8'].v : undefined;
+    S8.value = cellValue;
+
+    //Row 14
+    cellValue = sheet['D14'] ? sheet['D14'].v : undefined;
+    D14.value = cellValue;
+
+    cellValue = sheet['G14'] ? sheet['G14'].v : undefined;
+    G14.value = cellValue;
+
+    cellValue = sheet['J14'] ? sheet['J14'].v : undefined;
+    J14.value = cellValue;
+
+    cellValue = sheet['M14'] ? sheet['M14'].v : undefined;
+    M14.value = cellValue;
+
+    cellValue = sheet['P14'] ? sheet['P14'].v : undefined;
+    P14.value = cellValue;
+
+    cellValue = sheet['S14'] ? sheet['S14'].v : undefined;
+    S14.value = cellValue;
+
+    //Row 20
+    cellValue = sheet['D20'] ? sheet['D20'].v : undefined;
+    D20.value = cellValue;
+
+    cellValue = sheet['G20'] ? sheet['G20'].v : undefined;
+    G20.value = cellValue;
+
+    cellValue = sheet['J20'] ? sheet['J20'].v : undefined;
+    J20.value = cellValue;
+
+    cellValue = sheet['M20'] ? sheet['M20'].v : undefined;
+    M20.value = cellValue;
+
+    cellValue = sheet['P20'] ? sheet['P20'].v : undefined;
+    P20.value = cellValue;
+
+    cellValue = sheet['S20'] ? sheet['S20'].v : undefined;
+    S20.value = cellValue;
+
+    //Row 23
+    cellValue = sheet['D23'] ? sheet['D23'].v : undefined;
+    D23.value = cellValue;
+
+    cellValue = sheet['J23'] ? sheet['J23'].v : undefined;
+    J23.value = cellValue;
+
+    cellValue = sheet['M23'] ? sheet['M23'].v : undefined;
+    M23.value = cellValue;
+
+    cellValue = sheet['S23'] ? sheet['S23'].v : undefined;
+    S23.value = cellValue;
+
+    //Row 26
+    cellValue = sheet['D26'] ? sheet['D26'].v : undefined;
+    D26.value = cellValue;
+
+    cellValue = sheet['J26'] ? sheet['J26'].v : undefined;
+    J26.value = cellValue;
+
+    //Row 29
+    cellValue = sheet['D29'] ? sheet['D29'].v : undefined;
+    D29.value = cellValue;
+
+
+
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 
 const uploadFile = () => {
   if (!selectedFile) {
@@ -213,5 +387,8 @@ const router = useRouter();
 const sendText = (text) => {
   router.push({ name: 'skillsmap', params: { text: text } });
 };
+
+
+onMounted(fetchData);
 </script>
 
