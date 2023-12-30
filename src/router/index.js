@@ -4,7 +4,7 @@ import AboutView from '../views/AboutView.vue'
 import CareerMap from '../views/CareerMapView.vue'
 import SkillsMap from '../views/SkillsMapView.vue'
 import FunctionalSkills from '../views/FunctionalSkillsView.vue'
-import EnablingSkillsDetails from '../views/EnablingSkillsView.vue'
+import EnablingSkillsDetails from '../views/EnablingSkillsDetailsView.vue'
 import FunctionalSkillsDetails from '../views/FunctionalSkillsDetailsView.vue'
 import EnablingSkills from '../views/EnablingSkillsView.vue'
 import ContactUs from '../views/ContactUsView.vue'
@@ -79,12 +79,12 @@ const router = createRouter({
       component: RevisionLog
     },
     {
-      path: '/functionalskillsdetails',
+      path: '/functionalskillsdetails/:fscCode',
       name: 'functionalskillsdetails',
       component: FunctionalSkillsDetails
     },
     {
-      path: '/enablingskillsdetails',
+      path: '/enablingskillsdetails/:escCode',
       name: 'enablingskillsdetails',
       component: EnablingSkillsDetails
     },

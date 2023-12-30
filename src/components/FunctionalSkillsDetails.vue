@@ -2,16 +2,67 @@
     <div>
       <table class="styled-table mb-3">
         <tr>
-          <th style="border: 1px solid white;">Header 1</th>
-          <th style="border: 1px solid white;">Header 2</th>
-          <th style="border: 1px solid white;">Header 3</th>
-          <!-- ... Repeat for other headers -->
+          <td style="border: 1px solid white;">Enabling Skill</td>
+          <th colspan="6" style="border: 1px solid white; text-align: center;">ESC-DGF: Digital Fluency</th>
         </tr>
-        <tr v-for="rowIndex in 10" :key="rowIndex">
-          <td style="border: 1px solid white;">Row {{ rowIndex }}, Col 1</td>
-          <td style="border: 1px solid white;">Row {{ rowIndex }}, Col 2</td>
-          <td style="border: 1px solid white;">Row {{ rowIndex }}, Col 3</td>
-          <!-- ... Repeat for other columns -->
+        <tr>
+          <td style="border: 1px solid white;">Category</td>
+          <th colspan="6" style="border: 1px solid white; text-align: center;">Staying Relevant</th>
+
+        </tr>
+        <tr>
+          <td style="border: 1px solid white;">Related Category</td>
+          <th colspan="6" style="border: 1px solid white; text-align: center;">21st Century Skills</th>
+        </tr>
+        <tr>
+          <td style="border: 1px solid white;">Description</td>
+          <th colspan="6" style="border: 1px solid white; text-align: center;">Leverage digital technology tools, systems, and software across work processes and activities to solve problems, drive efficiency and facilitate information sharing</th>
+        </tr>
+        <tr>
+          <th rowspan="3" style="border: 1px solid white; text-align: center;">Proficiency Description</th>
+          <th colspan="2" style="border: 1px solid white; text-align: center;">Basic</th>
+          <th colspan="2" style="border: 1px solid white; text-align: center;">Intermediate</th>
+          <th colspan="2" style="border: 1px solid white; text-align: center;">Advance</th>
+        </tr>
+        <tr>
+          <th colspan="2" style="border: 1px solid white; text-align: center;">ESC-DGF-B</th>
+          <th colspan="2" style="border: 1px solid white; text-align: center;">ESC-DGF-I</th>
+          <th colspan="2" style="border: 1px solid white; text-align: center;">Advance</th>
+        </tr>
+        <tr>
+          <td style="border: 1px solid white;">Row 7, Col 2</td>
+          <td style="border: 1px solid white;">Row 7, Col 3</td>
+          <td style="border: 1px solid white;">Row 7, Col 4</td>
+          <td style="border: 1px solid white;">Row 7, Col 5</td>
+          <td style="border: 1px solid white;">Row 7, Col 6</td>
+          <td style="border: 1px solid white;">Row 7, Col 7</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid white;">Row 8, Col 1</td>
+          <td style="border: 1px solid white;">Row 8, Col 2</td>
+          <td style="border: 1px solid white;">Row 8, Col 3</td>
+          <td style="border: 1px solid white;">Row 8, Col 4</td>
+          <td style="border: 1px solid white;">Row 8, Col 5</td>
+          <td style="border: 1px solid white;">Row 8, Col 6</td>
+          <td style="border: 1px solid white;">Row 8, Col 7</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid white;">Row 9, Col 1</td>
+          <td style="border: 1px solid white;">Row 9, Col 2</td>
+          <td style="border: 1px solid white;">Row 9, Col 3</td>
+          <td style="border: 1px solid white;">Row 9, Col 4</td>
+          <td style="border: 1px solid white;">Row 9, Col 5</td>
+          <td style="border: 1px solid white;">Row 9, Col 6</td>
+          <td style="border: 1px solid white;">Row 9, Col 7</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid white;">Row 10, Col 1</td>
+          <td style="border: 1px solid white;">Row 10, Col 2</td>
+          <td style="border: 1px solid white;">Row 10, Col 3</td>
+          <td style="border: 1px solid white;">Row 10, Col 4</td>
+          <td style="border: 1px solid white;">Row 10, Col 5</td>
+          <td style="border: 1px solid white;">Row 10, Col 6</td>
+          <td style="border: 1px solid white;">Row 10, Col 7</td>
         </tr>
       </table>
     </div>

@@ -13,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(row, index) in sortedESCData" :key="index">
+        <tr v-for="(row, index) in sortedESCData" :key="index" @click="handleRowClick(row['ESC Code'])">
           <td style="border: none;"></td>
           <td>{{ row['ESC Code'] }}</td>
           <td>{{ row['ESC Title'] }}</td>
@@ -31,6 +31,17 @@
 import { ref, onMounted, computed } from 'vue';
 import * as XLSX from 'xlsx/dist/xlsx.full.min.js';
 import { storage, ref as storageRef, getDownloadURL } from '@/firebase';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const handleRowClick = (escCode) => {
+  // Assuming you have a route named 'details' where you want to send the FSC Code
+  const routeParams = { params: { escCode } };
+
+  // Use router.push to navigate to the 'details' route with the FSC Code as a parameter
+  router.push({ name: 'enablingskillsdetails', ...routeParams });
+};
 
 const ESCData = ref([]);
 const sortColumn = ref('');
