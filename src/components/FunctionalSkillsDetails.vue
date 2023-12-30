@@ -152,16 +152,10 @@ onMounted(() => {
     // Access the text parameter from the route
     const route = useRoute(); // Use useRoute to get the route object
     clickedText.value = route.params.fscCode || '';
-    console.log(clickedText.value)
-
 });
-// If you have data variables, you can define them here
 
-// Function to handle click event
-const sendText = (value) => {
-    // Handle the click event, e.g., display an alert with the clicked value
-    alert(value);
-};
+
+
 </script>
   
 <style scoped>/* Add your additional styles here */
