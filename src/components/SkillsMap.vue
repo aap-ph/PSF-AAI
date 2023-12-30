@@ -251,7 +251,7 @@ const fetchAndAnalyzeFile = async () => {
 onMounted(fetchAndAnalyzeFile);
 </script>
   
-<style>
+<style scoped>
 .row{
     margin-right: 0!important;
 }

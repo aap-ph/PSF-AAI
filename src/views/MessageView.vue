@@ -10,9 +10,15 @@ import ContactUsNavBarView from './ContactUsNavBarView.vue';
         <ContactUsNavBarView />
       </div>
   </div>
-  <main class="pt-3 w-100 d-flex justify-content-center flex-column align-items-center">
+  <main class="message pt-3 w-100 d-flex justify-content-center flex-column align-items-start">
     <div class="d-flex align-items-center">
       <Message />
     </div>
   </main>
 </template>
+
+<style scoped>
+.message{
+  padding-left: 180px;
+}
+</style>

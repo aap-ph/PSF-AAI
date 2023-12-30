@@ -8,7 +8,7 @@ import ContactUsNavBarView from './ContactUsNavBarView.vue';
     <div class="bg w-100 align-items-center d-flex justify-content-center border border-2">
       <ContactUsNavBarView />
     </div>
-    <main class="pt-3 w-100 d-flex justify-content-center flex-column align-items-center">
+    <main class="w-100 d-flex justify-content-center flex-column align-items-center">
     <div class="d-flex align-items-center">
       <AboutPage />
     </div>
