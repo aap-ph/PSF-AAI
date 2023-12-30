@@ -23,6 +23,10 @@
               :class="{ 'active': isActive('/functionalskills') }">Functional Skills</router-link>
           </li>
           <li class="nav-item">
+            <router-link class="nav-link" :to="{ path: '/enablingskills' }"
+              :class="{ 'active': isActive('/enablingskills') }">Enabling Skills</router-link>
+          </li>
+          <li class="nav-item">
             <router-link class="nav-link" :to="{ path: '/about' }"
               :class="{ 'active': isActive('/about') }">About</router-link>
           </li>

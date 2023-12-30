@@ -4,6 +4,7 @@ import AboutView from '../views/AboutView.vue'
 import CareerMap from '../views/CareerMapView.vue'
 import SkillsMap from '../views/SkillsMapView.vue'
 import FunctionalSkills from '../views/FunctionalSkillsView.vue'
+import EnablingSkills from '../views/EnablingSkillsView.vue'
 import ContactUs from '../views/ContactUsView.vue'
 import AboutThePSF from '../views/AboutThePSFView.vue'
 import Message from '../views/MessageView.vue'
@@ -33,6 +34,11 @@ const router = createRouter({
       path: '/functionalskills',
       name: 'functionalskills',
       component: FunctionalSkills
+    },
+    {
+      path: '/enablingskills',
+      name: 'enablingskills',
+      component: EnablingSkills
     },
     {
       path: '/about',
