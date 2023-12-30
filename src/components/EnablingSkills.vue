@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table class="styled-table">
+    <table class="styled-table mb-4">
       <thead>
         <tr>
           <th style="border: none;"></th>
