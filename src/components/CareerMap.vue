@@ -3,19 +3,19 @@
     <tr>
       <th style="border-bottom: solid white; border-right: solid white;"></th>
       <td style="width: 10px;border-bottom: solid white;"></td>
-      <td style="font-weight: bold; left: 25px; top: 1px; border-bottom: solid white; text-align: center;" title="This career path focuses on using data to inform business decisions and strategy. Professionals in this field analyze data trends to provide insights that drive business growth, efficiency, and innovation. They often work with management teams to understand business objectives and translate data findings into actionable strategies.">Business<br> Intelligence &<br> Strategy</td>
+      <td style="font-weight: bold; left: 25px; top: 1px; border-bottom: solid white; text-align: center;" :title="D3">Business<br> Intelligence &<br> Strategy</td>
       <td style="width: 10px;border-bottom: solid white;"></td>
-      <td style="border-bottom: solid white; font-weight: bold; left: 165px; top: 30px;" title="This career path focuses on using data to inform business decisions and strategy. Professionals in this field analyze data trends to provide insights that drive business growth, efficiency, and innovation. They often work with management teams to understand business objectives and translate data findings into actionable strategies.">Data Stewardship</td>
+      <td style="border-bottom: solid white; font-weight: bold; left: 165px; top: 30px;" :title="G3">Data Stewardship</td>
       <td style="border-bottom: solid white; width: 10px;"></td>
-      <td style="border-bottom: solid white; font-weight: bold; left: 325px; top: 30px;" title="Data engineers design, build, and maintain the systems and infrastructure that collect, process, and store data. They are responsible for the technical architecture of data projects, including the integration of disparate data sources, data transformation, and the creation of databases and data warehouses.">Data Engineering</td>
+      <td style="border-bottom: solid white; font-weight: bold; left: 325px; top: 30px;" :title="J3">Data Engineering</td>
       <td style="border-bottom: solid white; width: 10px;"></td>
-      <td style="border-bottom: solid white; font-weight: bold; left: 495px; top: 30px;" title="Data scientists analyze and interpret complex data to help organizations make better decisions. They use statistical techniques, machine learning, and predictive modeling to extract insights from data. Their work involves not only analyzing data but also developing new algorithms and models to solve specific business problems.">Data Science</td>
+      <td style="border-bottom: solid white; font-weight: bold; left: 495px; top: 30px;" :title="M3">Data Science</td>
       <td style="border-bottom: solid white; width: 10px;"></td>
-      <td style="border-bottom: solid white; font-weight: bold; left: 645px; top: 30px;" title="AI engineers focus on developing, deploying, and maintaining AI systems. This involves programming, algorithm development, and working with machine learning and deep learning models. They collaborate closely with data scientists to implement AI solutions and ensure that they are scalable, efficient, and effective.">AI Engineering</td>
+      <td style="border-bottom: solid white; font-weight: bold; left: 645px; top: 30px;" :title="P3">AI Engineering</td>
       <td style="border-bottom: solid white; width: 10px;"></td>
-      <td style="border-bottom: solid white; font-weight: bold; left: 795px; top: 15px; text-align: center;" title="This career track is for professionals who conduct research in data analytics and AI. They work on developing new methods, algorithms, and technologies in the field. Their focus is often on pushing the boundaries of what is currently possible in analytics and AI, contributing to academic knowledge as well as practical applications.">Applied Data/AI<br>Research</td>
+      <td style="border-bottom: solid white; font-weight: bold; left: 795px; top: 15px; text-align: center;" :title="S3">Applied Data/AI<br>Research</td>
       <td style="border-bottom: solid white; width: 10px;"></td>
-      <td style="border-bottom: solid white; font-weight: bold; left: 965px; top: 15px; text-align: center;" title="This career path in data and AI education for aspiring teachers, trainers, and learning providers encompasses a journey from introductory instructional roles to advanced educational leadership, specializing in imparting and developing cutting-edge analytics and AI knowledge and skills.">Data/AI<br>Education</td>
+      <td style="border-bottom: solid white; font-weight: bold; left: 965px; top: 15px; text-align: center;" :title="V3">Data/AI<br>Education</td>
     </tr>
     <tr>
       <th style=" border-right: solid white">
@@ -176,6 +176,15 @@ import { storage, uploadBytes, ref as storageRef, getDownloadURL } from '@/fireb
 import * as XLSX from 'xlsx/dist/xlsx.full.min.js';
 import { onMounted, ref } from 'vue';
 
+//Row 3
+var D3 = ref('') 
+var G3 = ref('') 
+var J3 = ref('') 
+var M3 = ref('') 
+var P3 = ref('') 
+var S3 = ref('') 
+var V3 = ref('') 
+
 //Row 5
 var D5 = ref('') //Value of Chief [Business Function] Officer"
 var G5 = ref('') //Value of Chief Data Officer
@@ -242,6 +251,28 @@ const fetchData = async () => {
     // Assuming you want to read cell D5 in the sheet named 'Career Map'
     const sheetName = 'Career Map';
     const sheet = workbook.Sheets[sheetName];
+
+    //Row 3
+    var cellValue = sheet['D3'] ? sheet['D3'].v : undefined;
+    D3.value = cellValue;
+
+    cellValue = sheet['G3'] ? sheet['G3'].v : undefined;
+    G3.value = cellValue;
+
+    cellValue = sheet['J3'] ? sheet['J3'].v : undefined;
+    J3.value = cellValue;
+
+    cellValue = sheet['M3'] ? sheet['M3'].v : undefined;
+    M3.value = cellValue;
+
+    cellValue = sheet['P3'] ? sheet['P3'].v : undefined;
+    P3.value = cellValue;
+
+    cellValue = sheet['S3'] ? sheet['S3'].v : undefined;
+    S3.value = cellValue;
+
+    cellValue = sheet['V3'] ? sheet['V3'].v : undefined;
+    V3.value = cellValue;
 
     //Row 5
     var cellValue = sheet['D5'] ? sheet['D5'].v : undefined;
