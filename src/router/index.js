@@ -19,11 +19,6 @@ const router = createRouter({
   mode:'history',
   routes: [
     {
-      path: '/',
-      name: 'MainPage',
-      component: CareerMap
-    },
-    {
       path: '/careermap',
       name: 'careermap',
       component: CareerMap
@@ -87,6 +82,11 @@ const router = createRouter({
       path: '/enablingskillsdetails/:escCode',
       name: 'enablingskillsdetails',
       component: EnablingSkillsDetails
+    },
+    {
+      path: '/MainPage',
+      name: 'MainPage',
+      component: MainPageView
     },
   ]
 })
