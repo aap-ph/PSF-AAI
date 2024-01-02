@@ -10,7 +10,7 @@
       </thead>
       <tbody>
         <tr v-for="(revision, index) in revisions" :key="index">
-          <td>{{ revision.version_no }}</td>
+          <td>{{ formatVersionNumber(revision.version_no) }}</td>
           <td>{{ formatActualDate(revision.date) }}</td>
           <td v-html="formatRevisionDetails(revision.revision_details)"></td>
         </tr>
@@ -30,6 +30,12 @@ onMounted(() => {
   fetchAndAnalyzeFile();
 });
 
+// Custom filter for formatting version number as "1.00" instead of "1"
+const formatVersionNumber = (versionNo) => {
+  // Check if versionNo is a valid number
+  const formattedVersion = parseFloat(versionNo);
+  return !isNaN(formattedVersion) ? formattedVersion.toFixed(2) : versionNo;
+};
 const fetchAndAnalyzeFile = async () => {
   try {
     const filePath = 'excel.xlsx';
@@ -66,20 +72,20 @@ const fetchAndAnalyzeFile = async () => {
         groupedRevisions[versionNo][date].push(revisionDetails);
       });
 
-          // Flatten grouped revisions with separate rows for each revision
-    revisions.value = Object.keys(groupedRevisions)
-      .map(versionNo => {
-        const dates = Object.keys(groupedRevisions[versionNo]);
-        return dates.map(date => ({
-          version_no: versionNo,
-          date: date,
-          revision_details: groupedRevisions[versionNo][date].join('\n'),
-        }));
-      })
-      .flat();
+      // Flatten grouped revisions with separate rows for each revision
+      revisions.value = Object.keys(groupedRevisions)
+        .map(versionNo => {
+          const dates = Object.keys(groupedRevisions[versionNo]);
+          return dates.map(date => ({
+            version_no: versionNo,
+            date: date,
+            revision_details: groupedRevisions[versionNo][date].join('\n'),
+          }));
+        })
+        .flat();
 
-    // Sort revisions by version number in descending order
-    revisions.value.sort((a, b) => b.version_no - a.version_no);
+      // Sort revisions by version number in descending order
+      revisions.value.sort((a, b) => b.version_no - a.version_no);
 
     } else {
       console.error(`Sheet "${sheetName}" not found in the Excel file.`);
@@ -110,6 +116,9 @@ const formatActualDate = (excelDate) => {
 
 // Custom filter for formatting revision details as bullets
 const formatRevisionDetails = (revisionDetails) => {
+  // Add a condition to check if the revision details (trimmed) as a string is "1" and replace with "1.00"
+  revisionDetails = revisionDetails.trim().toString() === "1" ? "1.00" : revisionDetails;
+
   const bulletPoints = revisionDetails.split('\n').map(point => `<li>${point.trim()}</li>`).join('');
   return `<ul>${bulletPoints}</ul>`;
 };
