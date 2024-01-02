@@ -13,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(row, index) in sortedFunctionalSkillsData" :key="index">
+        <tr v-for="(row, index) in sortedFunctionalSkillsData" :key="index" @click="navigateToDetails(row['FSC Code'])">
           <td style="border: none;"></td>
           <td>{{ row['FSC Code'] }}</td>
           <td>{{ row['FSC Title'] }}</td>
@@ -26,15 +26,30 @@
     </table>
   </div>
 </template>
+
   
 <script setup>
 import { ref, onMounted, computed } from 'vue';
 import * as XLSX from 'xlsx/dist/xlsx.full.min.js';
 import { storage, ref as storageRef, getDownloadURL } from '@/firebase';
+import { useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
+
 
 const functionalSkillsData = ref([]);
 const sortColumn = ref('');
 const sortOrder = ref(1); // 1 for ascending, -1 for descending
+
+
+
+const router = useRouter();
+const navigateToDetails = (fscCode) => {
+  // Assuming you have a route named 'details' where you want to send the FSC Code
+
+  // Use router.push to navigate to the 'details' route with the FSC Code as a parameter
+  router.push({ name: 'functionalskillsdetails', params: { fscCode: fscCode } });
+};
+
 
 const fetchFunctionalSkills = async () => {
   try {
