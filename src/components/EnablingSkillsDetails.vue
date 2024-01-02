@@ -36,9 +36,9 @@
         </th>
       </tr>
       <tr>
-        <td>{{ globalDescription1 }}</td>
-        <td>{{ globalDescription2 }}</td>
-        <td>{{ globalDescription3 }}</td>
+        <td style="vertical-align: top;">{{ globalDescription1 ? globalDescription1: ''}}</td>
+        <td style="vertical-align: top;">{{ globalDescription2 ? globalDescription2: '' }}</td>
+        <td style="vertical-align: top;">{{ globalDescription3 ? globalDescription3: '' }}</td>
       </tr>
       <tr>
         <td style="border: 1px solid white; text-align: start; vertical-align: top;">Knowledge</td>
