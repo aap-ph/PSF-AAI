@@ -29,25 +29,26 @@
                 <th colspan="2" style="border: 1px solid white; text-align: center;">6</th>
             </tr>
             <tr>
-                <th colspan="2" style="border: 1px solid white; text-align: center;">
-                    {{ globalFSCProficiencyCode1 ? globalFSCProficiencyCode1 : '' }}
+                <th colspan="2" style="border: 1px solid white; text-align: center; width: 15%;">
+                    {{ globalFSCProficiencyCode1 ? globalFSCProficiencyCode1 : 'None' }}
                 </th>
-                <th colspan="2" style="border: 1px solid white; text-align: center;">
-                    {{ globalFSCProficiencyCode2 ? globalFSCProficiencyCode2 : '' }}
+                <th colspan="2" style="border: 1px solid white; text-align: center; width: 15%;">
+                    {{ globalFSCProficiencyCode2 ? globalFSCProficiencyCode2 : 'None' }}
                 </th>
-                <th colspan="2" style="border: 1px solid white; text-align: center;">
-                    {{ globalFSCProficiencyCode3 ? globalFSCProficiencyCode3 : '' }}
+                <th colspan="2" style="border: 1px solid white; text-align: center; width: 15%;">
+                    {{ globalFSCProficiencyCode3 ? globalFSCProficiencyCode3 : 'None' }}
                 </th>
-                <th colspan="2" style="border: 1px solid white; text-align: center;">
-                    {{ globalFSCProficiencyCode4 ? globalFSCProficiencyCode4 : '' }}
+                <th colspan="2" style="border: 1px solid white; text-align: center; width: 15%;">
+                    {{ globalFSCProficiencyCode4 ? globalFSCProficiencyCode4 : 'None' }}
                 </th>
-                <th colspan="2" style="border: 1px solid white; text-align: center;">
-                    {{ globalFSCProficiencyCode5 ? globalFSCProficiencyCode5 : '' }}
+                <th colspan="2" style="border: 1px solid white; text-align: center; width: 15%;">
+                    {{ globalFSCProficiencyCode5 ? globalFSCProficiencyCode5 : 'None' }}
                 </th>
-                <th colspan="2" style="border: 1px solid white; text-align: center;">
-                    {{ globalFSCProficiencyCode6 ? globalFSCProficiencyCode6 : '' }}
+                <th colspan="2" style="border: 1px solid white; text-align: center; width: 15%;">
+                    {{ globalFSCProficiencyCode6 ? globalFSCProficiencyCode6 : 'None' }}
                 </th>
             </tr>
+
             <tr>
                 <th colspan="2" style="border: 1px solid white; text-align: center;">
                     {{ globalFSCDescription1 ? globalFSCDescription1 : '' }}

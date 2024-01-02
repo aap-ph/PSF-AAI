@@ -25,9 +25,15 @@
         <td>Advanced</td>
       </tr>
       <tr>
-        <td>{{ globalProficiencyCode1 }}</td>
-        <td>{{ globalProficiencyCode2 }}</td>
-        <td>{{ globalProficiencyCode3 }}</td>
+        <th colspan="1" style="border: 1px solid white; text-align: center; width: 30%;">
+            {{ globalProficiencyCode1 ? globalProficiencyCode1 : 'None' }}
+        </th>
+        <th colspan="1" style="border: 1px solid white; text-align: center; width: 30%;">
+            {{ globalProficiencyCode2 ? globalProficiencyCode2 : 'None' }}
+        </th>
+        <th colspan="1" style="border: 1px solid white; text-align: center; width: 30%;">
+            {{ globalProficiencyCode3 ? globalProficiencyCode3 : 'None' }}
+        </th>
       </tr>
       <tr>
         <td>{{ globalDescription1 }}</td>
