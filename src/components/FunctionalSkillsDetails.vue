@@ -2,21 +2,21 @@
     <div>
         <table class="styled-table mb-3">
             <tr>
-                <td style="border: 1px solid white;">Functional Skill</td>
+                <td style="border: 1px solid white; text-align: left; vertical-align: top;" >Functional Skill</td>
                 <th colspan="11" style="border: 1px solid white; text-align: start;">{{ clickedText }} {{ globalfscTitle }}
                 </th>
             </tr>
             <tr>
-                <td style="border: 1px solid white;">Category</td>
+                <td style="border: 1px solid white; text-align: left; vertical-align: top;">Category</td>
                 <th colspan="11" style="border: 1px solid white; text-align: start;">{{ globalcategory }}</th>
 
             </tr>
             <tr>
-                <td style="border: 1px solid white;">Related Category</td>
+                <td style="border: 1px solid white; text-align: left; vertical-align: top;">Related Category</td>
                 <th colspan="11" style="border: 1px solid white; text-align: start;">{{ globalRelatedcategory }}</th>
             </tr>
             <tr>
-                <td style="border: 1px solid white;">Description</td>
+                <td style="border: 1px solid white; text-align: left; vertical-align: top;">Description</td>
                 <th colspan="11" style="border: 1px solid white; text-align: start;">{{ globalfscDescription }}</th>
             </tr>
             <tr>

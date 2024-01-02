@@ -1,28 +1,28 @@
 <template>
   <div>
     <table class="styled-table">
-      <tr>
-        <th>Enabling Skills</th>
+      <tr style="text-align: start; vertical-align: top;">
+        <th >Enabling Skills</th>
         <td colspan="3">{{ clickedText }} {{ globalTitle }}</td>
         <td style="border: none;"></td>
       </tr>
-      <tr>
+      <tr style="text-align: start; vertical-align: top;">
         <th>Category</th>
         <td colspan="3">{{ globalcategory }}</td>
       </tr>
       <tr>
-        <th>Related Category</th>
+        <th style="text-align: start; vertical-align: top;">Related Category</th>
         <td colspan="3">{{ globalRelatedcategory }}</td>
       </tr>
       <tr>
-        <th>Description</th>
+        <th style="text-align: start; vertical-align: top;">Description</th>
         <td colspan="3">{{ globalDescription }}</td>
       </tr>
       <tr>
         <th rowspan="3" style="text-align: start; vertical-align: top;">Proficiency Description</th>
-        <td>Basic</td>
-        <td>Intermediate</td>
-        <td>Advanced</td>
+        <td style="text-align: center; vertical-align: center;">Basic</td>
+        <td style="text-align: center; vertical-align: center;">Intermediate</td>
+        <td style="text-align: center; vertical-align: center;">Advanced</td>
       </tr>
       <tr>
         <th colspan="1" style="border: 1px solid white; text-align: center; width: 30%;">

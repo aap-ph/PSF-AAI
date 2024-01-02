@@ -2,7 +2,7 @@
     <div>
         <div class="fs-4 text-light text-center">{{ clickedText }}</div>
         <div class="contents row p-2 text-light">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <div class="d-flex flex-column m-2">
                     <div>
                         <div class="title">
@@ -47,18 +47,18 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 p-0">
+            <div class="col-md-4 p-0">
                 <div class="d-flex flex-column m-2">
                     <div class="competence">
-                        <div class="title">
+                        <div class="title" style="font-weight: bold;">
                             Functional Skills and Competencies
                         </div>
                         <div class="container mt-2 p-0 bg-dark">
                             <table class="table table-bordered reduced-font">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Skill</th>
-                                        <th scope="col">Proficiency</th>
+                                        <th scope="col" style="text-align: center; font-weight: bold;">Skill</th>
+                                        <th scope="col" style="text-align: center; font-weight: bold;">Proficiency</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -72,15 +72,15 @@
                     </div>
 
                     <div class="ESC">
-                        <div class="title">
+                        <div class="title" style="font-weight: bold;">
                             Enabling Skills and Competencies
                         </div>
                         <div class="container mt-2 p-0">
                             <table class="table reduced-font">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Skill</th>
-                                        <th scope="col">Proficiency</th>
+                                        <th scope="col" style="text-align: center; font-weight: bold;">Skill</th>
+                                        <th scope="col" style="text-align: center; font-weight: bold;">Proficiency</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -286,6 +286,10 @@ onMounted(fetchAndAnalyzeFile);
     text-align: center;
 }
 
+.table{
+    background: none !important;
+}
+
 td:hover {
   cursor: pointer;
 }
@@ -309,7 +313,9 @@ td:hover {
 .table td {
     border: 1px solid #ddd;
     padding: 8px;
+    color: white;
     text-align: left;
+    background-color: rgb(68, 84, 106) !important;  
 }
 
 .table th {
