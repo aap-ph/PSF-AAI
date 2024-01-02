@@ -1,179 +1,336 @@
 <template>
-    <div>
-      <table class="styled-table">
-        <tr>
-          <th>Enabling Skills</th>
-          <td colspan="3">ESC-DGF: Digital Fluency</td>
-          <td style="border: none;"></td>
-        </tr>
-        <tr>
-          <th>Category</th>
-          <td colspan="3">Staying Relevant</td>
-        </tr>
-        <tr>
-          <th>Related Category</th>
-          <td colspan="3">21st Century Skills</td>
-        </tr>
-        <tr>
-          <th>Description</th>
-          <td colspan="3" id="long-words">Leverage digital technology tools, systems, and software across work processes and activities to solve problems, drive efficiency and facilitate information sharing</td>
-        </tr>
-        <tr>
-          <th rowspan="3">Proficiency Description</th>
-          <td>Basic</td>
-          <td>Intermediate</td>
-          <td>Advanced</td>
-        </tr>
-        <tr>
-          <td>ESC-DGF-B</td>
-          <td>ESC-DGF-I</td>
-          <td>ESC-DGF-A</td>
-        </tr>
-        <tr>
-          <td id="long-words">Perform work processes and activities using identified digital technology tools, systems and software</td>
-          <td id="long-words">Identify opportunities and evaluate risks of integrating digital technology tools, systems and software across work processes and activities</td>
-          <td id="long-words">Drive the creation of a digital culture and environment, educating stakeholders across the organization on the benefits and risks of digital technology tools, systems and software</td>
-        </tr>
-        <tr>
-          <th>Knowledge</th>
-          <td id="long-words">
+  <div>
+    <table class="styled-table">
+      <tr>
+        <th>Enabling Skills</th>
+        <td colspan="3">{{ clickedText }} {{ globalTitle }}</td>
+        <td style="border: none;"></td>
+      </tr>
+      <tr>
+        <th>Category</th>
+        <td colspan="3">{{ globalcategory }}</td>
+      </tr>
+      <tr>
+        <th>Related Category</th>
+        <td colspan="3">{{ globalRelatedcategory }}</td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td colspan="3">{{ globalDescription }}</td>
+      </tr>
+      <tr>
+        <th rowspan="3">Proficiency Description</th>
+        <td>Basic</td>
+        <td>Intermediate</td>
+        <td>Advanced</td>
+      </tr>
+      <tr>
+        <td>{{ globalProficiencyCode1 }}</td>
+        <td>{{ globalProficiencyCode2 }}</td>
+        <td>{{ globalProficiencyCode3 }}</td>
+      </tr>
+      <tr>
+        <td>{{ globalDescription1 }}</td>
+        <td>{{ globalDescription2 }}</td>
+        <td>{{ globalDescription3 }}</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid white;">Knowledge</td>
+        <th colspan="1" style="border: 1px solid white; text-align: start; vertical-align: top;">
+          <div v-if="Knowledge1.length > 0">
             <ul>
-              <li>Digital terminologies</li>
-              <li>Digital etiquettes</li>
-              <li>Types of digital search and information collection tools</li>
-              <li>Types of digital technology tools, systems and software</li>
-              <li>Types of technology-enabled communication channels</li>
-              <li>Organisation's InfoComm Technology troubleshooting and Information Technology (IT) back-up processes</li>
-              <li>Organisation's IT, personal data and privacy policies</li>
-              <li>Types of cyber security risks</li>
-              <li>Organisation's policies to monitor cyber security risks</li>
+              <li v-for="(item, index) in Knowledge1" :key="index">{{ item.item }}</li>
             </ul>
+          </div>
+        </th>
+        <th colspan="1" style="border: 1px solid white; text-align: start; vertical-align: top;">
+          <div v-if="Knowledge2.length > 0">
+            <ul>
+              <li v-for="(item, index) in Knowledge2" :key="index">{{ item.item }}</li>
+            </ul>
+          </div>
+        </th>
+        <th colspan="1" style="border: 1px solid white; text-align: start; vertical-align: top;">
+          <div v-if="Knowledge3.length > 0">
+            <ul>
+              <li v-for="(item, index) in Knowledge3" :key="index">{{ item.item }}</li>
+            </ul>
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid white;">Abilities</td>
+        <th colspan="1" style="border: 1px solid white; text-align: start; vertical-align: top;">
+          <div v-if="Ability1.length > 0">
+            <ul>
+              <li v-for="(item, index) in Ability1" :key="index">{{ item.item }}</li>
+            </ul>
+          </div>
+        </th>
+        <th colspan="1" style="border: 1px solid white; text-align: start; vertical-align: top;">
+          <div v-if="Ability2.length > 0">
+            <ul>
+              <li v-for="(item, index) in Ability2" :key="index">{{ item.item }}</li>
+            </ul>
+          </div>
+        </th>
+        <th colspan="1" style="border: 1px solid white; text-align: start; vertical-align: top;">
+          <div v-if="Ability3.length > 0">
+            <ul>
+              <li v-for="(item, index) in Ability3" :key="index">{{ item.item }}</li>
+            </ul>
+          </div>
+        </th>
+      </tr>
+    </table>
+  </div>
+</template>
 
-          </td>
-          <td id="long-words">
-            <ul>
-              <li>Emerging digital technology tools, systems and software</li>
-              <li>Emerging digital communication channels</li>
-              <li>Methods to evaluate suitability of digital technology tools, systems and software</li>
-              <li>Types of visualization tools and techniques</li>
-              <li>Technology implementation processes</li>
-              <li>Problem-solving techniques</li>
-              <li>Decision evaluation and prioritization frameworks</li>
-              <li>Risk assessment techniques</li>
-              <li>Strategies to manage cyber security risks</li>
-              <li>Types of metrics to measure effectiveness of digital tools, systems and software</li>
-            </ul>
+<script setup>
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+import * as XLSX from 'xlsx/dist/xlsx.full.min.js';
+import { storage, ref as storageRef, getDownloadURL } from '@/firebase';
 
-          </td>
-          <td id="long-words">
-            <ul>
-              <li>Best practice applications of digital technology tools, systems and software</li>
-              <li>Emerging trends in the digital environment</li>
-              <li>Strategies to manage technology implementation</li>
-              <li>Digital education strategies</li>
-              <li>Types of digital training programs</li>
-              <li>Strategies to manage InfoComm Technology troubleshooting and back-up processes</li>
-              <li>Strategies to manage cyber security risk strategies and policies</li>
-              <li>Strategies to manage personal data and privacy policies</li>
-              <li>Legal and regulatory frameworks related to digital technology tools, systems and software</li>
-            </ul>
-          </td>
-          <tr>
-            <th>Abilities</th>
-            <td id="long-words">
-              <ul>
-                <li>Interpret instructions and actions based on digital terminologies</li>
-                <li>Operate identified digital technology tools, systems and software to perform own work processes and activities</li>
-                <li>Present information using identified digital technology tools, systems and software</li>
-                <li>Exchange information with other stakeholders using identified technology-mediated communication channels</li>
-                <li>Perform searches to source information using digital search and information collection tools</li>
-                <li>Assess the credibility of information sourced using digital search and information collection tools</li>
-                <li>Organise digital content to be stored and retrieved in line with organisational requirements</li>
-                <li>Adhere to organisation's personal data and privacy policies</li>
-                <li>Follow organisation's cyber security policies to identify potential risks</li>
-              </ul>
-            </td>
-            <td id="long-words">
-              <ul>
-                <li>Analyse work processes and activities across own team to identify potential applications of digital technology tools, systems or software which drive efficiency and solve problems</li>
-                <li>Evaluate emerging digital technology tools, systems or software to propose applications which drive efficiency and solve problems in own team</li>
-                <li>Identify applications of different visualisation techniques and tools to analyse and present information</li>
-                <li>Deploy processes to manage technology implementation</li>
-                <li>Review usage of digital technology tools, systems and software to identify any breaches of organisation's digital and IT policies</li>
-                <li>Assess current applications of digital technology tools, systems or software to propose improvement areas</li>
-              </ul>
-            </td>
-            <td id="long-words">
-              <ul>
-                <li>Champion the benefits of digital applications and advancements to build an organisation-wide community which focuses on digital approaches and adopts a digital mindset</li>
-                <li>Synthesise emerging trends in the digital environment to anticipate changes required to organisation's current digital technology tools, systems and software</li>
-                <li>Oversee the progress of digital intervention implementations across the organisation</li>
-                <li>Champion digital education strategies across the organisation to address digital literacy skill gaps and drive continuous learning</li>
-                <li>Influence stakeholders to communicate the narrative of digital transformation and manage any change barriers</li>
-                <li>Direct the development and implementation of organisational digital and IT policies</li>
-                <li>Guide the analysis of past breaches of organisational digital and IT policies to mitigate future impacts of cyber security issues, data breaches or system failures</li>
-              </ul>
-            </td>
-          </tr>
-        </tr>
-      </table>
-    </div>
-  </template>
+const clickedText = ref('');
+var globalTitle = ref('')
+var globalcategory = ref('')
+var globalRelatedcategory = ref('')
+var globalDescription = ref('')
+var globalRangeApplication = ref('')
+
+// Basic
+var globalProficiencyCode1 = ref('')
+var globalDescription1 = ref('')
+
+var Knowledge1 = ref([]);
+var Ability1 = ref([]);
+
+// Intermediate
+var globalProficiencyCode2 = ref('')
+var globalDescription2 = ref('')
+
+var Knowledge2 = ref([]);
+var Ability2 = ref([]);
+
+// Advanced
+var globalProficiencyCode3 = ref('')
+var globalDescription3 = ref('')
+
+var Knowledge3 = ref([]);
+var Ability3 = ref([]);
+
+const fetchAndAnalyzeFile = async () => {
+  try {
+    const filePath = 'excel.xlsx';
+    const fileURL = await getDownloadURL(storageRef(storage, filePath));
+
+    // Assuming CORS has been addressed either through Firebase Storage rules or a proxy
+
+    const response = await fetch(fileURL, { mode: 'cors' });
+    const arrayBuffer = await response.arrayBuffer();
+
+    const data = new Uint8Array(arrayBuffer);
+    const workbook = XLSX.read(data, { type: 'array' });
+
+    // Assuming "Job Role Description" is the sheet name
+    const sheetName = 'Enabling Skills';
+
+    if (workbook.SheetNames.includes(sheetName)) {
+      const worksheet = workbook.Sheets[sheetName];
+
+      // Extract data from the "Job Role Description" sheet
+      const allRows = XLSX.utils.sheet_to_json(worksheet);
+
+      // Specify the job role you want to filter
+
+      const targetcode = clickedText.value;
+
+      // Filter rows based on the job role
+      const matchingRows = allRows.filter(row => row['ESC Code'] === targetcode);
+
+      if (matchingRows.length > 0) {
+        // Assign the job role description to the global variable
+        let fscTitle = matchingRows[0]['ESC Title'];
+        let fscCategory = matchingRows[0]['ESC Category'];
+        let fscRelatedCategory = matchingRows[0]['ESC Related Category'];
+        let fscDescription = matchingRows[0]['ESC Description'];
+        globalTitle.value = fscTitle;
+        globalcategory.value = fscCategory;
+        globalRelatedcategory.value = fscRelatedCategory;
+        globalDescription.value = fscDescription;
+      } else {
+
+      }
+
+      //Basic
+      const matchingBasic = allRows.filter(row => row['Proficiency Level'] === 'Basic' && row['ESC Code'] === targetcode);
+
+      if (matchingBasic.length > 0) {
+        // Assign the job role description to the global variable
+        let ESCProficiencyCode = matchingBasic[0]['ESC Proficiency Code'];
+        let ESCDescription = matchingBasic[0]['Proficiency Description'];
+
+
+        globalProficiencyCode1.value = ESCProficiencyCode;
+        globalDescription1.value = ESCDescription;
+      } else {
+
+      }
+
+      const MatchingKnowledge1 = allRows.filter(row => row['Proficiency Level'] === 'Basic' && row['Knowledge / Ability Classification'] === 'Knowledge' && row['ESC Code'] === targetcode);
+
+      if (MatchingKnowledge1.length > 0) {
+        // Extract skills and proficiency levels
+        Knowledge1.value = MatchingKnowledge1.map(row => ({
+          item: row['Knowledge / Ability Items'],
+        }));
+      } else {
+
+      }
+
+      const MatchingAbility1 = allRows.filter(row => row['Proficiency Level'] === 'Basic' && row['Knowledge / Ability Classification'] === 'Ability' && row['ESC Code'] === targetcode);
+
+      if (MatchingAbility1.length > 0) {
+        // Extract skills and proficiency levels
+        Ability1.value = MatchingAbility1.map(row => ({
+          item: row['Knowledge / Ability Items'],
+        }));
+      } else {
+
+      }
+
+      //Intermediate
+      const matchingIntermediate = allRows.filter(row => row['Proficiency Level'] === 'Intermediate' && row['ESC Code'] === targetcode);
+
+      if (matchingIntermediate.length > 0) {
+        // Assign the job role description to the global variable
+        let ESCProficiencyCode = matchingIntermediate[0]['ESC Proficiency Code'];
+        let ESCDescription = matchingIntermediate[0]['Proficiency Description'];
+
+
+        globalProficiencyCode2.value = ESCProficiencyCode;
+        globalDescription2.value = ESCDescription;
+      } else {
+
+      }
+
+      const MatchingKnowledge2 = allRows.filter(row => row['Proficiency Level'] === 'Intermediate' && row['Knowledge / Ability Classification'] === 'Knowledge' && row['ESC Code'] === targetcode);
+
+      if (MatchingKnowledge2.length > 0) {
+        // Extract skills and proficiency levels
+        Knowledge2.value = MatchingKnowledge2.map(row => ({
+          item: row['Knowledge / Ability Items'],
+        }));
+      } else {
+
+      }
+
+      const MatchingAbility2 = allRows.filter(row => row['Proficiency Level'] === 'Intermediate' && row['Knowledge / Ability Classification'] === 'Ability' && row['ESC Code'] === targetcode);
+
+      if (MatchingAbility2.length > 0) {
+        // Extract skills and proficiency levels
+        Ability2.value = MatchingAbility2.map(row => ({
+          item: row['Knowledge / Ability Items'],
+        }));
+      } else {
+
+      }
+
+      //Advanced
+      const matchingAdvanced = allRows.filter(row => row['Proficiency Level'] === 'Advanced' && row['ESC Code'] === targetcode);
+
+      if (matchingAdvanced.length > 0) {
+        // Assign the job role description to the global variable
+        let ESCProficiencyCode = matchingAdvanced[0]['ESC Proficiency Code'];
+        let ESCDescription = matchingAdvanced[0]['Proficiency Description'];
+
+
+        globalProficiencyCode3.value = ESCProficiencyCode;
+        globalDescription3.value = ESCDescription;
+      } else {
+
+      }
+
+      const MatchingKnowledge3 = allRows.filter(row => row['Proficiency Level'] === 'Advanced' && row['Knowledge / Ability Classification'] === 'Knowledge' && row['ESC Code'] === targetcode);
+
+      if (MatchingKnowledge3.length > 0) {
+        // Extract skills and proficiency levels
+        Knowledge3.value = MatchingKnowledge3.map(row => ({
+          item: row['Knowledge / Ability Items'],
+        }));
+      } else {
+
+      }
+
+      const MatchingAbility3 = allRows.filter(row => row['Proficiency Level'] === 'Advanced' && row['Knowledge / Ability Classification'] === 'Ability' && row['ESC Code'] === targetcode);
+
+      if (MatchingAbility3.length > 0) {
+        // Extract skills and proficiency levels
+        Ability3.value = MatchingAbility3.map(row => ({
+          item: row['Knowledge / Ability Items'],
+        }));
+      } else {
+
+      }
+
+    } else {
+      console.error(`Sheet "${sheetName}" not found in the Excel file.`);
+    }
+
+    // Assuming "Job Role Description" is the sheet name
+    const sheetName2 = 'Functional Skills - Application';
+
+    if (workbook.SheetNames.includes(sheetName2)) {
+      const worksheet = workbook.Sheets[sheetName2];
+
+      // Extract data from the "Job Role Description" sheet
+      const allRows = XLSX.utils.sheet_to_json(worksheet);
+
+      // Specify the job role you want to filter
+
+      const targetcode = clickedText.value;
+
+      // Filter rows based on the job role
+      const matchingRows = allRows.filter(row => row['TSC Code'] === targetcode);
+
+      if (matchingRows.length > 0) {
+        // Assign the job role description to the global variable
+        let RangeApplication = matchingRows[0]['Range of Application'];
+
+        globalRangeApplication.value = RangeApplication
+      } else {
+
+      }
+    }
+
+
+  } catch (error) {
+    console.error('Error processing Excel file:', error.message);
+  }
+};
+
+onMounted(() => {
+  // Access the text parameter from the route
+  const route = useRoute(); // Use useRoute to get the route object
+  clickedText.value = route.params.escCode || '';
+  fetchAndAnalyzeFile();
+});
+</script>
   
-  <style scoped>
-  .styled-table {
-    width: 100%;
+<style scoped>
+/* Add your additional styles here */
+.styled-table {
     border-collapse: collapse;
-    overflow-x: auto;
-    box-sizing: border-box;
-    margin-left: 15px;
-  }
-  
-  td:hover {
-    cursor: pointer;
-  }
-  
-  .styled-table th,
-  .styled-table td {
-    text-align: left;
-    color: white;
-    white-space: nowrap;
-    padding: 10px;
-    border: 1px solid #ddd;
-  }
+    margin-left: 50px;
+    margin-right: 50px;
+}
 
-  #long-words {
-    white-space: normal;
-    text-align: left;
-    width: 25%;
-  }
-  
-  /* Responsive styles for smaller screens */
-  @media only screen and (max-width: 600px) {
-    .styled-table th,
-    .styled-table td {
-      font-size: 12px;
-      display: block;
-      width: 100%;
-      box-sizing: border-box;
-    }
-  
-    .styled-table th {
-      text-align: center;
-    }
-  
-    .styled-table td {
-      text-align: left;
-      margin-bottom: 10px;
-    }
-  }
-  
-  .sortable {
-    cursor: pointer;
-  }
-  
-  .sortable:hover {
-    background-color: #555;
-  }
-  </style>
+.styled-table th,
+.styled-table td {
+    border: 1px solid white;
+    padding: 8px;
+    color: white;
+}
+</style>
   
