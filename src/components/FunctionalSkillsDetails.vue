@@ -20,7 +20,7 @@
                 <th colspan="11" style="border: 1px solid white; text-align: start;">{{ globalfscDescription }}</th>
             </tr>
             <tr>
-                <th rowspan="3" style="border: 1px solid white; text-align: center;">Proficiency Description</th>
+                <th rowspan="3" style="border: 1px solid white; text-align: start; vertical-align: top;">Proficiency Description</th>
                 <th colspan="2" style="border: 1px solid white; text-align: center;">1</th>
                 <th colspan="2" style="border: 1px solid white; text-align: center;">2</th>
                 <th colspan="2" style="border: 1px solid white; text-align: center;">3</th>
@@ -70,7 +70,7 @@
                 </th>
             </tr>
             <tr>
-                <td style="border: 1px solid white;">Knowledge</td>
+                <td style="border: 1px solid white; text-align: start; vertical-align: top;">Knowledge</td>
                 <th colspan="2" style="border: 1px solid white; text-align: start; vertical-align: top;">
                     <div v-if="Knowledge1.length > 0">
                         <ul>
@@ -133,7 +133,7 @@
                 </th>
             </tr>
             <tr>
-                <td style="border: 1px solid white;">Abilities</td>
+                <td style="border: 1px solid white; text-align: start; vertical-align: top;">Abilities</td>
                 <th colspan="2" style="border: 1px solid white; text-align: start; vertical-align: top;">
                     <div v-if="Ability1.length > 0">
                         <ul>

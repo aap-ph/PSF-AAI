@@ -19,7 +19,7 @@
         <td colspan="3">{{ globalDescription }}</td>
       </tr>
       <tr>
-        <th rowspan="3">Proficiency Description</th>
+        <th rowspan="3" style="text-align: start; vertical-align: top;">Proficiency Description</th>
         <td>Basic</td>
         <td>Intermediate</td>
         <td>Advanced</td>
@@ -41,7 +41,7 @@
         <td>{{ globalDescription3 }}</td>
       </tr>
       <tr>
-        <td style="border: 1px solid white;">Knowledge</td>
+        <td style="border: 1px solid white; text-align: start; vertical-align: top;">Knowledge</td>
         <th colspan="1" style="border: 1px solid white; text-align: start; vertical-align: top;">
           <div v-if="Knowledge1.length > 0">
             <ul>
@@ -65,7 +65,7 @@
         </th>
       </tr>
       <tr>
-        <td style="border: 1px solid white;">Abilities</td>
+        <td style="border: 1px solid white; text-align: start; vertical-align: top;">Abilities</td>
         <th colspan="1" style="border: 1px solid white; text-align: start; vertical-align: top;">
           <div v-if="Ability1.length > 0">
             <ul>
