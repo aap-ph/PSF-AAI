@@ -66,15 +66,20 @@ const fetchAndAnalyzeFile = async () => {
         groupedRevisions[versionNo][date].push(revisionDetails);
       });
 
-      // Flatten grouped revisions with separate rows for each revision
-      revisions.value = Object.keys(groupedRevisions).map(versionNo => {
+          // Flatten grouped revisions with separate rows for each revision
+    revisions.value = Object.keys(groupedRevisions)
+      .map(versionNo => {
         const dates = Object.keys(groupedRevisions[versionNo]);
         return dates.map(date => ({
           version_no: versionNo,
           date: date,
           revision_details: groupedRevisions[versionNo][date].join('\n'),
         }));
-      }).flat();
+      })
+      .flat();
+
+    // Sort revisions by version number in descending order
+    revisions.value.sort((a, b) => b.version_no - a.version_no);
 
     } else {
       console.error(`Sheet "${sheetName}" not found in the Excel file.`);
@@ -87,10 +92,21 @@ const fetchAndAnalyzeFile = async () => {
 
 // Custom filter for formatting actual date from Excel serial number
 const formatActualDate = (excelDate) => {
-  const actualDate = new Date((excelDate - 1) * 86400000); // 86400000 milliseconds in a day
+  const excelEpoch = new Date(Date.UTC(1899, 11, 30));
+  const utcDays = excelDate - 1;
+  const utcMillisecondsPerDay = 24 * 60 * 60 * 1000;
+
+  let actualDate = new Date(excelEpoch.getTime() + utcDays * utcMillisecondsPerDay);
+
+  // Adjust for the leap year bug in Excel (1900 is not a leap year)
+  if (excelDate >= 60) {
+    actualDate = new Date(actualDate.getTime() + 24 * 60 * 60 * 1000);
+  }
+
   const options = { year: 'numeric', month: 'short', day: 'numeric' };
   return actualDate.toLocaleDateString('en-US', options);
 };
+
 
 // Custom filter for formatting revision details as bullets
 const formatRevisionDetails = (revisionDetails) => {
