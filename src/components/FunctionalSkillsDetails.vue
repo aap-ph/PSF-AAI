@@ -50,22 +50,22 @@
             </tr>
 
             <tr>
-                <th colspan="2" style="border: 1px solid white; text-align: start; ">
+                <th colspan="2" style="border: 1px solid white; text-align: start; vertical-align: top;">
                     {{ globalFSCDescription1 ? globalFSCDescription1 : '' }}
                 </th>
-                <th colspan="2" style="border: 1px solid white; text-align: start;">
+                <th colspan="2" style="border: 1px solid white; text-align: start; vertical-align: top;">
                     {{ globalFSCDescription2 ? globalFSCDescription2 : '' }}
                 </th>
-                <th colspan="2" style="border: 1px solid white; text-align: start;">
+                <th colspan="2" style="border: 1px solid white; text-align: start; vertical-align: top;">
                     {{ globalFSCDescription3 ? globalFSCDescription3 : '' }}
                 </th>
-                <th colspan="2" style="border: 1px solid white; text-align: start;">
+                <th colspan="2" style="border: 1px solid white; text-align: start; vertical-align: top;">
                     {{ globalFSCDescription4 ? globalFSCDescription4 : '' }}
                 </th>
-                <th colspan="2" style="border: 1px solid white; text-align: start;">
+                <th colspan="2" style="border: 1px solid white; text-align: start; vertical-align: top;">
                     {{ globalFSCDescription5 ? globalFSCDescription5 : '' }}
                 </th>
-                <th colspan="2" style="border: 1px solid white; text-align: start;">
+                <th colspan="2" style="border: 1px solid white; text-align: start; vertical-align: top;">
                     {{ globalFSCDescription6 ? globalFSCDescription6 : '' }}
                 </th>
             </tr>
@@ -309,7 +309,7 @@ const fetchAndAnalyzeFile = async () => {
             if (matchingProfLevel.length > 0) {
                 // Assign the job role description to the global variable
                 let FSCProficiencyCode = matchingProfLevel[0]['FSC Proficiency Code'];
-                let FSCDescription = matchingProfLevel[0]['FSC Description'];
+                let FSCDescription = matchingProfLevel[0]['Proficiency Description'];
 
 
                 globalFSCProficiencyCode1.value = FSCProficiencyCode;
@@ -346,7 +346,7 @@ const fetchAndAnalyzeFile = async () => {
             if (matchingProfLevel2.length > 0) {
                 // Assign the job role description to the global variable
                 let FSCProficiencyCode = matchingProfLevel2[0]['FSC Proficiency Code'];
-                let FSCDescription = matchingProfLevel2[0]['FSC Description'];
+                let FSCDescription = matchingProfLevel2[0]['Proficiency Description'];
 
 
                 globalFSCProficiencyCode2.value = FSCProficiencyCode;
@@ -383,7 +383,7 @@ const fetchAndAnalyzeFile = async () => {
             if (matchingProfLevel3.length > 0) {
                 // Assign the job role description to the global variable
                 let FSCProficiencyCode = matchingProfLevel3[0]['FSC Proficiency Code'];
-                let FSCDescription = matchingProfLevel3[0]['FSC Description'];
+                let FSCDescription = matchingProfLevel3[0]['Proficiency Description'];
 
 
                 globalFSCProficiencyCode3.value = FSCProficiencyCode;
@@ -419,7 +419,7 @@ const fetchAndAnalyzeFile = async () => {
             if (matchingProfLevel4.length > 0) {
                 // Assign the job role description to the global variable
                 let FSCProficiencyCode = matchingProfLevel4[0]['FSC Proficiency Code'];
-                let FSCDescription = matchingProfLevel4[0]['FSC Description'];
+                let FSCDescription = matchingProfLevel4[0]['Proficiency Description'];
 
 
                 globalFSCProficiencyCode4.value = FSCProficiencyCode;
@@ -455,7 +455,7 @@ const fetchAndAnalyzeFile = async () => {
             if (matchingProfLevel5.length > 0) {
                 // Assign the job role description to the global variable
                 let FSCProficiencyCode = matchingProfLevel5[0]['FSC Proficiency Code'];
-                let FSCDescription = matchingProfLevel5[0]['FSC Description'];
+                let FSCDescription = matchingProfLevel5[0]['Proficiency Description'];
 
 
                 globalFSCProficiencyCode5.value = FSCProficiencyCode;
@@ -491,7 +491,7 @@ const fetchAndAnalyzeFile = async () => {
             if (matchingProfLevel6.length > 0) {
                 // Assign the job role description to the global variable
                 let FSCProficiencyCode = matchingProfLevel6[0]['FSC Proficiency Code'];
-                let FSCDescription = matchingProfLevel6[0]['FSC Description'];
+                let FSCDescription = matchingProfLevel6[0]['Proficiency Description'];
 
 
                 globalFSCProficiencyCode6.value = FSCProficiencyCode;
