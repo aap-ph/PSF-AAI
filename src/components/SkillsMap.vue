@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="fs-4 text-light text-center">{{ clickedText }}</div>
-        <div class="contents row p-2 text-light">
-            <div class="col-md-8">
+        <div class="contents row p-2 text-light justify-content-md-center">
+            <div class="col-md-7">
                 <div class="d-flex flex-column m-2">
                     <div>
                         <div class="title">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 p-0">
+            <div class="col-md-3 p-0">
                 <div class="d-flex flex-column m-2">
                     <div class="competence">
                         <div class="title" style="font-weight: bold;">
@@ -266,6 +266,7 @@ onMounted(fetchAndAnalyzeFile);
 <style scoped>
 .row {
     margin-right: 0 !important;
+    justify-content: center !important;
 }
 
 .list .subtitle {
