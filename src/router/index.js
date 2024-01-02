@@ -19,7 +19,7 @@ const router = createRouter({
   mode:'history',
   routes: [
     {
-      path: '/careermap',
+      path: '/',
       name: 'careermap',
       component: CareerMap
     },
