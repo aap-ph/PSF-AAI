@@ -47,7 +47,7 @@ import { RouterLink, useRoute } from 'vue-router';
 const props = defineProps(['to']);
 const route = useRoute();
 const activeLink = ref('');
-const isSkillsMapClickable = true;
+const isSkillsMapClickable = false;
 
 const isActive = (path) => {
   return route.path === path;
