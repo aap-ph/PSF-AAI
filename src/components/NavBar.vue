@@ -14,8 +14,8 @@
           <li class="nav-item">
             <!-- Skills Map link is non-clickable -->
             <span v-if="!isSkillsMapClickable" class="nav-link inactive-link">Skills Map</span>
-            <router-link v-else class="nav-link" :to="{ path: '/skillsmap' }"
-              :class="{ 'active': isActive('/skillsmap') }">Skills Map</router-link>
+            <router-link v-else class="nav-link" :to="{ path: '/skillsmapmain' }"
+              :class="{ 'active': isActive('/skillsmapmain') }">Skills Map</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" :to="{ path: '/functionalskills' }"
@@ -47,7 +47,7 @@ import { RouterLink, useRoute } from 'vue-router';
 const props = defineProps(['to']);
 const route = useRoute();
 const activeLink = ref('');
-const isSkillsMapClickable = false;
+const isSkillsMapClickable = true;
 
 const isActive = (path) => {
   return route.path === path;

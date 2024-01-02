@@ -21,12 +21,4 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const storage = getStorage(app);
 
-// firebase.js
-
-console.log("Firebase app initialized:", app);
-console.log("Firebase analytics initialized:", analytics);
-console.log("Firebase auth initialized:", auth);
-console.log("Firebase storage initialized:", storage);
-
-
 export { app, analytics, auth, storage, uploadBytes, getDownloadURL, ref  };

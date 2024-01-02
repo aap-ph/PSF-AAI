@@ -3,6 +3,7 @@ import MainPageView from '../views/MainPageView.vue'
 import AboutView from '../views/AboutView.vue'
 import CareerMap from '../views/CareerMapView.vue'
 import SkillsMap from '../views/SkillsMapView.vue'
+import SkillsMapMain from '../views/SkillMapMainView.vue'
 import FunctionalSkills from '../views/FunctionalSkillsView.vue'
 import EnablingSkillsDetails from '../views/EnablingSkillsDetailsView.vue'
 import FunctionalSkillsDetails from '../views/FunctionalSkillsDetailsView.vue'
@@ -32,6 +33,12 @@ const router = createRouter({
       path: '/skillsmap/:text',
       name: 'skillsmap',  
       component: SkillsMap
+    },
+    ,
+    {
+      path: '/skillsmapmain',
+      name: 'skillsmapmain',  
+      component: SkillsMapMain
     },
     {
       path: '/functionalskills',

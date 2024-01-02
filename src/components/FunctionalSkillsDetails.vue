@@ -50,22 +50,22 @@
             </tr>
 
             <tr>
-                <th colspan="2" style="border: 1px solid white; text-align: center;">
+                <th colspan="2" style="border: 1px solid white; text-align: start; ">
                     {{ globalFSCDescription1 ? globalFSCDescription1 : '' }}
                 </th>
-                <th colspan="2" style="border: 1px solid white; text-align: center;">
+                <th colspan="2" style="border: 1px solid white; text-align: start;">
                     {{ globalFSCDescription2 ? globalFSCDescription2 : '' }}
                 </th>
-                <th colspan="2" style="border: 1px solid white; text-align: center;">
+                <th colspan="2" style="border: 1px solid white; text-align: start;">
                     {{ globalFSCDescription3 ? globalFSCDescription3 : '' }}
                 </th>
-                <th colspan="2" style="border: 1px solid white; text-align: center;">
+                <th colspan="2" style="border: 1px solid white; text-align: start;">
                     {{ globalFSCDescription4 ? globalFSCDescription4 : '' }}
                 </th>
-                <th colspan="2" style="border: 1px solid white; text-align: center;">
+                <th colspan="2" style="border: 1px solid white; text-align: start;">
                     {{ globalFSCDescription5 ? globalFSCDescription5 : '' }}
                 </th>
-                <th colspan="2" style="border: 1px solid white; text-align: center;">
+                <th colspan="2" style="border: 1px solid white; text-align: start;">
                     {{ globalFSCDescription6 ? globalFSCDescription6 : '' }}
                 </th>
             </tr>
