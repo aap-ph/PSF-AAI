@@ -4,7 +4,7 @@
         <!-- Left Half Content Goes Here -->
         <table id="left-table">
             <thead>
-                <tr style="height: 120.8px;">
+                <tr style="height: 123px;">
                     <th>Skill Type</th>
                     <th>Skill Category</th>
                     <th>Related Category</th>
@@ -393,45 +393,7 @@
                 <td>5</td>
                 <td>6</td>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-            </tr>
-            <tr>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Advanced</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Advanced</td>
-            </tr>
-            <tr>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Advanced</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Advanced</td>
-            </tr>
+
             <!-- Add more rows as needed -->
           </tbody>
         </table>
@@ -511,6 +473,7 @@ thead {
   background-color: #44546a;
   color: white;
   z-index: 1;
+  border: none;
 }
 
 thead tr, th {
@@ -520,7 +483,8 @@ thead tr, th {
 
 
 table {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0px;
   width: 100%;
 }
 
