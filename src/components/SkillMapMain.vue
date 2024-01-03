@@ -4,7 +4,7 @@
             <!-- Left Half Content Goes Here -->
             <table id="left-table">
                 <thead>
-                    <tr style="height: 120.8px;">
+                    <tr style="height: 120.8px; text-align: center;">
                         <th>Skill Type</th>
                         <th>Skill Category</th>
                         <th>Related Category</th>
@@ -12,13 +12,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(row, index) in FunctionalData" :key="index">
+                    <tr v-for="(row, index) in EnablingData" :key="index">
                         <td>{{ row.title }}</td>
                         <td>{{ row.category }}</td>
                         <td>{{ row.relatedcategory }}</td>
                         <td>{{ row.skills }}</td>
                     </tr>
-                    <tr v-for="(row, index) in EnablingData" :key="index">
+                    <tr v-for="(row, index) in FunctionalData" :key="index">
                         <td>{{ row.title }}</td>
                         <td>{{ row.category }}</td>
                         <td>{{ row.relatedcategory }}</td>
@@ -33,11 +33,10 @@
                 <thead>
                     <tr>
                         <th v-for="(row, index) in categoryRef" :key="index" :colspan="getColspanForRow(row)"
-                            style="font-size: 14px; padding: 0px;">{{ row }}</th>
+                            style="font-size: 14px; padding: 0px; ">{{ row }}</th>
                     </tr>
                     <tr>
-                        <th v-for="(row, index) in jobRole" :key="index"
-                            >{{ row }}</th>
+                        <th v-for="(row, index) in jobRole" :key="index" >{{ row }}</th>
                     </tr>
                 </thead>
 
@@ -580,15 +579,15 @@ function syncScroll() {
 
 #left-table {
     white-space: nowrap;
-
 }
+
 
 .fixed-width::-webkit-scrollbar {
     display: none;
 }
 
 .fixed-width {
-    width: 200%;
+    width: 500%;
     /* Adjust the fixed width as needed */
     box-sizing: border-box;
     overflow-y: scroll;
