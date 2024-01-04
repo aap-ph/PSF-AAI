@@ -197,45 +197,6 @@
                         <td>Advanced</td>
                         <td>Advanced</td>
                     </tr>   
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Basic</td>
-                        <td>Intermediate</td>
-                        <td>Intermediate</td>
-                        <td>Advanced</td>
-                        <td>Basic</td>
-                        <td>Intermediate</td>
-                        <td>Intermediate</td>
-                        <td>Advanced</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Basic</td>
-                        <td>Intermediate</td>
-                        <td>Intermediate</td>
-                        <td>Advanced</td>
-                        <td>Basic</td>
-                        <td>Intermediate</td>
-                        <td>Intermediate</td>
-                        <td>Advanced</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Basic</td>
-                        <td>Intermediate</td>
-                        <td>Advanced</td>
-                        <td>Advanced</td>
-                        <td>Basic</td>
-                        <td>Intermediate</td>
-                        <td>Advanced</td>
-                        <td>Advanced</td>
-                    </tr>
                 </tbody>
             </table>
         </div>
