@@ -47,9 +47,6 @@
                         <td v-for="(col, colIndex) in proficiencyLevelData[index + EnablingData.length]"
                             :key="colIndex">{{ col }}</td>
                     </tr>
-                    <!-- <tr v-for="(row, rowIndex) in proficiencyLevelData" :key="rowIndex">
-                        <td v-for="(col, colIndex) in row" :key="colIndex">{{ col }}</td>
-                    </tr> -->
                 </tbody>
             </table>
         </div>
