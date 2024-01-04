@@ -6,17 +6,17 @@
                 <thead>
                     <tr style="height: 123px; text-align: center;">
                         <th>Skill Type</th>
-                        <th>Skill Category</th>
+                        <th>Skill</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="(row, index) in EnablingData" :key="index">
                         <td>{{ row.title }}</td>
-                        <td>{{ row.category }}</td>
+                        <td>{{ row.skills }}</td>
                     </tr>
                     <tr v-for="(row, index) in FunctionalData" :key="index">
                         <td>{{ row.title }}</td>
-                        <td>{{ row.category }}</td>
+                        <td>{{ row.skills }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -26,8 +26,8 @@
             <table id="right-table">
                 <thead>
                     <tr>
+                        <th rowspan="2">Skill Category</th>
                         <th rowspan="2">Related Category</th>
-                        <th rowspan="2">Skill</th>
                         <th v-for="(row, index) in categoryRef" :key="index" :colspan="getColspanForRow(row)"
                             style="font-size: 14px; padding: 0px;">{{ row }}</th>
                     </tr>
@@ -37,13 +37,13 @@
                 </thead>
                 <tbody>
                     <tr v-for="(row, index) in EnablingData" :key="index" style="white-space: nowrap;">
+                        <td>{{ row.category }}</td>
                         <td>{{ row.relatedcategory }}</td>
-                        <td>{{ row.skills }}</td>
                         <td v-for="(col, colIndex) in proficiencyLevelData[index]" :key="colIndex">{{ col }}</td>
                     </tr>
                     <tr v-for="(row, index) in FunctionalData" :key="index" style="white-space: nowrap;">
+                        <td>{{ row.category }}</td>
                         <td>{{ row.relatedcategory }}</td>
-                        <td>{{ row.skills }}</td>
                         <td v-for="(col, colIndex) in proficiencyLevelData[index + EnablingData.length]"
                             :key="colIndex">{{ col }}</td>
                     </tr>
