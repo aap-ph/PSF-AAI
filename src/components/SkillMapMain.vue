@@ -154,29 +154,41 @@ const fetchAndAnalyzeFile = async () => {
         function processJobRoleSkillsEnabling(worksheet) {
             const allRows = XLSX.utils.sheet_to_json(worksheet);
 
-            // Replace 'FSC' with 'Functional' and filter rows based on the modified Skill Type
-            var MatchingFunctional = allRows.map(row => ({
-                ...row,
-                'Skill Type': row['Skill Type'].replace('ESC', 'Enabling'),
-            }))
-                .filter(row => row['Skill Type'] === 'Enabling');
-
+            // Replace 'ESC' with 'Enabling' and filter rows based on the modified Skill Type
+            var MatchingFunctional = allRows
+                .map(row => ({
+                    ...row,
+                    'Skill Type': row['Skill Type'].replace('ESC', 'Enabling'),
+                }))
+                .filter(row => row['Skill Type'] === 'Enabling' && row['Skill Code'] !== undefined);
 
             if (MatchingFunctional.length > 0) {
                 // Extract skills, proficiency levels, and replace Skill Code with corresponding category
-                EnablingData.value = MatchingFunctional.map(row => ({
-                    title: row['Skill Type'],
-                    category: getCategoryForSkillCodeEnabling(row['Skill Code']),
-                    relatedcategory: getRelatedCategoryForSkillCodeEnabling(row['Skill Code']),
-                    skills: getSkillsForSkillCodeEnabling(row['Skill Code']),
-                }));
-                // Concatenate Skill Code values to the existing data in skillCode variable
-                skillCode.value = skillCode.value.concat(MatchingFunctional.map(row => row['Skill Code']));
+                const newSkillCodes = MatchingFunctional.map(row => row['Skill Code']);
 
+                // Add new skill codes to skillCode variable only if they don't already exist
+                newSkillCodes.forEach(skillCodeValue => {
+                    if (skillCodeValue !== undefined && !skillCode.value.includes(skillCodeValue)) {
+                        skillCode.value.push(skillCodeValue);
+
+                        // Add the skill to EnablingData only if it's not already present
+                        const isSkillAlreadyPresent = EnablingData.value.some(skill => skill.skills === getSkillsForSkillCodeEnabling(skillCodeValue));
+                        if (!isSkillAlreadyPresent) {
+                            EnablingData.value.push({
+                                title: 'Enabling',  // Assuming 'Enabling' as the title for this case
+                                category: getCategoryForSkillCodeEnabling(skillCodeValue),
+                                relatedcategory: getRelatedCategoryForSkillCodeEnabling(skillCodeValue),
+                                skills: getSkillsForSkillCodeEnabling(skillCodeValue),
+                            });
+                        }
+                    }
+                });
             } else {
-                console.log('No matching rows found for Skill Type "Functional".');
+                console.log('No matching rows found for Skill Type "Enabling" or Skill Code is undefined.');
             }
         }
+
+
 
         function getCategoryForSkillCodeEnabling(skillCode) {
             // Access the Functional Skills sheet to get the corresponding category for the skill code
@@ -211,27 +223,40 @@ const fetchAndAnalyzeFile = async () => {
             const allRows = XLSX.utils.sheet_to_json(worksheet);
 
             // Replace 'FSC' with 'Functional' and filter rows based on the modified Skill Type
-            var MatchingFunctional = allRows.map(row => ({
-                ...row,
-                'Skill Type': row['Skill Type'].replace('FSC', 'Functional'),
-            }))
-                .filter(row => row['Skill Type'] === 'Functional');
-
+            var MatchingFunctional = allRows
+                .map(row => ({
+                    ...row,
+                    'Skill Type': row['Skill Type'].replace('FSC', 'Functional'),
+                }))
+                .filter(row => row['Skill Type'] === 'Functional' && row['Skill Code'] !== undefined);
 
             if (MatchingFunctional.length > 0) {
                 // Extract skills, proficiency levels, and replace Skill Code with corresponding category
-                FunctionalData.value = MatchingFunctional.map(row => ({
-                    title: row['Skill Type'],
-                    category: getCategoryForSkillCode(row['Skill Code']),
-                    relatedcategory: getRelatedCategoryForSkillCode(row['Skill Code']),
-                    skills: getSkillsForSkillCode(row['Skill Code']),
-                }));
-                // Concatenate Skill Code values to the existing data in skillCode variable
-                skillCode.value = skillCode.value.concat(MatchingFunctional.map(row => row['Skill Code']));
+                const newSkillCodes = MatchingFunctional.map(row => row['Skill Code']);
+
+                // Add new skill codes to skillCode variable only if they don't already exist
+                newSkillCodes.forEach(skillCodeValue => {
+                    if (skillCodeValue !== undefined && !skillCode.value.includes(skillCodeValue)) {
+                        skillCode.value.push(skillCodeValue);
+
+                        // Add the skill to FunctionalData only if it's not already present
+                        const isSkillAlreadyPresent = FunctionalData.value.some(skill => skill.skills === getSkillsForSkillCode(skillCodeValue));
+                        if (!isSkillAlreadyPresent) {
+                            FunctionalData.value.push({
+                                title: 'Functional',  // Assuming 'Functional' as the title for this case
+                                category: getCategoryForSkillCode(skillCodeValue),
+                                relatedcategory: getRelatedCategoryForSkillCode(skillCodeValue),
+                                skills: getSkillsForSkillCode(skillCodeValue),
+                            });
+                        }
+                    }
+                });
             } else {
-                console.log('No matching rows found for Skill Type "Functional".');
+                console.log('No matching rows found for Skill Type "Functional" or Skill Code is undefined.');
             }
         }
+
+
 
         function getCategoryForSkillCode(skillCode) {
             // Access the Functional Skills sheet to get the corresponding category for the skill code
@@ -307,7 +332,7 @@ const fetchAndAnalyzeFile = async () => {
         // Iterate through each job code and skill code combination
         console.log(skillCode) 
         console.log(jobCode)
-        console.log(proficiencyLevelData)
+        //console.log(proficiencyLevelData)
 
         for (let i = 0; i < skillCode.value.length; i++) {
             proficiencyLevelData.value.push([]);
@@ -319,7 +344,7 @@ const fetchAndAnalyzeFile = async () => {
         // Iterate through each job code and skill code combination
         skillCode.value.forEach((skillCodeValue, rowIndex) => {
             jobCode.value.forEach((jobCodeValue, colIndex) => {
-                console.log(skillCodeValue + ' paired with ' + jobCodeValue);
+                //console.log(skillCodeValue + ' paired with ' + jobCodeValue);
 
                 // Check if both jobCodeValue and skillCodeValue are defined
                 if (skillCodeValue !== undefined) {
@@ -331,9 +356,9 @@ const fetchAndAnalyzeFile = async () => {
 
                     // Check if matchingRow is defined and 'Proficiency Level' is present
                     if (matchingRow && 'Proficiency Level' in matchingRow) {
-                        console.log(matchingRow['Proficiency Level']);
-                        console.log(rowIndex);
-                        console.log(colIndex);
+                        //console.log(matchingRow['Proficiency Level']);
+                        //console.log(rowIndex);
+                        //console.log(colIndex);
 
                         // Assign the proficiency level if there is a match
                         proficiencyLevelData.value[rowIndex][colIndex] = matchingRow['Proficiency Level'];
