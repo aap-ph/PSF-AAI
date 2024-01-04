@@ -1,500 +1,439 @@
 <template>
     <div class="container">
-      <div class="fixed-width" ref="fixedWidth">
-        <!-- Left Half Content Goes Here -->
-        <table id="left-table">
-            <thead>
-                <tr style="height: 123px;">
-                    <th>Skill Type</th>
-                    <th>Skill Category</th>
-                    <th>Related Category</th>
-                    <th>Skill</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Interacting with Others</td>
-                    <td>21st Century Skills</td>
-                    <td>Building Inclusivity</td>
-                </tr>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Interacting with Others</td>
-                    <td>21st Century Skills</td>
-                    <td>Collaboration</td>
-                </tr>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Interacting with Others</td>
-                    <td>21st Century Skills</td>
-                    <td>Communication</td>
-                </tr>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Interacting with Others</td>
-                    <td>21st Century Skills</td>
-                    <td>Customer Orientation</td>
-                </tr>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Interacting with Others</td>
-                    <td>21st Century Skills</td>
-                    <td>Developing People</td>
-                </tr>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Interacting with Others</td>
-                    <td>21st Century Skills</td>
-                    <td>Influence</td>
-                </tr>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Staying Relevant</td>
-                    <td>21st Century Skills</td>
-                    <td>Adaptability</td>
-                </tr>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Staying Relevant</td>
-                    <td>21st Century Skills</td>
-                    <td>Digital Fluency</td>
-                </tr>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Staying Relevant</td>
-                    <td>21st Century Skills</td>
-                    <td>Global Perspective</td>
-                </tr>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Staying Relevant</td>
-                    <td>21st Century Skills</td>
-                    <td>Learning Agility</td>
-                </tr>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Staying Relevant</td>
-                    <td>21st Century Skills</td>
-                    <td>Self Management</td>
-                </tr>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Thinking Critically</td>
-                    <td>21st Century Skills</td>
-                    <td>Creative Thinking</td>
-                </tr>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Thinking Critically</td>
-                    <td>21st Century Skills</td>
-                    <td>Decision Making</td>
-                </tr>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Thinking Critically</td>
-                    <td>21st Century Skills</td>
-                    <td>Problem Solving</td>
-                </tr>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Thinking Critically</td>
-                    <td>21st Century Skills</td>
-                    <td>Sense Making</td>
-                </tr>
-                <tr>
-                    <td>Enabling</td>
-                    <td>Thinking Critically</td>
-                    <td>21st Century Skills</td>
-                    <td>Transdisciplinary Thinking</td>
-                </tr>
-                <tr>
-                    <td>Functional</td>
-                    <td>Analytical Thinking</td>
-                    <td></td>
-                    <td>Systems Thinking</td>
-                </tr>
-                <tr>
-                    <td>Functional</td>
-                    <td>Business and Project Management</td>
-                    <td></td>
-                    <td>Business Agility</td>
-                </tr>
-                <tr>
-                    <td>Functional</td>
-                    <td>Business and Project Management</td>
-                    <td></td>
-                    <td>Business Continuity</td>
-                </tr>
-            </tbody>
-        </table>
-      </div>
-      <div class="scrollable" ref="scrollable">
-        <!-- Right Half Content Goes Here -->
-        <table id="right-table" >
-          <thead>
-            <th colspan="7" style="font-size: 14px; padding: 0px;">Business Intelligence & Strategy</th>
-            <th colspan="7" style="font-size: 14px; padding: 0px;">Data Steward</th>      
-            <tr>
-              <th>Associate Data Analyst</th>
-              <th>Data Analyst</th>
-              <th>Business Intelligence Analyst</th>
-              <th>Senior Business Intelligence Analyst</th>
-              <th>Business Analytics Manager</th>
-              <th>Business Analytics Director</th>
-              <th>Chief [Business Function] Officer</th>
-              <th>Data Protection Specialist</th>
-              <th>Data Governance Manager</th>
-              <th>Data Governance Officer</th>
-              <th>Chief Data Officer</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-            </tr>
-            <tr>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Advanced</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Advanced</td>
-            </tr>
-            <tr>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Advanced</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Advanced</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Advanced</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Advanced</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-            </tr>
-            <tr>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Advanced</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Advanced</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td></td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-            </tr>
-            <tr>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Advanced</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Advanced</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>Basic</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-                <td>Basic</td>
-                <td>Intermediate</td>
-                <td>Intermediate</td>
-                <td>Advanced</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>3</td>
-                <td>4</td>
-                <td>4</td>
-                <td>5</td>
-                <td>3</td>
-                <td>4</td>
-                <td>4</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td></td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td></td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-            </tr>
-
-            <!-- Add more rows as needed -->
-          </tbody>
-        </table>
-      </div>
+        <div class="fixed-width" ref="fixedWidth">
+            <!-- Left Half Content Goes Here -->
+            <table id="left-table">
+                <thead>
+                    <tr style="height: 125px; text-align: center;">
+                        <th>Skill Type</th>
+                        <th>Skill Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(row, index) in EnablingData" :key="index">
+                        <td>{{ row.title }}</td>
+                        <td>{{ row.category }}</td>
+                    </tr>
+                    <tr v-for="(row, index) in FunctionalData" :key="index">
+                        <td>{{ row.title }}</td>
+                        <td>{{ row.category }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="scrollable" ref="scrollable">
+            <!-- Right Half Content Goes Here -->
+            <table id="right-table">
+                <thead>
+                    <tr>
+                        <th rowspan="2">Related Category</th>
+                        <th rowspan="2">Skill</th>
+                        <th v-for="(row, index) in categoryRef" :key="index" :colspan="getColspanForRow(row)"
+                            style="font-size: 14px; padding: 0px;">{{ row }}</th>
+                    </tr>
+                    <tr>
+                        <th v-for="(row, index) in jobRole" :key="index">{{ row }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(row, index) in EnablingData" :key="index" style="white-space: nowrap;">
+                        <td>{{ row.relatedcategory }}</td>
+                        <td>{{ row.skills }}</td>
+                        <td v-for="(col, colIndex) in proficiencyLevelData[index]" :key="colIndex">{{ col }}</td>
+                    </tr>
+                    <tr v-for="(row, index) in FunctionalData" :key="index" style="white-space: nowrap;">
+                        <td>{{ row.relatedcategory }}</td>
+                        <td>{{ row.skills }}</td>
+                        <td v-for="(col, colIndex) in proficiencyLevelData[index + EnablingData.length]"
+                            :key="colIndex">{{ col }}</td>
+                    </tr>
+                    <!-- <tr v-for="(row, rowIndex) in proficiencyLevelData" :key="rowIndex">
+                        <td v-for="(col, colIndex) in row" :key="colIndex">{{ col }}</td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
     </div>
-  </template>
+</template>
   
   
-  <script>
-  export default {
-    mounted() {
-      this.syncScroll();
-    },
-    methods: {
-      syncScroll() {
-        const fixedWidth = this.$refs.fixedWidth;
-        const scrollable = this.$refs.scrollable;
-  
-        // Set the width and height of fixed-width to match scrollable
-        // fixedWidth.style.width = `${scrollable.clientWidth}px`;
-        fixedWidth.style.height = `${scrollable.clientHeight}px`;
-  
-        // Add event listener to synchronize scroll from scrollable to fixed-width
-        scrollable.addEventListener("scroll", () => {
-          fixedWidth.scrollTop = scrollable.scrollTop;
+<script setup>
+import { onMounted, ref } from 'vue';
+import * as XLSX from 'xlsx/dist/xlsx.full.min.js';
+import { storage, ref as storageRef, getDownloadURL } from '@/firebase';
+
+const fixedWidth = ref(null);
+const scrollable = ref(null);
+
+const EnablingData = ref([])
+const FunctionalData = ref([])
+
+const categoryRef = ref([]);
+const jobRole = ref([]);
+
+const jobCode = ref([]);
+const skillCode = ref([])
+
+
+//let proficiencyLevelData = ref([]);
+
+// Initialize proficiencyLevelData with zeros
+for (let i = 0; i < skillCode.value.length; i++) {
+    proficiencyLevelData.value.push([]);
+    for (let j = 0; j < jobCode.value.length; j++) {
+        proficiencyLevelData.value[i].push('0');
+    }
+}
+
+var proficiencyLevelData = ref([
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+    ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
+]);
+
+// Use refs to make the data reactive
+//var proficiencyLevelsRef = ref(proficiencyLevelData.value);
+
+
+// Function to get colspan for each row
+const getColspanForRow = (row) => {
+    // Add your condition here
+    if (row === 'Data Stewardship') {
+        return 4; // Change this to the desired colspan value
+    }
+    else if (row === 'Data Engineering') {
+        return 6;
+    }
+    else if (row === 'Data Science') {
+        return 5;
+    }
+    else if (row === 'AI Engineering') {
+        return 4;
+    }
+    else if (row === 'Applied Data/AI Research') {
+        return 5;
+    }
+    else if (row === 'Business Intelligence & Strategy') {
+        return 7;
+    }
+};
+
+const fetchAndAnalyzeFile = async () => {
+    try {
+        const filePath = 'excel.xlsx';
+        const fileURL = await getDownloadURL(storageRef(storage, filePath));
+
+        const response = await fetch(fileURL, { mode: 'cors' });
+        const arrayBuffer = await response.arrayBuffer();
+
+        const data = new Uint8Array(arrayBuffer);
+        const workbook = XLSX.read(data, { type: 'array' });
+
+        const skillsSheetName = 'Job Role Skills';
+
+        if (workbook.SheetNames.includes(skillsSheetName)) {
+            var skillsWorksheet = workbook.Sheets[skillsSheetName];
+            processJobRoleSkillsEnabling(skillsWorksheet);
+            processJobRoleSkills(skillsWorksheet);
+        } else {
+            console.error(`Sheet "${skillsSheetName}" not found in the Excel file.`);
+        }
+
+        function processJobRoleSkillsEnabling(worksheet) {
+            const allRows = XLSX.utils.sheet_to_json(worksheet);
+
+            // Replace 'FSC' with 'Functional' and filter rows based on the modified Skill Type
+            var MatchingFunctional = allRows.map(row => ({
+                ...row,
+                'Skill Type': row['Skill Type'].replace('ESC', 'Enabling'),
+            }))
+                .filter(row => row['Skill Type'] === 'Enabling');
+
+
+            if (MatchingFunctional.length > 0) {
+                // Extract skills, proficiency levels, and replace Skill Code with corresponding category
+                EnablingData.value = MatchingFunctional.map(row => ({
+                    title: row['Skill Type'],
+                    category: getCategoryForSkillCodeEnabling(row['Skill Code']),
+                    relatedcategory: getRelatedCategoryForSkillCodeEnabling(row['Skill Code']),
+                    skills: getSkillsForSkillCodeEnabling(row['Skill Code']),
+                }));
+                // Concatenate Skill Code values to the existing data in skillCode variable
+                skillCode.value = skillCode.value.concat(MatchingFunctional.map(row => row['Skill Code']));
+
+            } else {
+                console.log('No matching rows found for Skill Type "Functional".');
+            }
+        }
+
+        function getCategoryForSkillCodeEnabling(skillCode) {
+            // Access the Functional Skills sheet to get the corresponding category for the skill code
+            var functionalSkillsSheet = workbook.Sheets['Enabling Skills'];
+            var categoryRow = XLSX.utils.sheet_to_json(functionalSkillsSheet)
+                .find(row => row['ESC Code'] === skillCode);
+
+
+            return categoryRow ? categoryRow['ESC Category'] : '';
+        }
+
+        function getRelatedCategoryForSkillCodeEnabling(skillCode) {
+            // Access the Functional Skills sheet to get the corresponding category for the skill code
+            var functionalSkillsSheet = workbook.Sheets['Enabling Skills'];
+            var categoryRow = XLSX.utils.sheet_to_json(functionalSkillsSheet)
+                .find(row => row['ESC Code'] === skillCode);
+
+            return categoryRow ? categoryRow['ESC Related Category'] : '';
+        }
+
+        function getSkillsForSkillCodeEnabling(skillCode) {
+            // Access the Functional Skills sheet to get the corresponding category for the skill code
+            var functionalSkillsSheet = workbook.Sheets['Enabling Skills'];
+            var categoryRow = XLSX.utils.sheet_to_json(functionalSkillsSheet)
+                .find(row => row['ESC Code'] === skillCode);
+
+            return categoryRow ? categoryRow['ESC Title'] : '';
+        }
+
+        //Function
+        function processJobRoleSkills(worksheet) {
+            const allRows = XLSX.utils.sheet_to_json(worksheet);
+
+            // Replace 'FSC' with 'Functional' and filter rows based on the modified Skill Type
+            var MatchingFunctional = allRows.map(row => ({
+                ...row,
+                'Skill Type': row['Skill Type'].replace('FSC', 'Functional'),
+            }))
+                .filter(row => row['Skill Type'] === 'Functional');
+
+
+            if (MatchingFunctional.length > 0) {
+                // Extract skills, proficiency levels, and replace Skill Code with corresponding category
+                FunctionalData.value = MatchingFunctional.map(row => ({
+                    title: row['Skill Type'],
+                    category: getCategoryForSkillCode(row['Skill Code']),
+                    relatedcategory: getRelatedCategoryForSkillCode(row['Skill Code']),
+                    skills: getSkillsForSkillCode(row['Skill Code']),
+                }));
+                // Concatenate Skill Code values to the existing data in skillCode variable
+                skillCode.value = skillCode.value.concat(MatchingFunctional.map(row => row['Skill Code']));
+            } else {
+                console.log('No matching rows found for Skill Type "Functional".');
+            }
+        }
+
+        function getCategoryForSkillCode(skillCode) {
+            // Access the Functional Skills sheet to get the corresponding category for the skill code
+            const functionalSkillsSheet = workbook.Sheets['Functional Skills'];
+            const categoryRow = XLSX.utils.sheet_to_json(functionalSkillsSheet)
+                .find(row => row['FSC Code'] === skillCode);
+
+            return categoryRow ? categoryRow['FSC Category'] : '';
+        }
+
+        function getRelatedCategoryForSkillCode(skillCode) {
+            // Access the Functional Skills sheet to get the corresponding category for the skill code
+            const functionalSkillsSheet = workbook.Sheets['Functional Skills'];
+            const categoryRow = XLSX.utils.sheet_to_json(functionalSkillsSheet)
+                .find(row => row['FSC Code'] === skillCode);
+
+            return categoryRow ? categoryRow['FSC Related Category'] : '';
+        }
+
+        function getSkillsForSkillCode(skillCode) {
+            // Access the Functional Skills sheet to get the corresponding category for the skill code
+            const functionalSkillsSheet = workbook.Sheets['Functional Skills'];
+            const categoryRow = XLSX.utils.sheet_to_json(functionalSkillsSheet)
+                .find(row => row['FSC Code'] === skillCode);
+
+            return categoryRow ? categoryRow['FSC Title'] : '';
+        }
+
+        const jobRoleSheetName = 'Job Role Description';
+
+        if (workbook.SheetNames.includes(jobRoleSheetName)) {
+            const jobRoleSheet = workbook.Sheets[jobRoleSheetName];
+            extractCategoriesFromJobRoleSheet(jobRoleSheet);
+        } else {
+            console.error(`Sheet "${jobRoleSheetName}" not found in the Excel file.`);
+        }
+
+        function extractCategoriesFromJobRoleSheet(sheet) {
+            // Extract unique values from the 'Track' column
+            const jobRoleData = XLSX.utils.sheet_to_json(sheet);
+            const uniqueTracks = [...new Set(jobRoleData.map(row => row.Track))];
+
+            // Update categoryRef with unique tracks
+            categoryRef.value = uniqueTracks;
+        }
+
+        if (workbook.SheetNames.includes(jobRoleSheetName)) {
+            const jobRoleSheet = workbook.Sheets[jobRoleSheetName];
+            extractJobRolesFromSheet(jobRoleSheet);
+        } else {
+            console.error(`Sheet "${jobRoleSheetName}" not found in the Excel file.`);
+        }
+
+        function extractJobRolesFromSheet(sheet) {
+            // Extract job roles and sort them based on 'Display Order'
+            const jobRoleData = XLSX.utils.sheet_to_json(sheet);
+            const sortedJobRoles = jobRoleData
+                .sort((a, b) => a['Display Order'] - b['Display Order'])
+                .map(row => row['Job Role']);
+            const sortedJobCode = jobRoleData
+                .sort((a, b) => a['Display Order'] - b['Display Order'])
+                .map(row => row['Job Code']);
+
+            // Update jobRole ref with sorted job roles
+            jobRole.value = sortedJobRoles;
+            jobCode.value = sortedJobCode;
+        }
+
+        var skillsWorksheet = workbook.Sheets['Job Role Skills'];
+        var allRows = XLSX.utils.sheet_to_json(skillsWorksheet);
+        console.log(allRows)
+
+        // Iterate through each job code and skill code combination
+        console.log(skillCode) 
+        console.log(jobCode)
+        console.log(proficiencyLevelData)
+
+        // Iterate through each job code and skill code combination
+        skillCode.value.forEach((skillCodeValue, rowIndex) => {
+            jobCode.value.forEach((jobCodeValue, colIndex) => {
+                console.log(skillCodeValue + ' paired with ' + jobCodeValue);
+
+                // Check if both jobCodeValue and skillCodeValue are defined
+                if (skillCodeValue !== undefined) {
+                    // Find the corresponding row in the "Job Role Skills" sheet based on job code and skill code
+                    const matchingRow = allRows.find(
+                        row =>
+                            row['Job Code'] === jobCodeValue && row['Skill Code'] === skillCodeValue
+                    );
+
+                    // Check if matchingRow is defined and 'Proficiency Level' is present
+                    if (matchingRow && 'Proficiency Level' in matchingRow) {
+                        console.log(matchingRow['Proficiency Level']);
+                        console.log(rowIndex);
+                        console.log(colIndex);
+
+                        // Assign the proficiency level if there is a match
+                        proficiencyLevelData.value[rowIndex][colIndex] = matchingRow['Proficiency Level'];
+                    } else {
+                        // Handle the case where either matchingRow is undefined or 'Proficiency Level' is not present
+                        proficiencyLevelData.value[rowIndex][colIndex] = '';
+                    }
+                }
+            });
         });
-  
-        // Add event listener to synchronize scroll from fixed-width to scrollable
-        fixedWidth.addEventListener("scroll", () => {
-          scrollable.scrollTop = fixedWidth.scrollTop;
-        });
-      },
-    },
-  };
-  </script>
-  
+
+
+        console.log(proficiencyLevelData)   
+
+    } catch (error) {
+        console.error('Error fetching and analyzing file:', error);
+    }
+};
+
+onMounted(() => {
+    syncScroll();
+    fetchAndAnalyzeFile();
+
+    // Add event listener to synchronize scroll from scrollable to fixed-width
+    scrollable.value.addEventListener('scroll', () => {
+        fixedWidth.value.scrollTop = scrollable.value.scrollTop;
+    });
+
+    // Add event listener to synchronize scroll from fixed-width to scrollable
+    fixedWidth.value.addEventListener('scroll', () => {
+        scrollable.value.scrollTop = fixedWidth.value.scrollTop;
+    });
+});
+
+function syncScroll() {
+    // Set the height of fixed-width to match scrollable
+    // fixedWidth.value.style.height = `${scrollable.value.clientHeight}px`; // Do not uncomment this line
+}
+</script>
+
 <style scoped>
 .container {
-  display: flex;
-  padding: 0px;
-  max-height: 740px !important;
+    display: flex;
+    padding: 0px;
+    max-height: 800px !important;
+    width: 150vw;
 }
 
-#left-table {
+/* #left-table {
     white-space: nowrap;
-
-}
+} */
 
 .fixed-width::-webkit-scrollbar {
     display: none;
 }
 
 .fixed-width {
-  width: 200%; /* Adjust the fixed width as needed */
-  box-sizing: border-box;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+    width: 200%; /* Adjust the width as needed */
+    box-sizing: border-box;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-
+#right-table {
+    width: 300%; /* Adjust the width as needed */
+    box-sizing: border-box;
+}
 
 .scrollable {
-  overflow-x: auto;
-  overflow-y: scroll;
-  min-width: 0; /* Add this line to allow the div to shrink below its content size */
+    overflow-x: auto;
+    overflow-y: scroll;
+    min-width: 0;
+    /* Add this line to allow the div to shrink below its content size */
 }
 
 .scrollable th {
-  text-align: center;
+    text-align: center;
 }
 
 thead {
-  position: sticky;
-  top: 0;
-  background-color: #44546a;
-  color: white;
-  z-index: 1;
-  border: none;
+    position: sticky;
+    top: 0;
+    background-color: #44546a;
+    color: white;
+    z-index: 1;
 }
 
-thead tr, th {
-    border: 1px solid #ddd;
+thead tr,
+th {
+    border: 2px solid #ddd;
     border-top: 1px solid #ddd;
 }
 
-
 table {
-  border-collapse: separate;
-  border-spacing: 0px;
-  width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
 }
 
 td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-  color: white;
+    border: 2px solid #ddd;
+    padding: 5px;
+    text-align: left;
+    color: white;
 }
-
-
 </style>
-  
