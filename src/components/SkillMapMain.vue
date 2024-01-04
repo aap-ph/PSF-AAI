@@ -4,7 +4,7 @@
             <!-- Left Half Content Goes Here -->
             <table id="left-table">
                 <thead>
-                    <tr style="height: 125px; text-align: center;">
+                    <tr style="height: 123px; text-align: center;">
                         <th>Skill Type</th>
                         <th>Skill Category</th>
                     </tr>
@@ -425,7 +425,7 @@ thead {
 
 thead tr,
 th {
-    border: 2px solid #ddd;
+    border: 1px solid #ddd;
     border-top: 1px solid #ddd;
 }
 
@@ -436,7 +436,7 @@ table {
 }
 
 td {
-    border: 2px solid #ddd;
+    border: 1px solid #ddd;
     padding: 5px;
     text-align: left;
     color: white;
