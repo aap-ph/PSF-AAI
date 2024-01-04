@@ -39,7 +39,6 @@
                         <th v-for="(row, index) in jobRole" :key="index" >{{ row }}</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     <tr>
                         <td></td>
@@ -53,45 +52,121 @@
                         <td>4</td>
                         <td>4</td>
                         <td>5</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>3</td>
+                        <td>4</td>
                         <td>4</td>
                         <td>5</td>
-                        <td>6</td>
-                        <td></td>
+                        <td>3</td>
+                        <td>4</td>
                         <td>4</td>
                         <td>5</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>3</td>
+                        <td>4</td>
                         <td>4</td>
                         <td>5</td>
-                        <td>6</td>
-                        <td></td>
+                        <td>3</td>
+                        <td>4</td>
                         <td>4</td>
                         <td>5</td>
-                        <td>6</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
+                        <td>3</td>
+                        <td>4</td>
                         <td>4</td>
                         <td>5</td>
-                        <td>6</td>
-                        <td></td>
+                        <td>3</td>
+                        <td>4</td>
                         <td>4</td>
                         <td>5</td>
-                        <td>6</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>4</td>
                     </tr>
                     <tr>
                         <td></td>
@@ -105,58 +180,25 @@
                         <td>Intermediate</td>
                         <td>Intermediate</td>
                         <td>Intermediate</td>
-                    </tr>
-                    <tr>
-                        <td>Basic</td>
-                        <td>Basic</td>
-                        <td>Basic</td>
-                        <td>Intermediate</td>
-                        <td>Intermediate</td>
-                        <td>Advanced</td>
-                        <td>Advanced</td>
-                        <td>Intermediate</td>
-                        <td>Intermediate</td>
-                        <td>Advanced</td>
-                        <td>Advanced</td>
-                    </tr>
-                    <tr>
-                        <td>Basic</td>
-                        <td>Basic</td>
-                        <td>Basic</td>
-                        <td>Intermediate</td>
-                        <td>Intermediate</td>
-                        <td>Advanced</td>
-                        <td>Advanced</td>
-                        <td>Intermediate</td>
-                        <td>Intermediate</td>
-                        <td>Advanced</td>
-                        <td>Advanced</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Basic</td>
-                        <td>Basic</td>
-                        <td>Intermediate</td>
-                        <td>Intermediate</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
                         <td></td>
                         <td></td>
                         <td>Basic</td>
                         <td>Intermediate</td>
-                        <td>Advanced</td>
-                        <td>Advanced</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
                         <td>Basic</td>
                         <td>Intermediate</td>
-                        <td>Advanced</td>
-                        <td>Advanced</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
                     </tr>
                     <tr>
                         <td></td>
@@ -165,11 +207,30 @@
                         <td>Basic</td>
                         <td>Intermediate</td>
                         <td>Intermediate</td>
-                        <td>Advanced</td>
+                        <td>Intermediate</td>
                         <td>Basic</td>
                         <td>Intermediate</td>
                         <td>Intermediate</td>
-                        <td>Advanced</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
                     </tr>
                     <tr>
                         <td></td>
@@ -178,24 +239,190 @@
                         <td>Basic</td>
                         <td>Intermediate</td>
                         <td>Intermediate</td>
-                        <td>Advanced</td>
+                        <td>Intermediate</td>
                         <td>Basic</td>
                         <td>Intermediate</td>
                         <td>Intermediate</td>
-                        <td>Advanced</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
                     </tr>
                     <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
                         <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td></td>
                         <td>Basic</td>
                         <td>Intermediate</td>
                         <td>Intermediate</td>
-                        <td>Advanced</td>
-                        <td>Advanced</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
                         <td>Intermediate</td>
                         <td>Intermediate</td>
-                        <td>Advanced</td>
-                        <td>Advanced</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td></td>
+                        <td></td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
+                        <td>Basic</td>
+                        <td>Intermediate</td>
+                        <td>Intermediate</td>
                     </tr>   
                 </tbody>
             </table>
@@ -215,9 +442,11 @@ const scrollable = ref(null);
 const EnablingData = ref([])
 const FunctionalData = ref([])
 
-// Declare categoryRef inside the setup block to make it reactive
 const categoryRef = ref([]);
 const jobRole = ref([]);
+
+const jobCode = ref([]);
+
 
 // Function to get colspan for each row
 const getColspanForRow = (row) => {
@@ -324,7 +553,6 @@ const fetchAndAnalyzeFile = async () => {
 
         function processJobRoleSkillsEnabling(worksheet) {
             const allRows = XLSX.utils.sheet_to_json(worksheet);
-            console.log(allRows);
 
             // Replace 'FSC' with 'Functional' and filter rows based on the modified Skill Type
             var MatchingFunctional = allRows.map(row => ({
@@ -333,7 +561,6 @@ const fetchAndAnalyzeFile = async () => {
             }))
                 .filter(row => row['Skill Type'] === 'Enabling');
 
-            console.log(MatchingFunctional);
 
             if (MatchingFunctional.length > 0) {
                 // Extract skills, proficiency levels, and replace Skill Code with corresponding category
@@ -349,7 +576,7 @@ const fetchAndAnalyzeFile = async () => {
         }
 
         function getCategoryForSkillCodeEnabling(skillCode) {
-            console.log(skillCode)
+            //console.log(skillCode)
             // Access the Functional Skills sheet to get the corresponding category for the skill code
             var functionalSkillsSheet = workbook.Sheets['Enabling Skills'];
             var categoryRow = XLSX.utils.sheet_to_json(functionalSkillsSheet)
@@ -405,17 +632,20 @@ const fetchAndAnalyzeFile = async () => {
         }
 
         function extractJobRolesFromSheet(sheet) {
-        // Extract job roles and sort them based on 'Display Order'
-        const jobRoleData = XLSX.utils.sheet_to_json(sheet);
-        const sortedJobRoles = jobRoleData
-            .sort((a, b) => a['Display Order'] - b['Display Order'])
-            .map(row => row['Job Role']);
+            // Extract job roles and sort them based on 'Display Order'
+            const jobRoleData = XLSX.utils.sheet_to_json(sheet);
+            const sortedJobRoles = jobRoleData
+                .sort((a, b) => a['Display Order'] - b['Display Order'])
+                .map(row => row['Job Role']);
+            const sortedJobCode = jobRoleData
+                .sort((a, b) => a['Display Order'] - b['Display Order'])
+                .map(row => row['Job Code']);
 
-        // Update jobRole ref with sorted job roles
-        jobRole.value = sortedJobRoles;
+            // Update jobRole ref with sorted job roles
+            jobRole.value = sortedJobRoles;
+            jobCode.value = sortedJobCode;
         }
 
-        
     } catch (error) {
         console.error('Error fetching and analyzing file:', error);
     }
