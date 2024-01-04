@@ -407,6 +407,7 @@ function syncScroll() {
     overflow-x: auto;
     overflow-y: scroll;
     min-width: 0;
+    height: 820px;
     /* Add this line to allow the div to shrink below its content size */
 }
 
