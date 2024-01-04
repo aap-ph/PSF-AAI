@@ -70,14 +70,6 @@ const skillCode = ref([])
 
 //let proficiencyLevelData = ref([]);
 
-// Initialize proficiencyLevelData with zeros
-for (let i = 0; i < skillCode.value.length; i++) {
-    proficiencyLevelData.value.push([]);
-    for (let j = 0; j < jobCode.value.length; j++) {
-        proficiencyLevelData.value[i].push('0');
-    }
-}
-
 var proficiencyLevelData = ref([
     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
@@ -100,31 +92,31 @@ var proficiencyLevelData = ref([
 ]);
 
 // Use refs to make the data reactive
-var proficiencyLevelsRef = ref(proficiencyLevelData.value);
+//var proficiencyLevelsRef = ref(proficiencyLevelData.value);
 
 
 // Function to get colspan for each row
-const getColspanForRow = (row) => {
-    // Add your condition here
-    if (row === 'Data Stewardship') {
-        return 4; // Change this to the desired colspan value
-    }
-    else if (row === 'Data Engineering') {
-        return 6;
-    }
-    else if (row === 'Data Science') {
-        return 5;
-    }
-    else if (row === 'AI Engineering') {
-        return 4;
-    }
-    else if (row === 'Applied Data/AI Research') {
-        return 4;
-    }
-    else if (row === 'Business Intelligence & Strategy') {
-        return 7;
-    }
-};
+function getColspanForRow(row) {
+// Add your condition here
+if (row === 'Data Stewardship') {
+return 4; // Change this to the desired colspan value
+}
+else if (row === 'Data Engineering') {
+return 6;
+}
+else if (row === 'Data Science') {
+return 5;
+}
+else if (row === 'AI Engineering') {
+return 4;
+}
+else if (row === 'Applied Data/AI Research') {
+return 4;
+}
+else if (row === 'Business Intelligence & Strategy') {
+return 7;
+}
+}
 
 const fetchAndAnalyzeFile = async () => {
     try {
@@ -308,7 +300,7 @@ const fetchAndAnalyzeFile = async () => {
         for (let i = 0; i < skillCode.value.length; i++) {
             proficiencyLevelData.value.push([]);
             for (let j = 0; j < jobCode.value.length; j++) {
-                proficiencyLevelData.value[i][j] = 0;
+                proficiencyLevelData.value[i][j] = '';
             }
         }
 
@@ -352,8 +344,8 @@ const fetchAndAnalyzeFile = async () => {
 };
 
 onMounted(() => {
-    syncScroll();
     fetchAndAnalyzeFile();
+    syncScroll();
 
     // Add event listener to synchronize scroll from scrollable to fixed-width
     scrollable.value.addEventListener('scroll', () => {
