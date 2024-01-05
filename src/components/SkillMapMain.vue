@@ -12,11 +12,11 @@
                 <tbody>
                     <tr v-for="(row, index) in EnablingData" :key="index">
                         <td>{{ row.title }}</td>
-                        <td @click="handleRowClick('enablingskillsdetails',row.skills)">{{ row.skills }}</td>
+                        <td class="hover" @click="handleRowClick('enablingskillsdetails',row.skills)">{{ row.skills }}</td>
                     </tr>
                     <tr v-for="(row, index) in FunctionalData" :key="index">
                         <td>{{ row.title }}</td>
-                        <td @click="handleRowClickFunc('functionalskillsdetails',row.skills)">{{ row.skills }}</td>
+                        <td class="hover" @click="handleRowClickFunc('functionalskillsdetails',row.skills)">{{ row.skills }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -32,7 +32,7 @@
                             style="font-size: 14px; padding: 0px;">{{ row }}</th>
                     </tr>
                     <tr>
-                        <th v-for="(row, index) in jobRole" :key="index" @click="sendText(row)">{{ row }}</th>
+                        <th v-for="(row, index) in jobRole" :key="index" class="hover" @click="sendText(row)">{{ row }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -487,7 +487,7 @@ function syncScroll() {
 
 <style scoped>
 
-.th:hover{
+.hover:hover:hover{
     cursor: pointer;
 }
 .container {
