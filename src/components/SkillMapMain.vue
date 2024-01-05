@@ -4,7 +4,7 @@
             <!-- Left Half Content Goes Here -->
             <table id="left-table">
                 <thead>
-                    <tr style="height: 123px; text-align: center;">
+                    <tr class="first-header">
                         <th>Skill Type</th>
                         <th>Skill</th>
                     </tr>
@@ -415,24 +415,34 @@ function syncScroll() {
     display: none;
 }
 
+/* .scrollable::-webkit-scrollbar:vertical{
+    height: 10px;
+} */
+
 .fixed-width {
     width: 200%; /* Adjust the width as needed */
     box-sizing: border-box;
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    height: 800px;
 }
 
-#right-table {
-    width: 300%; /* Adjust the width as needed */
-    box-sizing: border-box;
+.first-header {
+    height: 123px;
+    text-align: center;
 }
+/* #right-table {
+    width: 50%; 
+    box-sizing: border-box;
+} */
 
 .scrollable {
     overflow-x: auto;
     overflow-y: scroll;
     min-width: 0;
-    height: 820px;
+    height: 815px;
+    width: 300%;
     /* Add this line to allow the div to shrink below its content size */
 }
 
@@ -466,4 +476,33 @@ td {
     text-align: left;
     color: white;
 }
+
+@media (max-width: 1600px) {
+    .fixed-width {
+        height: 600px !important;
+    }
+    .first-header {
+        height: 122px;
+    }
+    .scrollable {
+        height: 612px !important;
+        width: 300% !important;
+    }
+}
+
+@media (max-width: 1377px) {
+    .fixed-width {
+        height: 500px !important;
+    }
+    .first-header {
+        height: 122px;
+    }
+    .scrollable {
+        height: 515px !important;
+        width: 200% !important;
+    }
+}
+
+
 </style>
+
