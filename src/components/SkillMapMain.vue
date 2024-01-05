@@ -12,7 +12,7 @@
                 <tbody>
                     <tr v-for="(row, index) in EnablingData" :key="index">
                         <td>{{ row.title }}</td>
-                        <td @click="handleRowClick()">{{ row.skills }}</td>
+                        <td @click="handleRowClick(row.skills)">{{ row.skills }}</td>
                     </tr>
                     <tr v-for="(row, index) in FunctionalData" :key="index">
                         <td>{{ row.title }}</td>
@@ -82,48 +82,39 @@ const sendText = (text) => {
 };
 
 const handleRowClick = async (escCode) => {
-    const filePath = 'excel.xlsx';
-    const fileURL = await getDownloadURL(storageRef(storage, filePath));
+    try {
+        const filePath = 'excel.xlsx';
+        const fileURL = await getDownloadURL(storageRef(storage, filePath));
 
-    const response = await fetch(fileURL, { mode: 'cors' });
-    const arrayBuffer = await response.arrayBuffer();
+        const response = await fetch(fileURL, { mode: 'cors' });
+        const arrayBuffer = await response.arrayBuffer();
 
-    const data = new Uint8Array(arrayBuffer);
-    const workbook = XLSX.read(data, { type: 'array' });
+        const data = new Uint8Array(arrayBuffer);
+        const workbook = XLSX.read(data, { type: 'array' });
 
-    const skillsSheetName = 'Job Role Skills';
+        function getSkillCode(name) {
+            // Access the Functional Skills sheet to get the corresponding category for the skill code
+            const functionalSkillsSheet = workbook.Sheets['Job Role Skills'];
+            const categoryRow = XLSX.utils.sheet_to_json(functionalSkillsSheet)
+                .find(row => row['Skill Title'] === name);
 
-    let escCodeValue = '';
-
-    if (workbook.SheetNames.includes(skillsSheetName)) {
-        const skillsWorksheet = workbook.Sheets[skillsSheetName];
-
-        // Assuming your "Code" column is, for example, in column 'A'
-        const codeColumn = 'Skill Code';
-
-        // Find the cell that matches the provided escCode in the "Code" column
-        const matchingCell = Object.keys(skillsWorksheet)
-            .filter(cell => cell.startsWith(codeColumn) && skillsWorksheet[cell].v === escCode);
-
-        if (matchingCell.length > 0) {
-            // Extract the row number from the matching cell
-            const rowNumber = matchingCell[0].replace(codeColumn, '');
-            
-            // Assuming the column where you want to get the value is, for example, in column 'B'
-            const valueColumn = 'Skill Title';
-
-            // Get the value from the corresponding row and column
-            escCodeValue = skillsWorksheet[`${valueColumn}${rowNumber}`].v;
-        } else {
-            console.error(`No matching entry for escCode "${escCode}" in the "Skill Codes" sheet.`);
+            return categoryRow ? categoryRow['Skill Code'] : '';
         }
-    } else {
-        console.error(`Sheet "${skillsSheetName}" not found in the Excel file.`);
-    }
 
-    // Assuming 'router' is available in your component
-    router.push({ name: 'enablingskillsdetails', params: { escCode: escCodeValue } });
+        const escCodeValue = getSkillCode(escCode);
+        // Assuming 'router' is available in your component
+        if (router) {
+            router.push({ name: 'enablingskillsdetails', params: { escCode: escCodeValue } });
+        } else {
+            console.error("Router is not available.");
+            // Handle the case where 'router' is not available
+        }
+    } catch (error) {
+        console.error("An error occurred:", error);
+        // Handle the error appropriately
+    }
 };
+
 
 
 
@@ -335,6 +326,15 @@ const fetchAndAnalyzeFile = async () => {
                 .find(row => row['FSC Code'] === skillCode);
 
             return categoryRow ? categoryRow['FSC Title'] : '';
+        }
+
+        function getSkillCode(name) {
+            // Access the Functional Skills sheet to get the corresponding category for the skill code
+            const functionalSkillsSheet = workbook.Sheets['Job Role Skills'];
+            const categoryRow = XLSX.utils.sheet_to_json(functionalSkillsSheet)
+                .find(row => row['Skill Title'] === name);
+
+            return categoryRow ? categoryRow['Skill Code'] : '';
         }
 
         const jobRoleSheetName = 'Job Role Description';
