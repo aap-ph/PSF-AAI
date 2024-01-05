@@ -1,41 +1,37 @@
 <template>
     <div class="container">
-        <div class="fixed-width" ref="fixedWidth">
-            <!-- Left Half Content Goes Here -->
-            <table id="left-table">
-                <thead>
-                    <tr class="first-header">
-                        <th>Skill Type</th>
-                        <th>Skill Category</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(row, index) in EnablingData" :key="index">
-                        <td>{{ row.title }}</td>
-                        <td>{{ row.category }}</td>
-                    </tr>
-                    <tr v-for="(row, index) in FunctionalData" :key="index">
-                        <td>{{ row.title }}</td>
-                        <td>{{ row.category }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="scrollable" ref="scrollable">
-            <!-- Right Half Content Goes Here -->
-            <table id="right-table">
-                <thead>
-                    <tr>
-                        <th rowspan="2">Related Category</th>
-                        <th rowspan="2">Skill</th>
-                        <th v-for="(row, index) in categoryRef" :key="index" :colspan="getColspanForRow(row)"
-                            style="font-size: 14px; padding: 0px;">{{ row }}</th>
-                    </tr>
-                    <tr>
-                        <th v-for="(row, index) in jobRole" :key="index">{{ row }}</th>
-                    </tr>
-                </thead>
-                <tbody>
+      <div class="fixed-width" ref="fixedWidth">
+        <!-- Left Half Content Goes Here -->
+        <table id="left-table">
+          <thead>
+            <tr class="first-header">
+              <th @click="sortByColumn('title')" class="sortable">Skill Type</th>
+              <th @click="sortByColumn('category')" class="sortable">Skill Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(row, index) in sortedTablesData.leftTable" :key="index">
+              <td>{{ row.title }}</td>
+              <td>{{ row.category }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="scrollable" ref="scrollable">
+        <!-- Right Half Content Goes Here -->
+        <table id="right-table">
+          <thead>
+            <tr>
+              <th rowspan="2" @click="sortByColumn('relatedcategory')" class="sortable">Related Category</th>
+              <th rowspan="2" @click="sortByColumn('skills')" class="sortable">Skill</th>
+              <th v-for="(row, index) in categoryRef" :key="index" :colspan="getColspanForRow(row)"
+                  style="font-size: 14px; padding: 0px;">{{ row }}</th>
+            </tr>
+            <tr>
+              <th v-for="(row, index) in jobRole" :key="index">{{ row }}</th>
+            </tr>
+          </thead>
+          <tbody>
                     <tr v-for="(row, index) in EnablingData" :key="index" style="white-space: nowrap;">
                         <td>{{ row.relatedcategory }}</td>
                         <td>{{ row.skills }}</td>
@@ -47,15 +43,22 @@
                         <td v-for="(col, colIndex) in proficiencyLevelData[index + EnablingData.length]"
                             :key="colIndex">{{ col }}</td>
                     </tr>
-                </tbody>
-            </table>
-        </div>
+            </tbody>
+          <!-- <tbody>
+            <tr v-for="(row, index) in sortedTablesData.leftTable" :key="index" style="white-space: nowrap;">
+              <td>{{ row.relatedcategory }}</td>
+              <td>{{ row.skills }}</td>
+              <td v-for="(col, colIndex) in getProficiencyLevelData(row.id)" :key="colIndex">{{ col }}</td>
+            </tr>
+          </tbody> -->
+        </table>
+      </div>
     </div>
-</template>
+  </template>
   
   
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 import * as XLSX from 'xlsx/dist/xlsx.full.min.js';
 import { storage, ref as storageRef, getDownloadURL } from '@/firebase';
 
@@ -71,8 +74,11 @@ const jobRole = ref([]);
 const jobCode = ref([]);
 const skillCode = ref([])
 
+const sortColumn = ref('title'); // Initialize sortColumn with a default value
+const sortOrder = ref(1); // Initialize sortOrder with a default value
 
 let proficiencyLevelData = ref([]);
+
 
 // Initialize proficiencyLevelData with zeros
 // for (let i = 0; i < skillCode.value.length; i++) {
@@ -105,6 +111,48 @@ let proficiencyLevelData = ref([]);
 
 // Use refs to make the data reactive
 //var proficiencyLevelsRef = ref(proficiencyLevelData.value);
+
+const sortedTablesData = computed(() => {
+  return {
+    leftTable: sortTableData([...EnablingData.value, ...FunctionalData.value]),
+    rightTable: sortTableData([...proficiencyLevelData.value]), // Use proficiencyLevelData for the right table
+  };
+});
+
+const sortTableData = (data) => {
+  return [...data].sort((a, b) => {
+    const valueA = a[sortColumn.value];
+    const valueB = b[sortColumn.value];
+
+    if (valueA < valueB) return -1 * sortOrder.value;
+    if (valueA > valueB) return 1 * sortOrder.value;
+    return 0;
+  });
+};
+
+const sortByColumn = (column) => {
+  if (sortColumn.value === column) {
+    sortOrder.value *= -1; // Toggle between ascending and descending
+  } else {
+    sortColumn.value = column;
+    sortOrder.value = 1; // Default to ascending when changing the column
+  }
+
+  const sortedData = sortTableData([...EnablingData.value, ...FunctionalData.value]);
+
+  // Update the data properties
+  EnablingData.value = sortedData.slice(0, EnablingData.value.length);
+  FunctionalData.value = sortedData.slice(EnablingData.value.length);
+
+  // No need to sort proficiencyLevelData
+};
+
+const getProficiencyLevelData = (rowId) => {
+  // Assuming proficiencyLevelData is a ref containing an array associated with each row
+  return proficiencyLevelData.value.find((item) => item.id === rowId);
+};
+
+
 
 
 // Function to get colspan for each row
@@ -372,6 +420,7 @@ function syncScroll() {
     // Set the height of fixed-width to match scrollable
     // fixedWidth.value.style.height = `${scrollable.value.clientHeight}px`; // Do not uncomment this line
 }
+
 </script>
 
 <style scoped>
@@ -477,7 +526,13 @@ td {
         width: 200% !important;
     }
 }
+.sortable {
+  cursor: pointer;
+}
 
+.sortable:hover {
+  background-color: #555;
+}
 
 </style>
 
