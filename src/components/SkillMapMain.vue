@@ -12,11 +12,11 @@
                 <tbody>
                     <tr v-for="(row, index) in EnablingData" :key="index">
                         <td>{{ row.title }}</td>
-                        <td @click="handleRowClick(row.skills)">{{ row.skills }}</td>
+                        <td @click="handleRowClick('enablingskillsdetails',row.skills)">{{ row.skills }}</td>
                     </tr>
                     <tr v-for="(row, index) in FunctionalData" :key="index">
                         <td>{{ row.title }}</td>
-                        <td>{{ row.skills }}</td>
+                        <td @click="handleRowClickFunc('functionalskillsdetails',row.skills)">{{ row.skills }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -81,7 +81,7 @@ const sendText = (text) => {
   router.push({ name: 'skillsmap', params: { text: text } });
 };
 
-const handleRowClick = async (escCode) => {
+const handleRowClick = async (route,escCode) => {
     try {
         const filePath = 'excel.xlsx';
         const fileURL = await getDownloadURL(storageRef(storage, filePath));
@@ -104,7 +104,41 @@ const handleRowClick = async (escCode) => {
         const escCodeValue = getSkillCode(escCode);
         // Assuming 'router' is available in your component
         if (router) {
-            router.push({ name: 'enablingskillsdetails', params: { escCode: escCodeValue } });
+            router.push({ name: route, params: { escCode: escCodeValue } });
+        } else {
+            console.error("Router is not available.");
+            // Handle the case where 'router' is not available
+        }
+    } catch (error) {
+        console.error("An error occurred:", error);
+        // Handle the error appropriately
+    }
+};
+
+const handleRowClickFunc = async (route,escCode) => {
+    try {
+        const filePath = 'excel.xlsx';
+        const fileURL = await getDownloadURL(storageRef(storage, filePath));
+
+        const response = await fetch(fileURL, { mode: 'cors' });
+        const arrayBuffer = await response.arrayBuffer();
+
+        const data = new Uint8Array(arrayBuffer);
+        const workbook = XLSX.read(data, { type: 'array' });
+
+        function getSkillCode(name) {
+            // Access the Functional Skills sheet to get the corresponding category for the skill code
+            const functionalSkillsSheet = workbook.Sheets['Job Role Skills'];
+            const categoryRow = XLSX.utils.sheet_to_json(functionalSkillsSheet)
+                .find(row => row['Skill Title'] === name);
+
+            return categoryRow ? categoryRow['Skill Code'] : '';
+        }
+
+        const escCodeValue = getSkillCode(escCode);
+        // Assuming 'router' is available in your component
+        if (router) {
+            router.push({ name: route, params: { fscCode: escCodeValue } });
         } else {
             console.error("Router is not available.");
             // Handle the case where 'router' is not available
