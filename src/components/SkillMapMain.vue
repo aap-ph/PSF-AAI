@@ -12,7 +12,7 @@
                 <tbody>
                     <tr v-for="(row, index) in EnablingData" :key="index">
                         <td>{{ row.title }}</td>
-                        <td>{{ row.skills }}</td>
+                        <td @click="handleRowClick()">{{ row.skills }}</td>
                     </tr>
                     <tr v-for="(row, index) in FunctionalData" :key="index">
                         <td>{{ row.title }}</td>
@@ -32,7 +32,7 @@
                             style="font-size: 14px; padding: 0px;">{{ row }}</th>
                     </tr>
                     <tr>
-                        <th v-for="(row, index) in jobRole" :key="index">{{ row }}</th>
+                        <th v-for="(row, index) in jobRole" :key="index" @click="sendText(row)">{{ row }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,6 +58,7 @@
 import { onMounted, ref } from 'vue';
 import * as XLSX from 'xlsx/dist/xlsx.full.min.js';
 import { storage, ref as storageRef, getDownloadURL } from '@/firebase';
+import { useRouter } from 'vue-router';
 
 const fixedWidth = ref(null);
 const scrollable = ref(null);
@@ -73,6 +74,59 @@ const skillCode = ref([])
 
 
 let proficiencyLevelData = ref([]);
+
+const router = useRouter();
+
+const sendText = (text) => {
+  router.push({ name: 'skillsmap', params: { text: text } });
+};
+
+const handleRowClick = async (escCode) => {
+    const filePath = 'excel.xlsx';
+    const fileURL = await getDownloadURL(storageRef(storage, filePath));
+
+    const response = await fetch(fileURL, { mode: 'cors' });
+    const arrayBuffer = await response.arrayBuffer();
+
+    const data = new Uint8Array(arrayBuffer);
+    const workbook = XLSX.read(data, { type: 'array' });
+
+    const skillsSheetName = 'Job Role Skills';
+
+    let escCodeValue = '';
+
+    if (workbook.SheetNames.includes(skillsSheetName)) {
+        const skillsWorksheet = workbook.Sheets[skillsSheetName];
+
+        // Assuming your "Code" column is, for example, in column 'A'
+        const codeColumn = 'Skill Code';
+
+        // Find the cell that matches the provided escCode in the "Code" column
+        const matchingCell = Object.keys(skillsWorksheet)
+            .filter(cell => cell.startsWith(codeColumn) && skillsWorksheet[cell].v === escCode);
+
+        if (matchingCell.length > 0) {
+            // Extract the row number from the matching cell
+            const rowNumber = matchingCell[0].replace(codeColumn, '');
+            
+            // Assuming the column where you want to get the value is, for example, in column 'B'
+            const valueColumn = 'Skill Title';
+
+            // Get the value from the corresponding row and column
+            escCodeValue = skillsWorksheet[`${valueColumn}${rowNumber}`].v;
+        } else {
+            console.error(`No matching entry for escCode "${escCode}" in the "Skill Codes" sheet.`);
+        }
+    } else {
+        console.error(`Sheet "${skillsSheetName}" not found in the Excel file.`);
+    }
+
+    // Assuming 'router' is available in your component
+    router.push({ name: 'enablingskillsdetails', params: { escCode: escCodeValue } });
+};
+
+
+
 
 // Initialize proficiencyLevelData with zeros
 // for (let i = 0; i < skillCode.value.length; i++) {
@@ -256,8 +310,6 @@ const fetchAndAnalyzeFile = async () => {
             }
         }
 
-
-
         function getCategoryForSkillCode(skillCode) {
             // Access the Functional Skills sheet to get the corresponding category for the skill code
             const functionalSkillsSheet = workbook.Sheets['Functional Skills'];
@@ -400,6 +452,10 @@ function syncScroll() {
 </script>
 
 <style scoped>
+
+.th:hover{
+    cursor: pointer;
+}
 .container {
     display: flex;
     padding: 0px;
