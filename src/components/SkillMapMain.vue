@@ -1,66 +1,59 @@
 <template>
     <div class="container">
-      <div class="fixed-width" ref="fixedWidth">
-        <!-- Left Half Content Goes Here -->
-        <table id="left-table">
-          <thead>
-            <tr class="first-header">
-              <th @click="sortByColumn('title')" class="sortable">Skill Type</th>
-              <th @click="sortByColumn('category')" class="sortable">Skill Category</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(row, index) in sortedTablesData.leftTable" :key="index">
-              <td>{{ row.title }}</td>
-              <td>{{ row.category }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="scrollable" ref="scrollable">
-        <!-- Right Half Content Goes Here -->
-        <table id="right-table">
-          <thead>
-            <tr>
-              <th rowspan="2" @click="sortByColumn('relatedcategory')" class="sortable">Related Category</th>
-              <th rowspan="2" @click="sortByColumn('skills')" class="sortable">Skill</th>
-              <th v-for="(row, index) in categoryRef" :key="index" :colspan="getColspanForRow(row)"
-                  style="font-size: 14px; padding: 0px;">{{ row }}</th>
-            </tr>
-            <tr>
-              <th v-for="(row, index) in jobRole" :key="index">{{ row }}</th>
-            </tr>
-          </thead>
-          <tbody>
+        <div class="fixed-width" ref="fixedWidth">
+            <!-- Left Half Content Goes Here -->
+            <table id="left-table">
+                <thead>
+                    <tr class="first-header">
+                        <th>Skill Type</th>
+                        <th>Skill</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(row, index) in EnablingData" :key="index">
+                        <td>{{ row.title }}</td>
+                        <td class='hover' @click="handleRowClick('enablingskillsdetails',row.skills)">{{ row.skills }}</td>
+                    </tr>
+                    <tr v-for="(row, index) in FunctionalData" :key="index">
+                        <td>{{ row.title }}</td>
+                        <td class='hover' @click="handleRowClickFunc('functionalskillsdetails',row.skills)">{{ row.skills }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="scrollable" ref="scrollable">
+            <!-- Right Half Content Goes Here -->
+            <table id="right-table">
+                <thead>
+                    <tr>
+                        <th v-for="(row, index) in categoryRef" :key="index" :colspan="getColspanForRow(row)"
+                            style="font-size: 14px; padding: 0px;">{{ row }}</th>
+                    </tr>
+                    <tr>
+                        <th v-for="(row, index) in jobRole" :key="index" class='hover' @click="sendText(row)">{{ row }}</th>
+                    </tr>
+                </thead>
+                <tbody>
                     <tr v-for="(row, index) in EnablingData" :key="index" style="white-space: nowrap;">
-                        <td>{{ row.relatedcategory }}</td>
-                        <td>{{ row.skills }}</td>
                         <td v-for="(col, colIndex) in proficiencyLevelData[index]" :key="colIndex">{{ col }}</td>
                     </tr>
                     <tr v-for="(row, index) in FunctionalData" :key="index" style="white-space: nowrap;">
-                        <td>{{ row.relatedcategory }}</td>
-                        <td>{{ row.skills }}</td>
                         <td v-for="(col, colIndex) in proficiencyLevelData[index + EnablingData.length]"
                             :key="colIndex">{{ col }}</td>
                     </tr>
-            </tbody>
-          <!-- <tbody>
-            <tr v-for="(row, index) in sortedTablesData.leftTable" :key="index" style="white-space: nowrap;">
-              <td>{{ row.relatedcategory }}</td>
-              <td>{{ row.skills }}</td>
-              <td v-for="(col, colIndex) in getProficiencyLevelData(row.id)" :key="colIndex">{{ col }}</td>
-            </tr>
-          </tbody> -->
-        </table>
-      </div>
+                </tbody>
+            </table>
+
+        </div>
     </div>
-  </template>
+</template>
   
   
 <script setup>
-import { onMounted, ref, computed } from 'vue';
+import { onMounted, ref } from 'vue';
 import * as XLSX from 'xlsx/dist/xlsx.full.min.js';
 import { storage, ref as storageRef, getDownloadURL } from '@/firebase';
+import { useRouter } from 'vue-router';
 
 const fixedWidth = ref(null);
 const scrollable = ref(null);
@@ -74,85 +67,82 @@ const jobRole = ref([]);
 const jobCode = ref([]);
 const skillCode = ref([])
 
-const sortColumn = ref('title'); // Initialize sortColumn with a default value
-const sortOrder = ref(1); // Initialize sortOrder with a default value
 
 let proficiencyLevelData = ref([]);
 
+const router = useRouter();
 
-// Initialize proficiencyLevelData with zeros
-// for (let i = 0; i < skillCode.value.length; i++) {
-//     proficiencyLevelData.value.push([]);
-//     for (let j = 0; j < jobCode.value.length; j++) {
-//         proficiencyLevelData.value[i].push('0');
-//     }
-// }
-
-// var proficiencyLevelData = ref([
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-// ]);
-
-// Use refs to make the data reactive
-//var proficiencyLevelsRef = ref(proficiencyLevelData.value);
-
-const sortedTablesData = computed(() => {
-  return {
-    leftTable: sortTableData([...EnablingData.value, ...FunctionalData.value]),
-    rightTable: sortTableData([...proficiencyLevelData.value]), // Use proficiencyLevelData for the right table
-  };
-});
-
-const sortTableData = (data) => {
-  return [...data].sort((a, b) => {
-    const valueA = a[sortColumn.value];
-    const valueB = b[sortColumn.value];
-
-    if (valueA < valueB) return -1 * sortOrder.value;
-    if (valueA > valueB) return 1 * sortOrder.value;
-    return 0;
-  });
+const sendText = (text) => {
+  router.push({ name: 'skillsmap', params: { text: text } });
 };
 
-const sortByColumn = (column) => {
-  if (sortColumn.value === column) {
-    sortOrder.value *= -1; // Toggle between ascending and descending
-  } else {
-    sortColumn.value = column;
-    sortOrder.value = 1; // Default to ascending when changing the column
-  }
+const handleRowClick = async (route,escCode) => {
+    try {
+        const filePath = 'excel.xlsx';
+        const fileURL = await getDownloadURL(storageRef(storage, filePath));
 
-  const sortedData = sortTableData([...EnablingData.value, ...FunctionalData.value]);
+        const response = await fetch(fileURL, { mode: 'cors' });
+        const arrayBuffer = await response.arrayBuffer();
 
-  // Update the data properties
-  EnablingData.value = sortedData.slice(0, EnablingData.value.length);
-  FunctionalData.value = sortedData.slice(EnablingData.value.length);
+        const data = new Uint8Array(arrayBuffer);
+        const workbook = XLSX.read(data, { type: 'array' });
 
-  // No need to sort proficiencyLevelData
+        function getSkillCode(name) {
+            // Access the Functional Skills sheet to get the corresponding category for the skill code
+            const functionalSkillsSheet = workbook.Sheets['Job Role Skills'];
+            const categoryRow = XLSX.utils.sheet_to_json(functionalSkillsSheet)
+                .find(row => row['Skill Title'] === name);
+
+            return categoryRow ? categoryRow['Skill Code'] : '';
+        }
+
+        const escCodeValue = getSkillCode(escCode);
+        // Assuming 'router' is available in your component
+        if (router) {
+            router.push({ name: route, params: { escCode: escCodeValue } });
+        } else {
+            console.error("Router is not available.");
+            // Handle the case where 'router' is not available
+        }
+    } catch (error) {
+        console.error("An error occurred:", error);
+        // Handle the error appropriately
+    }
 };
 
-const getProficiencyLevelData = (rowId) => {
-  // Assuming proficiencyLevelData is a ref containing an array associated with each row
-  return proficiencyLevelData.value.find((item) => item.id === rowId);
+const handleRowClickFunc = async (route,escCode) => {
+    try {
+        const filePath = 'excel.xlsx';
+        const fileURL = await getDownloadURL(storageRef(storage, filePath));
+
+        const response = await fetch(fileURL, { mode: 'cors' });
+        const arrayBuffer = await response.arrayBuffer();
+
+        const data = new Uint8Array(arrayBuffer);
+        const workbook = XLSX.read(data, { type: 'array' });
+
+        function getSkillCode(name) {
+            // Access the Functional Skills sheet to get the corresponding category for the skill code
+            const functionalSkillsSheet = workbook.Sheets['Job Role Skills'];
+            const categoryRow = XLSX.utils.sheet_to_json(functionalSkillsSheet)
+                .find(row => row['Skill Title'] === name);
+
+            return categoryRow ? categoryRow['Skill Code'] : '';
+        }
+
+        const escCodeValue = getSkillCode(escCode);
+        // Assuming 'router' is available in your component
+        if (router) {
+            router.push({ name: route, params: { fscCode: escCodeValue } });
+        } else {
+            console.error("Router is not available.");
+            // Handle the case where 'router' is not available
+        }
+    } catch (error) {
+        console.error("An error occurred:", error);
+        // Handle the error appropriately
+    }
 };
-
-
 
 
 // Function to get colspan for each row
@@ -202,29 +192,41 @@ const fetchAndAnalyzeFile = async () => {
         function processJobRoleSkillsEnabling(worksheet) {
             const allRows = XLSX.utils.sheet_to_json(worksheet);
 
-            // Replace 'FSC' with 'Functional' and filter rows based on the modified Skill Type
-            var MatchingFunctional = allRows.map(row => ({
-                ...row,
-                'Skill Type': row['Skill Type'].replace('ESC', 'Enabling'),
-            }))
-                .filter(row => row['Skill Type'] === 'Enabling');
-
+            // Replace 'ESC' with 'Enabling' and filter rows based on the modified Skill Type
+            var MatchingFunctional = allRows
+                .map(row => ({
+                    ...row,
+                    'Skill Type': row['Skill Type'].replace('ESC', 'Enabling'),
+                }))
+                .filter(row => row['Skill Type'] === 'Enabling' && row['Skill Code'] !== undefined);
 
             if (MatchingFunctional.length > 0) {
                 // Extract skills, proficiency levels, and replace Skill Code with corresponding category
-                EnablingData.value = MatchingFunctional.map(row => ({
-                    title: row['Skill Type'],
-                    category: getCategoryForSkillCodeEnabling(row['Skill Code']),
-                    relatedcategory: getRelatedCategoryForSkillCodeEnabling(row['Skill Code']),
-                    skills: getSkillsForSkillCodeEnabling(row['Skill Code']),
-                }));
-                // Concatenate Skill Code values to the existing data in skillCode variable
-                skillCode.value = skillCode.value.concat(MatchingFunctional.map(row => row['Skill Code']));
+                const newSkillCodes = MatchingFunctional.map(row => row['Skill Code']);
 
+                // Add new skill codes to skillCode variable only if they don't already exist
+                newSkillCodes.forEach(skillCodeValue => {
+                    if (skillCodeValue !== undefined && !skillCode.value.includes(skillCodeValue)) {
+                        skillCode.value.push(skillCodeValue);
+
+                        // Add the skill to EnablingData only if it's not already present
+                        const isSkillAlreadyPresent = EnablingData.value.some(skill => skill.skills === getSkillsForSkillCodeEnabling(skillCodeValue));
+                        if (!isSkillAlreadyPresent) {
+                            EnablingData.value.push({
+                                title: 'Enabling',  // Assuming 'Enabling' as the title for this case
+                                category: getCategoryForSkillCodeEnabling(skillCodeValue),
+                                relatedcategory: getRelatedCategoryForSkillCodeEnabling(skillCodeValue),
+                                skills: getSkillsForSkillCodeEnabling(skillCodeValue),
+                            });
+                        }
+                    }
+                });
             } else {
-                console.log('No matching rows found for Skill Type "Functional".');
+                console.log('No matching rows found for Skill Type "Enabling" or Skill Code is undefined.');
             }
         }
+
+
 
         function getCategoryForSkillCodeEnabling(skillCode) {
             // Access the Functional Skills sheet to get the corresponding category for the skill code
@@ -259,25 +261,36 @@ const fetchAndAnalyzeFile = async () => {
             const allRows = XLSX.utils.sheet_to_json(worksheet);
 
             // Replace 'FSC' with 'Functional' and filter rows based on the modified Skill Type
-            var MatchingFunctional = allRows.map(row => ({
-                ...row,
-                'Skill Type': row['Skill Type'].replace('FSC', 'Functional'),
-            }))
-                .filter(row => row['Skill Type'] === 'Functional');
-
+            var MatchingFunctional = allRows
+                .map(row => ({
+                    ...row,
+                    'Skill Type': row['Skill Type'].replace('FSC', 'Functional'),
+                }))
+                .filter(row => row['Skill Type'] === 'Functional' && row['Skill Code'] !== undefined);
 
             if (MatchingFunctional.length > 0) {
                 // Extract skills, proficiency levels, and replace Skill Code with corresponding category
-                FunctionalData.value = MatchingFunctional.map(row => ({
-                    title: row['Skill Type'],
-                    category: getCategoryForSkillCode(row['Skill Code']),
-                    relatedcategory: getRelatedCategoryForSkillCode(row['Skill Code']),
-                    skills: getSkillsForSkillCode(row['Skill Code']),
-                }));
-                // Concatenate Skill Code values to the existing data in skillCode variable
-                skillCode.value = skillCode.value.concat(MatchingFunctional.map(row => row['Skill Code']));
+                const newSkillCodes = MatchingFunctional.map(row => row['Skill Code']);
+
+                // Add new skill codes to skillCode variable only if they don't already exist
+                newSkillCodes.forEach(skillCodeValue => {
+                    if (skillCodeValue !== undefined && !skillCode.value.includes(skillCodeValue)) {
+                        skillCode.value.push(skillCodeValue);
+
+                        // Add the skill to FunctionalData only if it's not already present
+                        const isSkillAlreadyPresent = FunctionalData.value.some(skill => skill.skills === getSkillsForSkillCode(skillCodeValue));
+                        if (!isSkillAlreadyPresent) {
+                            FunctionalData.value.push({
+                                title: 'Functional',  // Assuming 'Functional' as the title for this case
+                                category: getCategoryForSkillCode(skillCodeValue),
+                                relatedcategory: getRelatedCategoryForSkillCode(skillCodeValue),
+                                skills: getSkillsForSkillCode(skillCodeValue),
+                            });
+                        }
+                    }
+                });
             } else {
-                console.log('No matching rows found for Skill Type "Functional".');
+                console.log('No matching rows found for Skill Type "Functional" or Skill Code is undefined.');
             }
         }
 
@@ -306,6 +319,15 @@ const fetchAndAnalyzeFile = async () => {
                 .find(row => row['FSC Code'] === skillCode);
 
             return categoryRow ? categoryRow['FSC Title'] : '';
+        }
+
+        function getSkillCode(name) {
+            // Access the Functional Skills sheet to get the corresponding category for the skill code
+            const functionalSkillsSheet = workbook.Sheets['Job Role Skills'];
+            const categoryRow = XLSX.utils.sheet_to_json(functionalSkillsSheet)
+                .find(row => row['Skill Title'] === name);
+
+            return categoryRow ? categoryRow['Skill Code'] : '';
         }
 
         const jobRoleSheetName = 'Job Role Description';
@@ -355,7 +377,7 @@ const fetchAndAnalyzeFile = async () => {
         // Iterate through each job code and skill code combination
         console.log(skillCode) 
         console.log(jobCode)
-        console.log(proficiencyLevelData)
+        //console.log(proficiencyLevelData)
 
         for (let i = 0; i < skillCode.value.length; i++) {
             proficiencyLevelData.value.push([]);
@@ -367,7 +389,7 @@ const fetchAndAnalyzeFile = async () => {
         // Iterate through each job code and skill code combination
         skillCode.value.forEach((skillCodeValue, rowIndex) => {
             jobCode.value.forEach((jobCodeValue, colIndex) => {
-                console.log(skillCodeValue + ' paired with ' + jobCodeValue);
+                //console.log(skillCodeValue + ' paired with ' + jobCodeValue);
 
                 // Check if both jobCodeValue and skillCodeValue are defined
                 if (skillCodeValue !== undefined) {
@@ -379,9 +401,9 @@ const fetchAndAnalyzeFile = async () => {
 
                     // Check if matchingRow is defined and 'Proficiency Level' is present
                     if (matchingRow && 'Proficiency Level' in matchingRow) {
-                        console.log(matchingRow['Proficiency Level']);
-                        console.log(rowIndex);
-                        console.log(colIndex);
+                        //console.log(matchingRow['Proficiency Level']);
+                        //console.log(rowIndex);
+                        //console.log(colIndex);
 
                         // Assign the proficiency level if there is a match
                         proficiencyLevelData.value[rowIndex][colIndex] = matchingRow['Proficiency Level'];
@@ -420,14 +442,17 @@ function syncScroll() {
     // Set the height of fixed-width to match scrollable
     // fixedWidth.value.style.height = `${scrollable.value.clientHeight}px`; // Do not uncomment this line
 }
-
 </script>
 
 <style scoped>
+
+.hover:hover{
+    cursor: pointer;
+}
 .container {
     display: flex;
     padding: 0px;
-    max-height: 100% !important;
+    max-height: 800px !important;
     width: 150vw;
 }
 
@@ -449,7 +474,7 @@ function syncScroll() {
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    height: 780px;
+    height: 800px;
 }
 
 .first-header {
@@ -465,7 +490,7 @@ function syncScroll() {
     overflow-x: auto;
     overflow-y: scroll;
     min-width: 0;
-    height: 795px;
+    height: 815px;
     width: 300%;
     /* Add this line to allow the div to shrink below its content size */
 }
@@ -500,6 +525,7 @@ td {
     text-align: left;
     color: white;
 }
+
 @media (max-width: 1900px) {
     .fixed-width {
         height: 650px !important;
@@ -538,13 +564,6 @@ td {
         width: 200% !important;
     }
 }
-.sortable {
-  cursor: pointer;
-}
 
-.sortable:hover {
-  background-color: #555;
-}
 
 </style>
-
