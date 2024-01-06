@@ -26,8 +26,6 @@
             <table id="right-table">
                 <thead>
                     <tr>
-                        <th rowspan="2">Skill Category</th>
-                        <th rowspan="2">Related Category</th>
                         <th v-for="(row, index) in categoryRef" :key="index" :colspan="getColspanForRow(row)"
                             style="font-size: 14px; padding: 0px;">{{ row }}</th>
                     </tr>
@@ -37,32 +35,22 @@
                 </thead>
                 <tbody>
                     <tr v-for="(row, index) in EnablingData" :key="index" style="white-space: nowrap;">
-                        <td>{{ row.category }}</td>
-                        <td>{{ row.relatedcategory }}</td>
                         <td v-for="(col, colIndex) in proficiencyLevelData[index]" :key="colIndex">{{ col }}</td>
                     </tr>
                     <tr v-for="(row, index) in FunctionalData" :key="index" style="white-space: nowrap;">
-                        <td>{{ row.category }}</td>
-                        <td>{{ row.relatedcategory }}</td>
                         <td v-for="(col, colIndex) in proficiencyLevelData[index + EnablingData.length]"
                             :key="colIndex">{{ col }}</td>
                     </tr>
-            </tbody>
-          <!-- <tbody>
-            <tr v-for="(row, index) in sortedTablesData.leftTable" :key="index" style="white-space: nowrap;">
-              <td>{{ row.relatedcategory }}</td>
-              <td>{{ row.skills }}</td>
-              <td v-for="(col, colIndex) in getProficiencyLevelData(row.id)" :key="colIndex">{{ col }}</td>
-            </tr>
-          </tbody> -->
-        </table>
-      </div>
+                </tbody>
+            </table>
+
+        </div>
     </div>
-  </template>
+</template>
   
   
 <script setup>
-import { onMounted, ref, computed } from 'vue';
+import { onMounted, ref } from 'vue';
 import * as XLSX from 'xlsx/dist/xlsx.full.min.js';
 import { storage, ref as storageRef, getDownloadURL } from '@/firebase';
 import { useRouter } from 'vue-router';
@@ -79,8 +67,6 @@ const jobRole = ref([]);
 const jobCode = ref([]);
 const skillCode = ref([])
 
-const sortColumn = ref('title'); // Initialize sortColumn with a default value
-const sortOrder = ref(1); // Initialize sortOrder with a default value
 
 let proficiencyLevelData = ref([]);
 
@@ -464,7 +450,6 @@ function syncScroll() {
     // Set the height of fixed-width to match scrollable
     // fixedWidth.value.style.height = `${scrollable.value.clientHeight}px`; // Do not uncomment this line
 }
-
 </script>
 
 <style scoped>
@@ -549,38 +534,44 @@ td {
     color: white;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1900px) {
     .fixed-width {
-        height: 600px !important;
+        height: 650px !important;
     }
     .first-header {
         height: 122px;
     }
     .scrollable {
-        height: 612px !important;
+        height: 652px !important;
         width: 300% !important;
     }
 }
 
-@media (max-width: 1377px) {
+@media (max-width: 1700px) {
     .fixed-width {
-        height: 500px !important;
+        height: 550px !important;
     }
     .first-header {
         height: 122px;
     }
     .scrollable {
-        height: 515px !important;
+        height: 562px !important;
+        width: 300% !important;
+    }
+}
+
+@media (max-width: 1400px) {
+    .fixed-width {
+        height: 430px !important;
+    }
+    .first-header {
+        height: 122px;
+    }
+    .scrollable {
+        height: 445px !important;
         width: 200% !important;
     }
 }
-.sortable {
-  cursor: pointer;
-}
 
-.sortable:hover {
-  background-color: #555;
-}
 
 </style>
-
