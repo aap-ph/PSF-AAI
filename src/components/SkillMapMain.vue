@@ -1,37 +1,41 @@
 <template>
     <div class="container">
-      <div class="fixed-width" ref="fixedWidth">
-        <!-- Left Half Content Goes Here -->
-        <table id="left-table">
-          <thead>
-            <tr class="first-header">
-              <th @click="sortByColumn('title')" class="sortable">Skill Type</th>
-              <th @click="sortByColumn('category')" class="sortable">Skill Category</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(row, index) in sortedTablesData.leftTable" :key="index">
-              <td>{{ row.title }}</td>
-              <td>{{ row.category }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="scrollable" ref="scrollable">
-        <!-- Right Half Content Goes Here -->
-        <table id="right-table">
-          <thead>
-            <tr>
-              <th rowspan="2" @click="sortByColumn('relatedcategory')" class="sortable">Related Category</th>
-              <th rowspan="2" @click="sortByColumn('skills')" class="sortable">Skill</th>
-              <th v-for="(row, index) in categoryRef" :key="index" :colspan="getColspanForRow(row)"
-                  style="font-size: 14px; padding: 0px;">{{ row }}</th>
-            </tr>
-            <tr>
-              <th v-for="(row, index) in jobRole" :key="index">{{ row }}</th>
-            </tr>
-          </thead>
-          <tbody>
+        <div class="fixed-width" ref="fixedWidth">
+            <!-- Left Half Content Goes Here -->
+            <table id="left-table">
+                <thead>
+                    <tr class="first-header">
+                        <th>Skill Type</th>
+                        <th>Skill</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(row, index) in EnablingData" :key="index">
+                        <td>{{ row.title }}</td>
+                        <td class='hover' @click="handleRowClick('enablingskillsdetails',row.skills)">{{ row.skills }}</td>
+                    </tr>
+                    <tr v-for="(row, index) in FunctionalData" :key="index">
+                        <td>{{ row.title }}</td>
+                        <td class='hover' @click="handleRowClickFunc('functionalskillsdetails',row.skills)">{{ row.skills }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="scrollable" ref="scrollable">
+            <!-- Right Half Content Goes Here -->
+            <table id="right-table">
+                <thead>
+                    <tr>
+                        <th rowspan="2">Skill Category</th>
+                        <th rowspan="2">Related Category</th>
+                        <th v-for="(row, index) in categoryRef" :key="index" :colspan="getColspanForRow(row)"
+                            style="font-size: 14px; padding: 0px;">{{ row }}</th>
+                    </tr>
+                    <tr>
+                        <th v-for="(row, index) in jobRole" :key="index" class='hover' @click="sendText(row)">{{ row }}</th>
+                    </tr>
+                </thead>
+                <tbody>
                     <tr v-for="(row, index) in EnablingData" :key="index" style="white-space: nowrap;">
                         <td>{{ row.category }}</td>
                         <td>{{ row.relatedcategory }}</td>
@@ -153,81 +157,6 @@ const handleRowClickFunc = async (route,escCode) => {
         // Handle the error appropriately
     }
 };
-
-
-// Initialize proficiencyLevelData with zeros
-// for (let i = 0; i < skillCode.value.length; i++) {
-//     proficiencyLevelData.value.push([]);
-//     for (let j = 0; j < jobCode.value.length; j++) {
-//         proficiencyLevelData.value[i].push('0');
-//     }
-// }
-
-// var proficiencyLevelData = ref([
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-//     ['', '', '', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5', '3', '4', '4', '5'],
-// ]);
-
-// Use refs to make the data reactive
-//var proficiencyLevelsRef = ref(proficiencyLevelData.value);
-
-const sortedTablesData = computed(() => {
-  return {
-    leftTable: sortTableData([...EnablingData.value, ...FunctionalData.value]),
-    rightTable: sortTableData([...proficiencyLevelData.value]), // Use proficiencyLevelData for the right table
-  };
-});
-
-const sortTableData = (data) => {
-  return [...data].sort((a, b) => {
-    const valueA = a[sortColumn.value];
-    const valueB = b[sortColumn.value];
-
-    if (valueA < valueB) return -1 * sortOrder.value;
-    if (valueA > valueB) return 1 * sortOrder.value;
-    return 0;
-  });
-};
-
-const sortByColumn = (column) => {
-  if (sortColumn.value === column) {
-    sortOrder.value *= -1; // Toggle between ascending and descending
-  } else {
-    sortColumn.value = column;
-    sortOrder.value = 1; // Default to ascending when changing the column
-  }
-
-  const sortedData = sortTableData([...EnablingData.value, ...FunctionalData.value]);
-
-  // Update the data properties
-  EnablingData.value = sortedData.slice(0, EnablingData.value.length);
-  FunctionalData.value = sortedData.slice(EnablingData.value.length);
-
-  // No need to sort proficiencyLevelData
-};
-
-const getProficiencyLevelData = (rowId) => {
-  // Assuming proficiencyLevelData is a ref containing an array associated with each row
-  return proficiencyLevelData.value.find((item) => item.id === rowId);
-};
-
-
 
 
 // Function to get colspan for each row
@@ -532,7 +461,7 @@ function syncScroll() {
 
 <style scoped>
 
-.hover:hover:hover{
+.hover:hover{
     cursor: pointer;
 }
 .container {
