@@ -573,5 +573,18 @@ td {
     }
 }
 
+@media (max-width: 1100px) {
+    .fixed-width {
+        height: 290px !important;
+    }
+    .first-header {
+        height: 122px;
+    }
+    .scrollable {
+        height: 300px !important;
+        width: 200% !important;
+    }
+}
+
 
 </style>
