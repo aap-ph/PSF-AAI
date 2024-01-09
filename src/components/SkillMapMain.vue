@@ -1,6 +1,7 @@
 <template>
     <div class="container">
-        <div v-if="loading" class="loading-message">
+         <!-- Add loading message with animated dots -->
+         <div v-if="loading" class="loading-message">
             Loading data<span class="dot1">.</span><span class="dot2">.</span><span class="dot3">.</span>
         </div>
         <div v-if="!loading" class="fixed-width" ref="fixedWidth">
@@ -442,12 +443,10 @@ onMounted(() => {
     syncScroll();
     fetchAndAnalyzeFile();
 
-    // Add event listener to synchronize scroll from scrollable to fixed-width
     scrollable.value.addEventListener('scroll', () => {
         fixedWidth.value.scrollTop = scrollable.value.scrollTop;
     });
 
-    // Add event listener to synchronize scroll from fixed-width to scrollable
     fixedWidth.value.addEventListener('scroll', () => {
         scrollable.value.scrollTop = fixedWidth.value.scrollTop;
     });
@@ -483,7 +482,6 @@ function syncScroll() {
         opacity: 1;
     }
 }
-
 .hover:hover{
     cursor: pointer;
 }
