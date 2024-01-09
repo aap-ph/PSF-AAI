@@ -10,8 +10,10 @@ import FunctionalSkillsDetails from '../views/FunctionalSkillsDetailsView.vue'
 import EnablingSkills from '../views/EnablingSkillsView.vue'
 import ContactUs from '../views/ContactUsView.vue'
 import AboutThePSF from '../views/AboutThePSFView.vue'
+import TAAE from '../views/TAAEView.vue'
 import Message from '../views/MessageView.vue'
 import TechnicalGuide from '../views/TechnicalGuideView.vue'
+import Testimonial from '../views/TestimonialView.vue'
 import Acknowledgement from '../views/AcknowledgmentView.vue'
 import RevisionLog from '../views/RevisionLogView.vue'
 
@@ -66,6 +68,11 @@ const router = createRouter({
       component: AboutThePSF
     },
     {
+      path: '/taae',
+      name: 'taae',
+      component: TAAE
+    },
+    {
       path: '/message',
       name: 'message',
       component: Message
@@ -74,6 +81,11 @@ const router = createRouter({
       path: '/technicalguide',
       name: 'technicalguide',
       component: TechnicalGuide
+    },
+    {
+      path: '/testimonial',
+      name: 'testimonial',
+      component: Testimonial
     },
     {
       path: '/acknowledgement',

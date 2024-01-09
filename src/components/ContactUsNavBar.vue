@@ -19,10 +19,16 @@
             <router-link class="nav-link" :to="{ path: '/abouthePSF' }" :class="{ 'active': isActive('/abouthePSF') }">About the PSF</router-link>
           </li>
           <li class="nav-item">
+            <router-link class="nav-link" :to="{ path: '/taae' }" :class="{ 'active': isActive('/taae') }">The Analytics & AI Ecosystem</router-link>
+          </li>
+          <li class="nav-item">
             <router-link class="nav-link" :to="{ path: '/message' }" :class="{ 'active': isActive('/message') }">Messages</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" :to="{ path: '/technicalguide' }" :class="{ 'active': isActive('/technicalguide') }">Technical Guide</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" :to="{ path: '/testimonial' }" :class="{ 'active': isActive('/testimonial') }">Testimonials</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" :to="{ path: '/acknowledgement' }" :class="{ 'active': isActive('/acknowledgement') }">Acknowledgment</router-link>

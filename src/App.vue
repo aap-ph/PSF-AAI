@@ -5,12 +5,15 @@ import NavBarView from './views/NavBarView.vue';
 
 
 <template>
-  <div class="header w-100">
-    <img src="/DICT Logo.png" alt="DICT Logo" class="logo" />
-    <img src="/IIDB Logo.png" alt="IIDB Logo" class="logo" />
-    <img src="/Bagong Pilipinas Logo.jpg" alt="Bagong Pilipinas Logo" class="logo" />
+  <div class="header w-100 p-2">
+    <div class="left">
+      <img src="/Bagong Pilipinas Logo.jpg" alt="Bagong Pilipinas Logo" class="logo" />
+      <img src="/DICT Logo.png" alt="DICT Logo" class="logo" />
+    </div>
     <div class="text-after-images">
-      <p>THE PHILIPPINES SKILLS FRAMEWORK FOR ANALYTICS & ARTIFICIAL INTELLIGENCE</p>
+      <img src="/PSF Logo.png" alt="PSF Logo" class="logo" />
+      <p>ANALYTICS & ARTIFICIAL INTELLIGENCE</p>
+      <p class='Text2'>UNOFFICIAL RELEASE <br>FOR VALIDATION ONLY</p>
     </div>
     <img src="/AAP Logo.png" alt="AAP Logo" class="logo" />
   </div>
@@ -24,11 +27,24 @@ import NavBarView from './views/NavBarView.vue';
 
 <style scoped>
 
+.Text2{
+  margin-left: 30px;
+  color: red; 
+  font-weight: bold !important;
+  line-height: 20px;
+}
+
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: white;
+}
+
+p{
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -39,9 +55,9 @@ import NavBarView from './views/NavBarView.vue';
 
 .text-after-images {
   text-align: center;
-  margin-top: 20px; /* Adjust margin as needed */
-  margin-right: 25px;
-  margin-left: 25px;
+  display: flex!important;
+  flex-direction: row;
+  align-items: center;
 }
 
 .text-after-images p{

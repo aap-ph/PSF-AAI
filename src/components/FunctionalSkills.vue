@@ -3,29 +3,31 @@
     <table class="styled-table mb-4">
       <thead>
         <tr>
-          <th style="border: none;"></th>
-          <th @click="sortByColumn('FSC Code')" class="sortable">Code</th>
-          <th @click="sortByColumn('FSC Title')" class="sortable">Title</th>
-          <th @click="sortByColumn('FSC Category')" class="sortable">Category</th>
-          <th @click="sortByColumn('FSC Related Category')" class="sortable">Related Category</th>
-          <th>Description</th>
-          <th style="border: none;"></th>
+          <th style="border: none; width: 30px;"></th>
+          <th @click="sortByColumn('FSC Code')" class="sortable" style="width: 10%;">Code</th>
+          <th @click="sortByColumn('FSC Title')" class="sortable" style="width: 10%;">Skill</th>
+          <th @click="sortByColumn('FSC Category')" class="sortable" style="width: 10%;">Category</th>
+          <th @click="sortByColumn('FSC Related Category')" class="sortable" style="width: 10%;">Related Category</th>
+          <th style="width: 50%;">Description</th> <!-- Adjusted width to 50% -->
+          <th style="border: none; width: 30px;"></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(row, index) in sortedFunctionalSkillsData" :key="index" @click="navigateToDetails(row['FSC Code'])">
-          <td style="border: none;"></td>
-          <td>{{ row['FSC Code'] }}</td>
-          <td>{{ row['FSC Title'] }}</td>
-          <td>{{ row['FSC Category'] }}</td>
-          <td>{{ row['FSC Related Category'] }}</td>
-          <td style="white-space: normal; text-align: left; width: 50%;">{{ row['FSC Description'] }}</td>
-          <td style="border: none;"></td>
+          <td style="border: none; width: 30px;"></td>
+          <td style="width: 10%;">{{ row['FSC Code'] }}</td>
+          <td style="width: 10%;">{{ row['FSC Title'] }}</td>
+          <td style="width: 10%;">{{ row['FSC Category'] }}</td>
+          <td style="width: 10%;">{{ row['FSC Related Category'] }}</td>
+          <td style="text-align: left; width: 50%;">{{ row['FSC Description'] }}</td> <!-- Adjusted width to 50% -->
+          <td style="border: none; width: 30px;"></td>
         </tr>
       </tbody>
     </table>
   </div>
 </template>
+
+
 
   
 <script setup>
@@ -43,12 +45,11 @@ const sortOrder = ref(1); // 1 for ascending, -1 for descending
 
 
 const router = useRouter();
-const navigateToDetails = (fscCode) => {
-  // Assuming you have a route named 'details' where you want to send the FSC Code
-
-  // Use router.push to navigate to the 'details' route with the FSC Code as a parameter
-  router.push({ name: 'functionalskillsdetails', params: { fscCode: fscCode } });
+const navigateToDetails = (Code) => {
+  router.push({ name: 'functionalskillsdetails', params: { fscCode: Code } });
 };
+
+
 
 
 const fetchFunctionalSkills = async () => {
@@ -125,7 +126,6 @@ onMounted(fetchFunctionalSkills);
 
 </script>
 
-  
 <style scoped>
 .styled-table {
   width: 100%;
@@ -142,7 +142,6 @@ td:hover {
 .styled-table td {
   text-align: left;
   color: white;
-  white-space: nowrap;
   padding: 10px;
   border: 1px solid #ddd;
 }
@@ -163,4 +162,3 @@ td:hover {
   background-color: #555;
 }
 </style>
-  

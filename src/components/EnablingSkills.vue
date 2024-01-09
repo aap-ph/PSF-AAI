@@ -3,29 +3,30 @@
     <table class="styled-table mb-4">
       <thead>
         <tr>
-          <th style="border: none;"></th>
-          <th @click="sortByColumn('ESC Code')" class="sortable">Code</th>
-          <th @click="sortByColumn('ESC Title')" class="sortable">Title</th>
-          <th @click="sortByColumn('ESC Category')" class="sortable">Category</th>
-          <th @click="sortByColumn('ESC Related Category')" class="sortable">Related Category</th>
-          <th>Description</th>
-          <th style="border: none;"></th>
+          <th style="border: none; width: 30px;"></th>
+          <th @click="sortByColumn('ESC Code')" class="sortable" style="width: 10%;">Code</th>
+          <th @click="sortByColumn('ESC Title')" class="sortable" style="width: 10%;">Title</th>
+          <th @click="sortByColumn('ESC Category')" class="sortable" style="width: 10%;">Category</th>
+          <th @click="sortByColumn('ESC Related Category')" class="sortable" style="width: 10%;">Related Category</th>
+          <th style="width: 50%;">Description</th>
+          <th style="border: none; width: 30px;"></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(row, index) in sortedESCData" :key="index" @click="handleRowClick(row['ESC Code'])">
-          <td style="border: none;"></td>
-          <td>{{ row['ESC Code'] }}</td>
-          <td>{{ row['ESC Title'] }}</td>
-          <td>{{ row['ESC Category'] }}</td>
-          <td>{{ row['ESC Related Category'] }}</td>
+          <td style="border: none; width: 30px;"></td>
+          <td style="width: 10%;">{{ row['ESC Code'] }}</td>
+          <td style="width: 10%;">{{ row['ESC Title'] }}</td>
+          <td style="width: 10%;">{{ row['ESC Category'] }}</td>
+          <td style="width: 10%;">{{ row['ESC Related Category'] }}</td>
           <td style="white-space: normal; text-align: left; width: 50%;">{{ row['ESC Description'] }}</td>
-          <td style="border: none;"></td>
+          <td style="border: none; width: 30px;"></td>
         </tr>
       </tbody>
     </table>
   </div>
 </template>
+
   
 <script setup>
 import { ref, onMounted, computed } from 'vue';
@@ -137,7 +138,6 @@ td:hover {
 .styled-table td {
   text-align: left;
   color: white;
-  white-space: nowrap;
   padding: 10px;
   border: 1px solid #ddd;
 }
