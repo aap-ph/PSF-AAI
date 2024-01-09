@@ -2,13 +2,13 @@
     <div class="container">
          <!-- Add loading message with animated dots -->
          <div v-if="loading" class="loading-message">
-            Loading data<span class="dot1">.</span><span class="dot2">.</span><span class="dot3">.</span>
+            Loading data...
         </div>
-        <div v-if="!loading" class="fixed-width" ref="fixedWidth">
+        <div class="fixed-width" ref="fixedWidth">
             <!-- Left Half Content Goes Here -->
             <table id="left-table">
                 <thead>
-                    <tr class="first-header">
+                    <tr v-if="!loading" class="first-header">
                         <th>Skill Type</th>
                         <th>Skill</th>
                     </tr>
@@ -469,19 +469,6 @@ function syncScroll() {
     color: white;
 }
 
-/* Animated dots */
-.dot1, .dot2, .dot3 {
-    animation: dotAnimation 1.5s infinite;
-}
-
-@keyframes dotAnimation {
-    0%, 80%, 100% {
-        opacity: 0.5;
-    }
-    40% {
-        opacity: 1;
-    }
-}
 .hover:hover{
     cursor: pointer;
 }
