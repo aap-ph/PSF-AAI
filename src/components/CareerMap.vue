@@ -1,22 +1,24 @@
 <template>
-  <table class="styled-table mb-3">
-    <tr>
-      <th style="border-bottom: solid white; border-right: solid white;"></th>
-      <td style="width: 10px;border-bottom: solid white;"></td>
-      <td style="font-weight: bold; left: 25px; top: 1px; border-bottom: solid white; text-align: center;" :title="D3">Business<br> Intelligence &<br> Strategy</td>
-      <td style="width: 10px;border-bottom: solid white;"></td>
-      <td style="border-bottom: solid white; font-weight: bold; left: 165px; top: 30px;" :title="G3">Data Stewardship</td>
-      <td style="border-bottom: solid white; width: 10px;"></td>
-      <td style="border-bottom: solid white; font-weight: bold; left: 325px; top: 30px;" :title="J3">Data Engineering</td>
-      <td style="border-bottom: solid white; width: 10px;"></td>
-      <td style="border-bottom: solid white; font-weight: bold; left: 495px; top: 30px;" :title="M3">Data Science</td>
-      <td style="border-bottom: solid white; width: 10px;"></td>
-      <td style="border-bottom: solid white; font-weight: bold; left: 645px; top: 30px;" :title="P3">AI Engineering</td>
-      <td style="border-bottom: solid white; width: 10px;"></td>
-      <td style="border-bottom: solid white; font-weight: bold; left: 795px; top: 15px; text-align: center;" :title="S3">Applied Data/AI<br>Research</td>
-      <td style="border-bottom: solid white; width: 10px;"></td>
-      <td style="border-bottom: solid white; font-weight: bold; left: 965px; top: 15px; text-align: center;" :title="V3">Data/AI<br>Education</td>
-    </tr>
+  <div>
+    <div class="table-container">
+      <table class="styled-table mb-3">
+        <tr>
+          <th style="border-bottom: solid white; border-right: solid white; width: 200px;"></th>
+          <td style="width: 10px;border-bottom: solid white;"></td>
+          <td style="font-weight: bold; left: 25px; top: 1px; border-bottom: solid white; text-align: center; width: 200px;" :title="D3">Business<br> Intelligence &<br> Strategy</td>
+          <td style="width: 10px;border-bottom: solid white;"></td>
+          <td style="border-bottom: solid white; font-weight: bold; left: 165px; top: 30px; width: 200px;" :title="G3">Data Stewardship</td>
+          <td style="border-bottom: solid white; width: 10px;"></td>
+          <td style="border-bottom: solid white; font-weight: bold; left: 325px; top: 30px; width: 200px;" :title="J3">Data Engineering</td>
+          <td style="border-bottom: solid white; width: 10px;"></td>
+          <td style="border-bottom: solid white; font-weight: bold; left: 495px; top: 30px; width: 200px;" :title="M3">Data Science</td>
+          <td style="border-bottom: solid white; width: 10px;"></td>
+          <td style="border-bottom: solid white; font-weight: bold; left: 645px; top: 30px; width: 200px;" :title="P3">AI Engineering</td>
+          <td style="border-bottom: solid white; width: 10px;"></td>
+          <td style="border-bottom: solid white; font-weight: bold; left: 795px; top: 15px; text-align: center; width: 200px;" :title="S3">Applied Data/AI<br>Research</td>
+          <td style="border-bottom: solid white; width: 10px;"></td>
+          <td style="border-bottom: solid white; font-weight: bold; left: 965px; top: 15px; text-align: center; width: 200px;" :title="V3">Data/AI<br>Education</td>
+        </tr>
     <tr>
       <th style=" border-right: solid white">
       </th>
@@ -135,12 +137,207 @@
       <td style="width: 10px;"></td><td colspan="13" style="border: solid white;" @click="sendText(D29)">{{D29}}</td>
     </tr>
   </table>
+  <table class="dotted-overlay">
+      <tbody>
+        <tr style="height: 100px;">
+          <td style=" width: 11%;"></td>
+          <td style=""></td>
+          <td></td>
+          <td style="  width: 10%;"></td>
+          <td rowspan="5" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
+          <td></td>
+          <td style="  width: 10.5%;"></td>
+          <td rowspan="7" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
+          <td></td>
+          <td style="  width: 11%;"></td>
+          <td rowspan="6" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
+          <td></td>
+          <td style="  width: 10.5%;"></td>
+          <td rowspan="5" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
+          <td></td>
+          <td style="  width: 10.5%;"></td>
+          <td rowspan="6" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
+          <td></td>
+          <td style=" width: 10.5%;"></td>
+          <td rowspan="6" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
+          <td></td>
+          <td style=""></td>
+        </tr>
+        <tr style="height: 100px;">
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr style="height: 120px;">
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+          <tr style="height: 120px;">
+            <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          </tr>
+        <tr  style="height: 100px;">
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr style="height: 110px;">
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+        </tr>
+        <tr style="height: 70px;">
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+        </tr>
+        <tr style="height: 70px;">
+          
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
 
 </template>
 <style scoped>
+.table-container {
+  position: relative;
+}
+
+/* Style for the dotted-bordered table overlay */
+.dotted-overlay {
+  position: absolute; /* or position: fixed; depending on your layout */
+  border-collapse: collapse;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Add this to make sure the overlay is on top */
+  pointer-events: none; /* Add this to allow interaction with the table underneath */
+  background: transparent;
+}
+
 .styled-table {
   width: 100%;
   border-collapse: collapse;
+  background-color: #44546a;
+  position: relative; /* Add this to position the table relative to its container */
+  z-index: 0; /* Add this to position the table underneath the overlay */
 }
 
 td:hover{
@@ -149,11 +346,10 @@ td:hover{
 
 .styled-table th,
 .styled-table td {
-  /* border: 1px solid #ddd; */
   padding: 10px;
   margin: 100px;
   text-align: center;
-  color: white; /* Set text color to white */
+  color: white;
 }
 
 .styled-table td img {
@@ -166,6 +362,7 @@ td:hover{
     width: 30px;
   }
 </style>
+
 
 <script setup>
 import { useRouter } from 'vue-router';
