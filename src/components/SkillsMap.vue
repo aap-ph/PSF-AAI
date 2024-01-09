@@ -34,7 +34,7 @@
                             <p>No tasks available for the specified job role.</p>
                         </div>
                     </div>
-                    <div class="performance">
+                    <div class="performance mt-5">
                         <div class="title">
                             Performance Expectations
                         </div>
@@ -62,9 +62,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="(FSC, index) in FSC" :key="index" @click="redirectToFSCDetails('functionalskillsdetails', FSC.JobCode)">
+                                    <tr v-for="(FSC, index) in FSC" :key="index"
+                                        @click="redirectToFSCDetails('functionalskillsdetails', FSC.JobCode)">
                                         <td>{{ FSC.title }}</td>
-                                        <td>{{ FSC.proficiency }}</td>
+                                        <td style="text-align: center;">{{ FSC.proficiency }}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -84,9 +85,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="(ESC, index) in ESC" :key="index"  @click="redirectToESCDetails('enablingskillsdetails',ESC.JobCode)" >
+                                    <tr v-for="(ESC, index) in ESC" :key="index"
+                                        @click="redirectToESCDetails('enablingskillsdetails', ESC.JobCode)">
                                         <td>{{ ESC.title }}</td>
-                                        <td>{{ ESC.proficiency }}</td>
+                                        <td style="text-align: center;">{{ ESC.proficiency }}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -120,12 +122,16 @@ var FSC = ref([]);
 var ESC = ref([]);
 
 const router = useRouter();
-const redirectToFSCDetails = (page,skillTitle) => {
+const redirectToFSCDetails = (page, skillTitle) => {
     router.push({ name: page, params: { fscCode: skillTitle } });
 };
 
-const redirectToESCDetails = (page,skillTitle) => {
+const redirectToESCDetails = (page, skillTitle) => {
     router.push({ name: page, params: { escCode: skillTitle } });
+};
+
+const sortSkills = (skills) => {
+    return skills.sort((a, b) => a.title.localeCompare(b.title));
 };
 
 const fetchAndAnalyzeFile = async () => {
@@ -252,6 +258,10 @@ const fetchAndAnalyzeFile = async () => {
         if (workbook.SheetNames.includes(skillsSheetName)) {
             const skillsWorksheet = workbook.Sheets[skillsSheetName];
             processJobRoleSkills(skillsWorksheet);
+
+            // Sort FSC and ESC arrays
+            FSC.value = sortSkills(FSC.value);
+            ESC.value = sortSkills(ESC.value);  
         } else {
             console.error(`Sheet "${skillsSheetName}" not found in the Excel file.`);
         }
@@ -264,6 +274,9 @@ onMounted(fetchAndAnalyzeFile);
 </script>
   
 <style scoped>
+.prof{
+    text-align: center;
+}
 .row {
     margin-right: 0 !important;
     justify-content: center !important;
@@ -287,12 +300,12 @@ onMounted(fetchAndAnalyzeFile);
     text-align: center;
 }
 
-.table{
+.table {
     background: none !important;
 }
 
 td:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .critFunc {
@@ -316,7 +329,7 @@ td:hover {
     padding: 8px;
     color: white;
     text-align: left;
-    background-color: rgb(68, 84, 106) !important;  
+    background-color: rgb(68, 84, 106) !important;
 }
 
 .table th {

@@ -1,6 +1,9 @@
 <template>
     <div class="container">
-        <div class="fixed-width" ref="fixedWidth">
+        <div v-if="loading" class="loading-message">
+            Loading data<span class="dot1">.</span><span class="dot2">.</span><span class="dot3">.</span>
+        </div>
+        <div v-if="!loading" class="fixed-width" ref="fixedWidth">
             <!-- Left Half Content Goes Here -->
             <table id="left-table">
                 <thead>
@@ -21,7 +24,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="scrollable" ref="scrollable">
+        <div v-if="!loading" class="scrollable" ref="scrollable">
             <!-- Right Half Content Goes Here -->
             <table id="right-table">
                 <thead>
@@ -35,11 +38,11 @@
                 </thead>
                 <tbody>
                     <tr v-for="(row, index) in EnablingData" :key="index" style="white-space: nowrap;">
-                        <td v-for="(col, colIndex) in proficiencyLevelData[index]" :key="colIndex">{{ col }}</td>
+                        <td v-for="(col, colIndex) in proficiencyLevelData[index]" :key="colIndex" style="text-align: center;">{{ col }}</td>
                     </tr>
                     <tr v-for="(row, index) in FunctionalData" :key="index" style="white-space: nowrap;">
                         <td v-for="(col, colIndex) in proficiencyLevelData[index + EnablingData.length]"
-                            :key="colIndex">{{ col }}</td>
+                            :key="colIndex" style="text-align: center;">{{ col }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -69,6 +72,8 @@ const skillCode = ref([])
 
 
 let proficiencyLevelData = ref([]);
+
+const loading = ref(true);
 
 const router = useRouter();
 
@@ -425,9 +430,11 @@ const fetchAndAnalyzeFile = async () => {
 
 
         console.log(proficiencyLevelData)   
+        loading.value = false;
 
     } catch (error) {
         console.error('Error fetching and analyzing file:', error);
+        loading.value = false;
     }
 };
 
@@ -453,6 +460,29 @@ function syncScroll() {
 </script>
 
 <style scoped>
+
+.loading-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: white;
+}
+
+/* Animated dots */
+.dot1, .dot2, .dot3 {
+    animation: dotAnimation 1.5s infinite;
+}
+
+@keyframes dotAnimation {
+    0%, 80%, 100% {
+        opacity: 0.5;
+    }
+    40% {
+        opacity: 1;
+    }
+}
 
 .hover:hover{
     cursor: pointer;
@@ -572,6 +602,5 @@ td {
         width: 200% !important;
     }
 }
-
 
 </style>

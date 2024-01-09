@@ -87,7 +87,13 @@
             </ul>
           </div>
         </th>
+        
       </tr>
+      <tr>
+                <td style="border: 1px solid white;">Range of Application</td>
+                <th colspan="3" style="border: 1px solid white; text-align: start;">{{globalRangeApplication}}</th>
+
+        </tr>
     </table>
   </div>
 </template>
@@ -330,6 +336,7 @@ onMounted(() => {
     border-collapse: collapse;
     margin-left: 50px;
     margin-right: 50px;
+    margin-bottom: 30px;
 }
 
 .styled-table th,
