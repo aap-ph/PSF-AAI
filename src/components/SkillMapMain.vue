@@ -430,17 +430,18 @@ const fetchAndAnalyzeFile = async () => {
         });
 
 
-        console.log(proficiencyLevelData)   
+        console.log(proficiencyLevelData)  
+        loading.value = false; 
 
     } catch (error) {
         console.error('Error fetching and analyzing file:', error);
+        loading.value = false;
     }
 };
 
 onMounted(() => {
     fetchAndAnalyzeFile();
     syncScroll();
-    loading.value = false;
 
     scrollable.value.addEventListener('scroll', () => {
         fixedWidth.value.scrollTop = scrollable.value.scrollTop;
