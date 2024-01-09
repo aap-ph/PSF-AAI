@@ -4,11 +4,11 @@
          <div v-if="loading" class="loading-message">
             Loading data...
         </div>
-        <div class="fixed-width" ref="fixedWidth">
+        <div v-if="!loading" class="fixed-width" ref="fixedWidth">
             <!-- Left Half Content Goes Here -->
             <table id="left-table">
                 <thead>
-                    <tr v-if="!loading" class="first-header">
+                    <tr class="first-header">
                         <th>Skill Type</th>
                         <th>Skill</th>
                     </tr>
@@ -440,8 +440,8 @@ const fetchAndAnalyzeFile = async () => {
 };
 
 onMounted(() => {
-    fetchAndAnalyzeFile();
     syncScroll();
+    fetchAndAnalyzeFile();
 
     scrollable.value.addEventListener('scroll', () => {
         fixedWidth.value.scrollTop = scrollable.value.scrollTop;
