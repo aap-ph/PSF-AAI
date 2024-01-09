@@ -4,11 +4,11 @@
          <div v-if="loading" class="loading-message">
             Loading data...
         </div>
-        <div v-if="!loading" class="fixed-width" ref="fixedWidth">
+        <div class="fixed-width" ref="fixedWidth">
             <!-- Left Half Content Goes Here -->
             <table id="left-table">
                 <thead>
-                    <tr class="first-header">
+                    <tr v-if="!loading"  class="first-header">
                         <th>Skill Type</th>
                         <th>Skill</th>
                     </tr>
@@ -25,7 +25,7 @@
                 </tbody>
             </table>
         </div>
-        <div v-if="!loading" class="scrollable" ref="scrollable">
+        <div class="scrollable" ref="scrollable">
             <!-- Right Half Content Goes Here -->
             <table id="right-table">
                 <thead>
