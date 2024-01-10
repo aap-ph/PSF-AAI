@@ -5,7 +5,7 @@
         <tr>
           <th style="border: none; width: 30px;"></th>
           <th @click="sortByColumn('ESC Code')" class="sortable" style="width: 10%;">Code</th>
-          <th @click="sortByColumn('ESC Title')" class="sortable" style="width: 10%;">Title</th>
+          <th @click="sortByColumn('ESC Title')" class="sortable" style="width: 10%;">Skill</th>
           <th @click="sortByColumn('ESC Category')" class="sortable" style="width: 10%;">Category</th>
           <th @click="sortByColumn('ESC Related Category')" class="sortable" style="width: 10%;">Related Category</th>
           <th style="width: 50%;">Description</th>
