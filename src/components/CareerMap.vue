@@ -45,12 +45,12 @@
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Senior Director</th>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(D8)">{{D8}}</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(G8)">{{G8}}</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(J8)">{{J8}}</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(M8)">{{M8}}</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(P8)">{{P8}}</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(S8)">{{S8}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;  background-color: #44546a;" @click="sendText(D8)">{{D8}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;  background-color: #44546a;" @click="sendText(G8)">{{G8}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;  background-color: #44546a;" @click="sendText(J8)">{{J8}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;  background-color: #44546a;" @click="sendText(M8)">{{M8}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;  background-color: #44546a;" @click="sendText(P8)">{{P8}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;  background-color: #44546a;" @click="sendText(S8)">{{S8}}</td>
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Director</th>
@@ -67,12 +67,12 @@
     </tr>
     <tr>
       <th style="font-weight: bold;  border-right: solid white">Senior Manager</th>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(D14)">{{D14}}</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(G14)">{{G14}}</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(J14)">{{J14}}</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(M14)">{{M14}}</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(P14)">{{P14}}</td>
-      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;" @click="sendText(S14)">{{S14}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;  background-color: #44546a;" @click="sendText(D14)">{{D14}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;  background-color: #44546a;" @click="sendText(G14)">{{G14}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;  background-color: #44546a;" @click="sendText(J14)">{{J14}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;  background-color: #44546a;" @click="sendText(M14)">{{M14}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;  background-color: #44546a;" @click="sendText(P14)">{{P14}}</td>
+      <td style="width: 10px;"></td><td rowspan="2" style="border: solid white;  background-color: #44546a;" @click="sendText(S14)">{{S14}}</td>
     </tr>
     <tr>
       <th style="font-weight: bold; border-right: solid white">Manager</th>
@@ -139,31 +139,31 @@
   </table>
   <table class="dotted-overlay">
       <tbody>
-        <tr style="height: 100px;">
+        <tr style="height: 50px;">
           <td style=" width: 11%;"></td>
           <td style=""></td>
           <td></td>
           <td style="  width: 10%;"></td>
-          <td rowspan="5" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
+          <td rowspan="7" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
+          <td></td>
+          <td style="  width: 10.5%;"></td>
+          <td rowspan="9" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
+          <td></td>
+          <td style="  width: 11%;"></td>
+          <td rowspan="8" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
           <td></td>
           <td style="  width: 10.5%;"></td>
           <td rowspan="7" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
           <td></td>
-          <td style="  width: 11%;"></td>
-          <td rowspan="6" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
-          <td></td>
           <td style="  width: 10.5%;"></td>
-          <td rowspan="5" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
-          <td></td>
-          <td style="  width: 10.5%;"></td>
-          <td rowspan="6" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
+          <td rowspan="8" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
           <td></td>
           <td style=" width: 10.5%;"></td>
-          <td rowspan="6" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
+          <td rowspan="8" style="border-right: 1px dotted white; width: 0px; padding: 0px;"></td>
           <td></td>
           <td style=""></td>
         </tr>
-        <tr style="height: 100px;">
+        <tr style="height: 20px;">
           <td style=" border-bottom: 1px dotted white; "></td>
           <td style=" border-bottom: 1px dotted white; "></td>
           <td style=" border-bottom: 1px dotted white; "></td>
@@ -185,7 +185,7 @@
           <td></td>
           <td></td>
         </tr>
-        <tr style="height: 120px;">
+        <tr style="height: 20px;">
           <td style=" border-bottom: 1px dotted white; "></td>
           <td style=" border-bottom: 1px dotted white; "></td>
           <td style=" border-bottom: 1px dotted white; "></td>
@@ -207,7 +207,7 @@
           <td></td>
           <td></td>
         </tr>
-          <tr style="height: 120px;">
+          <tr style="height: 20px;">
             <td style=" border-bottom: 1px dotted white; "></td>
           <td style=" border-bottom: 1px dotted white; "></td>
           <td style=" border-bottom: 1px dotted white; "></td>
@@ -229,7 +229,7 @@
           <td></td>
           <td></td>
           </tr>
-        <tr  style="height: 100px;">
+        <tr  style="height: 20px;">
           <td style=" border-bottom: 1px dotted white; "></td>
           <td style=" border-bottom: 1px dotted white; "></td>
           <td style=" border-bottom: 1px dotted white; "></td>
@@ -252,7 +252,46 @@
           <td></td>
           <td></td>
         </tr>
-        <tr style="height: 110px;">
+        <tr  style="height: 20px;">
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr style="height: 35px;">
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+          <td style=" border-bottom: 1px dotted white; "></td>
+        </tr>
+        <tr style="height: 35px;">
           <td style=" border-bottom: 1px dotted white; "></td>
           <td style=" border-bottom: 1px dotted white; "></td>
           <td style=" border-bottom: 1px dotted white; "></td>
@@ -276,7 +315,7 @@
           <td style=" border-bottom: 1px dotted white; "></td>
           <td style=" border-bottom: 1px dotted white; "></td>
         </tr>
-        <tr style="height: 70px;">
+        <tr style="height: 30px;">
           <td style=" border-bottom: 1px dotted white; "></td>
           <td style=" border-bottom: 1px dotted white; "></td>
           <td style=" border-bottom: 1px dotted white; "></td>
@@ -303,8 +342,7 @@
           <td style=" border-bottom: 1px dotted white; "></td>
           <td style=" border-bottom: 1px dotted white; "></td>
         </tr>
-        <tr style="height: 70px;">
-          
+        <tr style="height: 20px;">
         </tr>
       </tbody>
     </table>
@@ -335,9 +373,8 @@
 .styled-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #44546a;
   position: relative; /* Add this to position the table relative to its container */
-  z-index: 0; /* Add this to position the table underneath the overlay */
+  z-index: 2; /* Add this to position the table underneath the overlay */
 }
 
 td:hover{
