@@ -1,4 +1,4 @@
-# PSF--AAI
+# PSF-AAI
 
 Install **Node JS** first.
  
