@@ -1,5 +1,5 @@
 <script setup>
-import Taae from '../components/TAAE.vue'
+import Ecosystem from '../components/Ecosystem.vue'
 import ContactUsNavBarView from './ContactUsNavBarView.vue';
 
 </script>
@@ -12,7 +12,7 @@ import ContactUsNavBarView from './ContactUsNavBarView.vue';
   </div>
   <main class="pt-3 w-100 d-flex justify-content-center flex-column align-items-center">
     <div class="d-flex align-items-center">
-      <Taae />
+      <Ecosystem />
     </div>
   </main>
 </template>

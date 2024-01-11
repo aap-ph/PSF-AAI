@@ -10,7 +10,7 @@ import FunctionalSkillsDetails from '../views/FunctionalSkillsDetailsView.vue'
 import EnablingSkills from '../views/EnablingSkillsView.vue'
 import ContactUs from '../views/ContactUsView.vue'
 import AboutThePSF from '../views/AboutThePSFView.vue'
-import TAAE from '../views/TAAEView.vue'
+import Ecosystem from '../views/EcosystemView.vue'
 import Message from '../views/MessageView.vue'
 import TechnicalGuide from '../views/TechnicalGuideView.vue'
 import Testimonial from '../views/TestimonialView.vue'
@@ -68,9 +68,9 @@ const router = createRouter({
       component: AboutThePSF
     },
     {
-      path: '/taae',
-      name: 'taae',
-      component: TAAE
+      path: '/ecosystem',
+      name: 'ecosystem',
+      component: Ecosystem
     },
     {
       path: '/message',

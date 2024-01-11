@@ -8,7 +8,7 @@
           <router-link class="nav-link" :to="{ path: '/abouthePSF' }" :class="{ 'active': isActive('/abouthePSF') }">About the PSF</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" :to="{ path: '/taae' }" :class="{ 'active': isActive('/taae') }">The Analytics & AI Ecosystem</router-link>
+          <router-link class="nav-link" :to="{ path: '/ecosystem' }" :class="{ 'active': isActive('/ecosystem') }">The Analytics & AI Ecosystem</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" :to="{ path: '/message' }" :class="{ 'active': isActive('/message') }">Messages</router-link>
