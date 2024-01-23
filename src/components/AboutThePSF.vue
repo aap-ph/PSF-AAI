@@ -5,7 +5,7 @@
       </p>
   
       <p>
-        The Philippine Skills Framework for Analytics and Artificial Intelligence (PSF-AAI) is an endeavor developed for the Philippine workforce of all industries to address skills mastery and continuous learning in the AAI Sector. It is a collaborative development effort initiated and spearheaded by the Department of Information and Communication Technology (DICT), the Analytics and Artificial Intelligence Association of the Philippines (AAP), and Thames International Business School, in cooperation with the stakeholders of the Philippine AAI field, i.e., employers, practitioners, education and training providers.
+        The Philippine Skills Framework for Analytics and Artificial Intelligence (PSF-AAI) is an endeavor developed for the Philippine workforce of all industries to address skills mastery and continuous learning in the AAI Sector. It is a collaborative development effort initiated and spearheaded by the Department of Information and Communication Technology (DICT) and the Analytics and Artificial Intelligence Association of the Philippines (AAP), in cooperation with the stakeholders of the Philippine AAI field, i.e., employers, practitioners, education and training providers.
       </p>
   
       <p>
