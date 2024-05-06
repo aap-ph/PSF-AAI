@@ -13,7 +13,7 @@ import NavBarView from './views/NavBarView.vue';
     <div class="text-after-images">
       <img src="/PSF Logo.png" alt="PSF Logo" class="logo" />
       <p>ANALYTICS & ARTIFICIAL INTELLIGENCE</p>
-      <p class='Text2'>UNOFFICIAL RELEASE <br>FOR VALIDATION ONLY</p>
+      <p class='Text2'> <br> </p>
     </div>
     <img src="/AAP Logo.png" alt="AAP Logo" class="logo" />
   </div>
